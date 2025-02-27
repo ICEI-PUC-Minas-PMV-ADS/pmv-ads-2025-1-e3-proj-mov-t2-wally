@@ -29,7 +29,7 @@ A definição do problema foi dada pela antropologia, uma técnica de observaç�
 |Hobbies| Comer fast-food no seu bairro, dançar ballet|
 ## Histórias de Usuários
 
-C|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE`                                             |PARA ... `MOTIVO/VALOR`                 |
+|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE`                                             |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|--------------------------------------------------------------------------------|----------------------------------------|
 |Matilde Ribeiro| Registrar entradas e saídas usando o celular|Armazenar seus gastos em um lugar que não se deteriore|
 |Matilde Ribeiro| Criar uma conta que possua minhas informações pessoais| Acessar meus dados a qualquer hora|
@@ -37,11 +37,7 @@ C|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE`                      
 |Thiago Costa| Consultar meu histórico de entradas e gastos| Controlar e mapear meus gastos|
 |Luiza Perreira|Criar metas financeiras|Visualizar o progresso da meta até sua materialização|
 |Luiza Pereira| Mostrar gráficos financeiros | Facilitar o entendimento do balancete geral.|
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
+
 
 ## Modelagem do Processo de Negócio 
 
