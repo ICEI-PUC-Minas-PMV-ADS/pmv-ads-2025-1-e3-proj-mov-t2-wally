@@ -1,39 +1,42 @@
 # Especificações do Projeto
 
-<span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
-
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
+A definição do problema foi dada pela antropologia, uma técnica de observação que nos permitiu criar as personas e usuários abaixo.
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+|Matilde Ribeiro|![Design sem nome](https://github.com/user-attachments/assets/986c6b9c-682d-4808-bc7f-b3d66f846824)|
+|-----------------------|-|
+|Idade:|59|
+|Ocupação:| Servidora pública aposentada|
+|Motivações| Quer uma forma mais rápida e simples de organizar suas finanças sem precisar utilizar papel|
+|Frustrações| Sistemas de finanças são muito complicados de utilizar |
+|Hobbies| Hidroginástica, brincar com os netos|
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+|Thiago Costa|![Design sem nome (1)](https://github.com/user-attachments/assets/bb09a82e-66c8-4134-8778-542d5c37bbbb)|
+|-----------------------|-|
+|Idade:|24|
+|Ocupação:| Estagiário de agronomia|
+|Motivações| Melhorar seus gastos excessivos e receber de seus amigos sem cobrar;|
+|Frustrações| Não consegue desenvolver o hábito de atualizar seu planejamento financeiro no excel e constantemente toma calote de seus colegas quando dividem a conta|
+|Hobbies| Ir para bares, comprar roupas on-line|
 
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
-
+|Luiza Pereira|![Design sem nome (2)](https://github.com/user-attachments/assets/23f76acc-8397-4d71-93fe-a3778879bcd5)|
+|-----------------------|-|
+|Idade:|15|
+|Ocupação:|Menor Aprendiz|
+|Motivações| Iniciar a sua vida financeira com bons hábitos|
+|Frustrações| Falta de conhecimento sobre termos financeiros e finanças no geral|
+|Hobbies| Comer fast-food no seu bairro, dançar ballet|
 ## Histórias de Usuários
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
-
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
+C|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE`                                             |PARA ... `MOTIVO/VALOR`                 |
+|--------------------|--------------------------------------------------------------------------------|----------------------------------------|
+|Matilde Ribeiro| Registrar entradas e saídas usando o celular|Armazenar seus gastos em um lugar que não se deteriore|
+|Matilde Ribeiro| Criar uma conta que possua minhas informações pessoais| Acessar meus dados a qualquer hora|
+|Thiago Costa|Dividir a conta com mais pessoas de forma justa|Diminuir os casos em que sai lesado ao não ser pago novamente pelos seus colegas|
+|Thiago Costa| Consultar meu histórico de entradas e gastos| Controlar e mapear meus gastos|
+|Luiza Perreira|Criar metas financeiras|Visualizar o progresso da meta até sua materialização|
+|Luiza Pereira| Mostrar gráficos financeiros | Facilitar o entendimento do balancete geral.|
 > - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
 > - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
 > - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
