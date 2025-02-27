@@ -24,9 +24,11 @@ Com duas áreas principais, o Wally permite que você tenha **total controle sob
 
 * Udo Fritzke Junior
 
+<!--
 ## Instruções de utilização
 
 Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação. 
+-->
 
 # Documentação
 
