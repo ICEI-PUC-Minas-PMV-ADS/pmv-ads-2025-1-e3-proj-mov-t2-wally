@@ -27,6 +27,26 @@ A definição do problema foi dada pela antropologia, uma técnica de observaç�
 |Motivações| Iniciar a sua vida financeira com bons hábitos|
 |Frustrações| Falta de conhecimento sobre termos financeiros e finanças no geral|
 |Hobbies| Comer fast-food no seu bairro, dançar ballet|
+
+
+| Marcos Vinícius |![$7CKdzVz5y2jPjw5D2_8!x$A](https://github.com/user-attachments/assets/f85f7fcd-b388-4204-afa4-36d05e5e6ec5)|
+|-----------------|---------------|
+| **Idade**       | 28            |
+| **Ocupação**    | Freelancer (Designer Gráfico) |
+| **Motivações**  | Melhorar a gestão financeira para poder investir em equipamentos e cursos para seu trabalho, além de criar uma reserva de emergência. |
+| **Frustrações** | Dificuldade em organizar seus rendimentos irregulares e pagar impostos sobre os seus serviços. |
+| **Hobbies**     | Criar designs para redes sociais, aprender novas técnicas de design, e curtir eventos de arte. |
+
+
+| Natasha Munhoz |![$7CKdzVz5y2jPjw5D2_8!x$A(1)](https://github.com/user-attachments/assets/ecae2aed-cb96-4f95-8e87-ef98bfa194ce)|
+|-----------------|---------------|
+| **Idade**       | 35            |
+| **Ocupação**    | Microempreendedora (Proprietária de uma pequena loja de roupas) |
+| **Motivações**  | Controlar melhor o fluxo de caixa da sua loja, separar finanças pessoais das da empresa e aumentar a lucratividade. |
+| **Frustrações** | Falta de tempo para estudar sobre finanças empresariais e a dificuldade em fazer planejamento financeiro de longo prazo. |
+| **Hobbies**     | Organizar eventos de moda, viajar para feiras de moda e criar coleções exclusivas para sua loja. |
+
+
 ## Histórias de Usuários
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE`                                             |PARA ... `MOTIVO/VALOR`                 |
@@ -34,8 +54,8 @@ A definição do problema foi dada pela antropologia, uma técnica de observaç�
 |Matilde Ribeiro| Registrar entradas e saídas usando o celular|Armazenar seus gastos em um lugar que não se deteriore|
 |Matilde Ribeiro| Criar uma conta que possua minhas informações pessoais| Acessar meus dados a qualquer hora|
 |Thiago Costa|Dividir a conta com mais pessoas de forma justa|Diminuir os casos em que sai lesado ao não ser pago novamente pelos seus colegas|
-|Thiago Costa| Consultar meu histórico de entradas e gastos| Controlar e mapear meus gastos|
-|Luiza Perreira|Criar metas financeiras|Visualizar o progresso da meta até sua materialização|
+|Marcos Vinícius| Consultar meu histórico de entradas e gastos| Controlar e mapear meus gastos|
+|Natasha Munhoz|Criar metas financeiras|Visualizar o progresso da meta até sua materialização|
 |Luiza Pereira| Mostrar gráficos financeiros | Facilitar o entendimento do balancete geral.|
 
 
