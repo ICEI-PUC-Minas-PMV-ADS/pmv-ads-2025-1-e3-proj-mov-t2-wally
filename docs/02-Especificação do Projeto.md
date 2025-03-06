@@ -4,6 +4,8 @@ A definição do problema foi dada pela antropologia, uma técnica de observaç�
 
 ## Personas
 
+<div align="center">
+
 |Matilde Ribeiro|![Design sem nome](https://github.com/user-attachments/assets/986c6b9c-682d-4808-bc7f-b3d66f846824)|
 |-----------------------|-|
 |Idade:|59|
@@ -46,6 +48,7 @@ A definição do problema foi dada pela antropologia, uma técnica de observaç�
 | **Frustrações** | Falta de tempo para estudar sobre finanças empresariais e a dificuldade em fazer planejamento financeiro de longo prazo. |
 | **Hobbies**     | Organizar eventos de moda, viajar para feiras de moda e criar coleções exclusivas para sua loja. |
 
+</div>
 
 ## Histórias de Usuários
 
@@ -107,6 +110,7 @@ Fluxograma 2:
 
 
 Esses processos otimizam o gerenciamento financeiro pessoal e coletivo, tornando o Wally uma solução eficiente para organização financeira.
+
 ## Indicadores de Desempenho
 
 Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
@@ -156,6 +160,8 @@ As tabelas a seguir apresentam uma descrição detalhada dos **requisitos funcio
 
 O projeto está **restrito** pelos itens apresentados na tabela a seguir:
 
+<div align="center">
+
 | ID  | Restrição |  
 |----|---------------------------------------------------------------|  
 | 01 | O projeto deve ser entregue até o final do semestre. |  
@@ -167,6 +173,8 @@ O projeto está **restrito** pelos itens apresentados na tabela a seguir:
 | 07 | O aplicativo deve estar em conformidade com a LGPD. |  
 | 08 | Todo o código deve ser disponibilizado em um repositório no GitHub. |  
 | 09 | O aplicativo deve funcionar offline para visualização de dados, mas requer conexão à internet para sincronização. |  
+
+</div>
 
 ## Diagrama de Casos de Uso
 
