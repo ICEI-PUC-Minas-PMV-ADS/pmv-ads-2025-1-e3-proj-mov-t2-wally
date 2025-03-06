@@ -59,28 +59,45 @@ A definição do problema foi dada pela antropologia, uma técnica de observaç�
 |Luiza Pereira| Mostrar gráficos financeiros | Facilitar o entendimento do balancete geral.|
 
 
-## Modelagem do Processo de Negócio 
+## Modelagem do Processo de Negócio - Wally
 
 ### Análise da Situação Atual
 
-Apresente aqui os problemas existentes que viabilizam sua proposta. Apresente o modelo do sistema como ele funciona hoje. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional. 
+O gerenciamento financeiro pessoal e de grupos é uma necessidade cotidiana. Muitas pessoas utilizam planilhas, anotações ou aplicativos fragmentados para controlar receitas, despesas e dividir custos em grupo.
+Os principais problemas são:
+* Falta de centralização das informações financeiras.
+* Dificuldade na divisão de despesas em grupos.
+* Baixa automação para categorização de despesas.
+* Ausência de relatórios e análises financeiras intuitivas.
 
 ### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+O Wally é um aplicativo mobile que permite aos usuários realizarem o controle de despesas individuais e compartilhadas. Ele busca facilitar a gestão financeira por meio de:
+* Interface intuitiva para registro e visualização de despesas.
+* Automatização na divisão de gastos em grupo.
+* Relatórios personalizados para tomada de decisão financeira.
 
-### Processo 1 – NOME DO PROCESSO
+### Processo 1 – Registro de Despesas
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
 
-![Processo 1](img/02-bpmn-proc1.png)
+Oportunidades de melhoria:
+* Registro simplificado de gastos individuais ou compartilhados.
+* Classificação automática das despesas.
+* Possibilidade controle de gastos
 
-### Processo 2 – NOME DO PROCESSO
+Fluxograma 1:
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
+### Processo 2 – Divisão de Despesas em Grupo
 
-![Processo 2](img/02-bpmn-proc2.png)
 
+Oportunidades de melhoria:
+* Automatização no cálculo de divisão de despesas.
+* Notificações para pagamento.
+* Organização de despesas compartilhadas.
+
+Fluxograma 2:
+
+Esses processos otimizam o gerenciamento financeiro pessoal e coletivo, tornando o Wally uma solução eficiente para organização financeira.
 ## Indicadores de Desempenho
 
 Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
