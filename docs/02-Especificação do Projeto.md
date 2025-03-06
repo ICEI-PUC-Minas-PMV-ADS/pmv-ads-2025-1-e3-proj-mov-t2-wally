@@ -185,14 +185,29 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de
 
 A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. 
 
-A matriz deve contemplar todos os elementos relevantes que fazem parte do sistema, conforme a figura meramente ilustrativa apresentada a seguir.
+A matriz deve contemplar todos os elementos relevantes que fazem parte do sistema, conforme a figura apresentada a seguir.
 
-![Exemplo de matriz de rastreabilidade](img/02-matriz-rastreabilidade.png)
 
-> **Links Úteis**:
-> - [Artigo Engenharia de Software 13 - Rastreabilidade](https://www.devmedia.com.br/artigo-engenharia-de-software-13-rastreabilidade/12822/)
-> - [Verificação da rastreabilidade de requisitos usando a integração do IBM Rational RequisitePro e do IBM ClearQuest Test Manager](https://developer.ibm.com/br/tutorials/requirementstraceabilityverificationusingrrpandcctm/)
-> - [IBM Engineering Lifecycle Optimization – Publishing](https://www.ibm.com/br-pt/products/engineering-lifecycle-optimization/publishing/)
+| Relacionamento REQ. | StakeHolder | RF-001 | RF-002 | RF-003 | RF-004 | RF-005 | RF-006 | RF-007 | RF-008 | RF-009 | RF-010 | RF-011 | RF-012 | RF-013 | RF-014 | RF-015 | RF-016 |
+|---------------------|-------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| *Stakeholder*      |             |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x     |
+| *RF-001*           |             |        |   x    |   x    |   x    |   x    |   x    |   x    |        |        |        |        |        |        |        |        |         |
+| *RF-002*           |             |   x    |        |   x    |   x    |   x    |   x    |   x    |   x    |        |        |        |        |        |        |        |         |
+| *RF-003*           |             |   x    |   x    |        |   x    |   x    |   x    |   x    |        |        |        |        |        |        |        |        |         |
+| *RF-004*           |             |   x    |   x    |   x    |        |   x    |   x    |   x    |        |        |        |        |        |        |        |        |         |
+| *RF-005*           |             |   x    |   x    |   x    |   x    |        |   x    |        |   x    |   x    |        |        |        |        |        |        |         |
+| *RF-006*           |             |   x    |   x    |   x    |   x    |   x    |        |        |        |        |        |        |        |        |        |        |         |
+| *RF-007*           |             |   x    |   x    |   x    |   x    |   x    |   x    |        |        |   x    |        |        |        |        |        |        |         |
+| *RF-008*           |             |   x    |   x    |   x    |   x    |   x    |   x    |   x    |        |        |        |        |        |        |        |        |         |
+| *RF-009*           |             |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |        |        |        |        |        |        |        |         |
+| *RF-010*           |             |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |        |        |        |        |        |        |         |
+| *RF-011*           |             |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |        |        |        |        |        |         |
+| *RF-012*           |             |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |        |        |        |        |         |
+| *RF-013*           |             |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |        |        |        |         |
+| *RF-014*           |             |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |        |        |         |
+| *RF-015*           |             |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |        |         |
+| *RF-016*           |             |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |   x    |         |
+
 
 
 # Gerenciamento de Projeto
