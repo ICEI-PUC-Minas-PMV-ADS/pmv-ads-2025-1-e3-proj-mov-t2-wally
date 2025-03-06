@@ -87,6 +87,9 @@ Oportunidades de melhoria:
 
 Fluxograma 1:
 
+![image](https://github.com/user-attachments/assets/9dd4f435-eeaf-4737-84e1-c4580502d8c8)
+
+
 ### Processo 2 – Divisão de Despesas em Grupo
 
 
