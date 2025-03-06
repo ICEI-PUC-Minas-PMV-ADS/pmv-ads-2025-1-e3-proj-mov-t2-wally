@@ -87,7 +87,8 @@ Oportunidades de melhoria:
 
 Fluxograma 1:
 
-![image](https://github.com/user-attachments/assets/27860a54-6c8c-4a39-b79d-1581740329b1)
+![image](https://github.com/user-attachments/assets/2b8f0b5e-3d48-400b-95e6-ca48a1080081)
+
 
 
 
