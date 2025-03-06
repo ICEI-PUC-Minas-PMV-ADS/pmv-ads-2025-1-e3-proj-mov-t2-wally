@@ -195,21 +195,37 @@ Para a realização do projeto Wally, utilizamos como base as diretrizes do **PM
 
 ## Gerenciamento de Tempo
 
+O gerenciamento do tempo foi realizado por meio do Diagrama de Gantt, que permite o acompanhamento das tarefas do projeto de forma visual. Com essa ferramenta, o gerente de projetos pode:
+- Agendar e coordenar tarefas de forma eficiente, evitando sobrecarga de trabalho.
+- Definir prazos e marcos do projeto, garantindo que cada fase seja concluída dentro do tempo estipulado.
+- Monitorar a evolução das atividades, permitindo ajustes caso ocorram atrasos ou imprevistos.
+
+Dessa forma, conseguimos garantir que o desenvolvimento do Wally ocorra de maneira organizada e dentro dos prazos estabelecidos.
+
 ![image](https://github.com/user-attachments/assets/7f408747-b771-4336-9b73-7a31eddc6fd1)
-
-
-
-
 <h4 align="center">FIGURA X - Diagrama de Gantt</h4>
 
 ## Gerenciamento de Equipe
 
-O gerenciamento adequado de tarefas contribuirá para que o projeto alcance altos níveis de produtividade. Por isso, é fundamental que ocorra a gestão de tarefas e de pessoas, de modo que os times envolvidos no projeto possam ser facilmente gerenciados. 
+A gestão da equipe foi realizada através da criação de um Cronograma do Projeto, onde organizamos as funções e responsabilidades dos membros do time. 
 
-![Simple Project Timeline](img/02-project-timeline.png)
+![gestaoequipe](https://github.com/user-attachments/assets/75c1f1aa-f586-443b-a4e0-05fb7cfb1ba6)
+<h4 align="center">FIGURA X - Cronograma do Projeto</h4>
 
 ## Gestão de Orçamento
 
-O processo de determinar o orçamento do projeto é uma tarefa que depende, além dos produtos (saídas) dos processos anteriores do gerenciamento de custos, também de produtos oferecidos por outros processos de gerenciamento, como o escopo e o tempo.
+O orçamento do projeto Wally foi elaborado considerando os principais recursos necessários para o desenvolvimento e implantação do aplicativo. Os custos foram divididos em recursos humanos, hardware, rede, software e serviços.
+Os principais pontos do orçamento incluem:
+- Recursos Humanos: Salários dos 6 desenvolvedores durante o período de desenvolvimento (6 meses).
+- Infraestrutura: Servidores em nuvem para hospedagem do sistema e equipamentos para a equipe.
+- Software e Licenças: Ferramentas de desenvolvimento, banco de dados e hospedagem.
+- Serviços: Consultoria em UX/UI, testes de segurança e publicação do aplicativo.
+  
+O total estimado do orçamento para o desenvolvimento do Wally é de aproximadamente R$ 354.900,00, garantindo que o projeto seja executado com qualidade e dentro dos padrões esperados.
 
-![Orçamento](img/02-orcamento.png)
+
+<p align="center">
+<img  src="https://github.com/user-attachments/assets/02e84641-ad08-45ad-bc68-5c37badb0634" width="500">
+</p>
+  
+<h4 align="center">FIGURA X - Quadro de Gestão de Custos</h4>
