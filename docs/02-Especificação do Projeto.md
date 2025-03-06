@@ -102,7 +102,8 @@ Oportunidades de melhoria:
 
 Fluxograma 2:
 
-![image](https://github.com/user-attachments/assets/3aeba811-60b6-4ec0-a83e-d1eb047e1b42)
+![image](https://github.com/user-attachments/assets/1834ee49-3a06-4bc5-b042-42cc7f4495a6)
+
 
 
 Esses processos otimizam o gerenciamento financeiro pessoal e coletivo, tornando o Wally uma solução eficiente para organização financeira.
