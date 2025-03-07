@@ -90,7 +90,9 @@ Oportunidades de melhoria:
 
 Fluxograma 1:
 
-![image](https://github.com/user-attachments/assets/2b8f0b5e-3d48-400b-95e6-ca48a1080081)
+![image](https://github.com/user-attachments/assets/8edd71e6-2c87-47d0-81da-f71c67b87d6a)
+
+
 
 
 
@@ -105,7 +107,8 @@ Oportunidades de melhoria:
 
 Fluxograma 2:
 
-![image](https://github.com/user-attachments/assets/1834ee49-3a06-4bc5-b042-42cc7f4495a6)
+![image](https://github.com/user-attachments/assets/366dac5d-b72e-417c-a98d-5e21b0c354a3)
+
 
 
 
