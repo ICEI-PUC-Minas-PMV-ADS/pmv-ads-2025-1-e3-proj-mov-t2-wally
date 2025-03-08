@@ -118,12 +118,22 @@ Esses processos otimizam o gerenciamento financeiro pessoal e coletivo, tornando
 
 ## Indicadores de Desempenho
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
+ <!-- Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores.
 
 Usar o seguinte modelo: 
 
 ![Indicadores de Desempenho](img/02-indic-desemp.png)
-Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. 
+Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. -->
+
+| Indicador                              | Descrição | Objetivo |
+|----------------------------------------|-----------|----------|
+| **Número de Usuários Ativos** | Quantidade de usuários que acessam o aplicativo diariamente. | Avaliar o engajamento e a relevância do aplicativo. |
+| **Taxa de Retenção de Usuários** | Percentual de usuários que continuam utilizando o aplicativo após um período (ex.: 30 dias). | Avaliar a satisfação e fidelidade dos usuários. |
+| **Número de Despesas em Grupo Criadas** | Quantidade de despesas compartilhadas registradas no aplicativo. | Medir a utilização da funcionalidade de gestão de despesas em grupo. |
+| **Percentual de Metas Financeiras Atingidas** | Proporção de metas financeiras definidas pelos usuários que foram alcançadas. | Avaliar se o app ajuda os usuários a atingirem seus objetivos financeiros. |
+| **Taxa de Erros e/ou Falhas no Aplicativo** | Número de erros ou falhas que ocorrem durante o uso. | Monitorar a estabilidade e confiabilidade do sistema. |
+| **Número de Feedbacks ou Sugestões Recebidas** | Quantidade de feedbacks ou sugestões enviados pelos usuários. | Melhorar o aplicativo com base na experiência dos usuários. |
+
 
 ## Requisitos
 
