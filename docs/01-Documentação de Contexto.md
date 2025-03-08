@@ -20,7 +20,7 @@ Diante desse contexto, a ausência de uma solução prática e abrangente para a
 
 ### Objetivo Geral
 
-Desenvolver um aplicativo mobile de gestão financeira que permita o controle de ganhos e despesas pessoais, além do gerenciamento de gastos compartilhados entre usuários, de forma intuitiva e acessível.
+Desenvolver um aplicativo mobile de gestão financeira que permita o controle de receitas e despesas pessoais, além do gerenciamento de gastos compartilhados entre usuários, de forma intuitiva e acessível.
 
 ### Objetivos Específicos
 
