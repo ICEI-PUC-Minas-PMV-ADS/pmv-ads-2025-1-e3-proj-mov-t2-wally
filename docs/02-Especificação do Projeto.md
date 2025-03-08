@@ -10,7 +10,7 @@ A definição do problema foi dada pela antropologia, uma técnica de observaç�
 |-----------------------|-|
 |Idade:|59|
 |Ocupação:| Servidora pública aposentada|
-|Motivações| Quer uma forma mais rápida e simples de organizar suas finanças sem precisar utilizar papel|
+|Motivações| Quer uma forma mais rápida, simples e segura de organizar suas finanças e calcular seus gastos sem precisar utilizar papel e caneta|
 |Frustrações| Sistemas de finanças são muito complicados de utilizar |
 |Hobbies| Hidroginástica, brincar com os netos|
 
@@ -27,11 +27,12 @@ A definição do problema foi dada pela antropologia, uma técnica de observaç�
 |Idade:|15|
 |Ocupação:|Menor Aprendiz|
 |Motivações| Iniciar a sua vida financeira com bons hábitos|
-|Frustrações| Falta de conhecimento sobre termos financeiros e finanças no geral|
+|Frustrações| A falta de experiência e falta de organização ao lidar com dinheiro combinado com seus objetivos ambiciosos, muitas vezes irreais|
 |Hobbies| Comer fast-food no seu bairro, dançar ballet|
 
 
-| Marcos Vinícius |![$7CKdzVz5y2jPjw5D2_8!x$A](https://github.com/user-attachments/assets/f85f7fcd-b388-4204-afa4-36d05e5e6ec5)|
+
+| Marcos Vinícius |![Design sem nome](https://github.com/user-attachments/assets/75ccb695-9e6e-4ee7-b2d1-07954d51d15f)|
 |-----------------|---------------|
 | **Idade**       | 28            |
 | **Ocupação**    | Freelancer (Designer Gráfico) |
@@ -40,7 +41,8 @@ A definição do problema foi dada pela antropologia, uma técnica de observaç�
 | **Hobbies**     | Criar designs para redes sociais, aprender novas técnicas de design, e curtir eventos de arte. |
 
 
-| Natasha Munhoz |![$7CKdzVz5y2jPjw5D2_8!x$A(1)](https://github.com/user-attachments/assets/ecae2aed-cb96-4f95-8e87-ef98bfa194ce)|
+
+| Natasha Munhoz |![Design sem nome(1)](https://github.com/user-attachments/assets/ff29087c-abcb-43be-aaea-10a8889ed31b)|
 |-----------------|---------------|
 | **Idade**       | 35            |
 | **Ocupação**    | Microempreendedora (Proprietária de uma pequena loja de roupas) |
