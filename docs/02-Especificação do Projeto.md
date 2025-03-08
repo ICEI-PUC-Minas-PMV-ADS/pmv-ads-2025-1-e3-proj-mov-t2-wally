@@ -125,14 +125,14 @@ Usar o seguinte modelo:
 ![Indicadores de Desempenho](img/02-indic-desemp.png)
 Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. -->
 
-| Indicador                              | Descrição | Objetivo |
-|----------------------------------------|-----------|----------|
-| **Número de Usuários Ativos** | Quantidade de usuários que acessam o aplicativo diariamente. | Avaliar o engajamento e a relevância do aplicativo. |
-| **Taxa de Retenção de Usuários** | Percentual de usuários que continuam utilizando o aplicativo após um período (ex.: 30 dias). | Avaliar a satisfação e fidelidade dos usuários. |
-| **Número de Despesas em Grupo Criadas** | Quantidade de despesas compartilhadas registradas no aplicativo. | Medir a utilização da funcionalidade de gestão de despesas em grupo. |
-| **Percentual de Metas Financeiras Atingidas** | Proporção de metas financeiras definidas pelos usuários que foram alcançadas. | Avaliar se o app ajuda os usuários a atingirem seus objetivos financeiros. |
-| **Taxa de Erros e/ou Falhas no Aplicativo** | Número de erros ou falhas que ocorrem durante o uso. | Monitorar a estabilidade e confiabilidade do sistema. |
-| **Número de Feedbacks ou Sugestões Recebidas** | Quantidade de feedbacks ou sugestões enviados pelos usuários. | Melhorar o aplicativo com base na experiência dos usuários. |
+| Indicador                              | Descrição | Objetivo | Cálculo | Fonte de Dados | Perspectiva |
+|----------------------------------------|-----------|----------|---------|-----------------|-------------|
+| **Número de Usuários Ativos**          | Quantidade de usuários que acessam o aplicativo diariamente. | Avaliar o engajamento e a relevância do aplicativo. | Contagem de usuários ativos. | Base de dados do app | Processos Internos |
+| **Taxa de Retenção de Usuários**       | Percentual de usuários que continuam utilizando o aplicativo após um período. | Avaliar a satisfação e fidelidade dos usuários. | (Usuários retidos / Usuários totais) * 100. | Base de dados do app | Processos Internos |
+| **Número de Despesas em Grupo Criadas** | Quantidade de despesas compartilhadas registradas no aplicativo. | Medir a utilização da funcionalidade de gestão de despesas em grupo. | Contagem de despesas em grupo criadas. | Base de dados do app | Clientes |
+| **Percentual de Metas Financeiras Atingidas** | Proporção de metas financeiras definidas pelos usuários que foram alcançadas. | Avaliar se o app ajuda os usuários a atingirem seus objetivos financeiros. | (Metas alcançadas / Metas definidas) * 100. | Base de dados do app | Clientes |
+| **Taxa de Erros ou Falhas no Aplicativo** | Número de erros ou falhas que ocorrem durante o uso. | Monitorar a estabilidade e confiabilidade do sistema. | Contagem de erros ou falhas. | Servidor do app | Aprendizado e Crescimento |
+| **Percentual de Satisfação dos Usuários** | Percentual de usuários que avaliaram o aplicativo positivamente com base em feedbacks ou pesquisas de satisfação. | Medir a aceitação do aplicativo e identificar oportunidades de melhoria. | (Avaliações positivas / Total de avaliações) * 100. | Sistema de pesquisa ou feedback do app | Aprendizado e Crescimento |
 
 
 ## Requisitos
