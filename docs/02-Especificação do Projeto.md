@@ -152,9 +152,9 @@ As tabelas a seguir apresentam uma descrição detalhada dos **requisitos funcio
 | RNF-001 | O aplicativo deve ser compatível com dispositivos Android e iOS. | ALTA |  
 | RNF-002 | O aplicativo deve ter uma interface simples e intuitiva, seguindo boas práticas de UX/UI. | ALTA |  
 | RNF-003 | O sistema deverá ter um ótimo desempenho para lidar com vários usuários de uma única vez. | ALTA |  
-| RNF-004 | (Número corrigido) A aplicação deve seguir protocolos de segurança, garantindo a proteção dos dados coletados. | ALTA |  
+| RNF-004 | A aplicação deve seguir protocolos de segurança, garantindo a proteção dos dados coletados. | ALTA |  
 | RNF-005 | O aplicativo deve ser desenvolvido usando React Native para o front-end e Node.js para o back-end. | ALTA |  
-| RNF-006 | (Número corrigido) O aplicativo deve ser testado em dispositivos móveis de baixo e alto desempenho. | MÉDIA |  
+| RNF-006 | O aplicativo deve ser testado em dispositivos móveis de baixo e alto desempenho. | MÉDIA |  
 
 ## Restrições
 
