@@ -1,78 +1,64 @@
-# Plano de Testes de Usabilidade  Wally
+# Plano de Testes de Usabilidade - Wally
 
 ## Objetivos dos Testes de Usabilidade
 
 Os testes de usabilidade visam:
 
-1. **Avaliar a navegação e a utilização das funcionalidades principais**: Observar como os usuários interagem com funcionalidades críticas, como login, cadastro, adição de ganhos e despesas, e a criação e gestão de grupos de despesas.
-   
-2. **Analisar a clareza das informações**: Verificar se as transações, categorias e relatórios gráficos são apresentados de maneira clara, acessível e compreensível para o usuário.
-
-3. **Medir a eficiência no cadastro, login e recuperação de senha**: Avaliar o tempo e a facilidade com que os usuários podem realizar o login, cadastro e recuperação de senha no aplicativo.
-
-4. **Testar a eficácia na criação e gestão de grupos de despesas**: Avaliar como os usuários criam, gerenciam e dividem despesas em grupos, e se o saldo de cada participante é atualizado corretamente.
-
-5. **Confirmar a facilidade de geração e interpretação de relatórios gráficos**: Garantir que os usuários consigam gerar relatórios de gastos, visualizando gráficos simples de gastos por categoria e evolução mensal de maneira clara.
+- **Avaliar a navegação e a utilização das funcionalidades principais**: Observar como os usuários interagem com funcionalidades críticas, como login, cadastro, adição de ganhos e despesas, e a criação e gestão de grupos de despesas.
+- **Analisar a clareza das informações**: Verificar se as transações, categorias e relatórios gráficos são apresentados de maneira clara, acessível e compreensível para o usuário.
+- **Medir a eficiência no cadastro, login e recuperação de senha**: Avaliar o tempo e a facilidade com que os usuários podem realizar o login, cadastro e recuperação de senha no aplicativo.
+- **Testar a eficácia na criação e gestão de grupos de despesas**: Avaliar como os usuários criam, gerenciam e dividem despesas em grupos, e se o saldo de cada participante é atualizado corretamente.
+- **Confirmar a facilidade de geração e interpretação de relatórios gráficos**: Garantir que os usuários consigam gerar relatórios de gastos, visualizando gráficos simples de gastos por categoria e evolução mensal de maneira clara.
 
 ## Critérios de Seleção dos Participantes
 
-1. **Faixa Etária**: Selecionar usuários de diversas idades, garantindo uma ampla representação de perspectivas.
-2. **Experiência com Finanças Pessoais**: Incluir participantes com diferentes níveis de conhecimento em finanças pessoais, desde iniciantes até usuários mais experientes, permitindo uma avaliação completa das funcionalidades.
-
-3. **Diversidade de Dispositivos**: Incluir usuários que utilizam dispositivos Android e iOS, para garantir uma avaliação abrangente em ambas as plataformas, considerando também a usabilidade em dispositivos de baixo e alto desempenho.
+- **Faixa Etária**: Selecionar usuários de diversas idades, garantindo uma ampla representação de perspectivas.
+- **Experiência com Finanças Pessoais**: Incluir participantes com diferentes níveis de conhecimento em finanças pessoais, desde iniciantes até usuários mais experientes, permitindo uma avaliação completa das funcionalidades.
+- **Diversidade de Dispositivos**: Incluir usuários que utilizam dispositivos Android e iOS, para garantir uma avaliação abrangente em ambas as plataformas, considerando também a usabilidade em dispositivos de baixo e alto desempenho.
 
 ## Procedimentos e Método
 
-1. **Método**: Utilizar uma abordagem que combine gravação de tela e áudio para avaliações à distância, além de realizar testes presenciais sempre que necessário.
-
-2. **Local**: Realizar as sessões em um ambiente seguro que favoreça um acompanhamento eficaz, oferecendo também a opção de testes remotos para maior conveniência dos participantes.
-
-3. **Instruções**: Fornecer orientações claras e detalhadas aos participantes antes do início dos testes, garantindo que eles compreendam completamente as atividades a serem executadas.
+- **Método**: Utilizar uma abordagem que combine gravação de tela e áudio para avaliações à distância, além de realizar testes presenciais sempre que necessário.
+- **Local**: Realizar as sessões em um ambiente seguro que favoreça um acompanhamento eficaz, oferecendo também a opção de testes remotos para maior conveniência dos participantes.
+- **Instruções**: Fornecer orientações claras e detalhadas aos participantes antes do início dos testes, garantindo que eles compreendam completamente as atividades a serem executadas.
 
 ## Tarefas a Serem Executadas
 
-1. **Login e Cadastro**:
-   - Realizar o processo de login com uma conta existente.
-   - Criar uma nova conta fornecendo nome, e-mail e senha.
-   - Realizar a recuperação de senha (se necessário).
-
-2. **Cadastro de Despesas Pessoais**:
-   - Adicionar uma transação (entrada ou saída) com valor, categoria e descrição.
-   - Editar uma transação existente e verificar a alteração no extrato financeiro.
-
-3. **Criação e Edição de Categorias**:
-   - Criar uma nova categoria de transação (ex: Alimentação).
-   - Editar uma categoria existente.
-
-4. **Criação de Grupos de Despesas Compartilhadas**:
-   - Criar um grupo de despesas e adicionar participantes.
-   - Adicionar despesas ao grupo, informando valor, descrição e divisão entre os participantes.
-
-5. **Gestão de Saldos do Grupo**:
-   - Verificar se o aplicativo gera automaticamente o saldo de cada participante após a adição de despesas.
-   - Marcar uma despesa como "pagamento" e verificar o ajuste do saldo.
-
-6. **Geração de Relatórios Gráficos**:
-   - Gerar um gráfico de gastos por categoria.
-   - Gerar um gráfico de evolução mensal das receitas e despesas.
+- **Login e Cadastro**:
+  - Realizar o processo de login com uma conta existente.
+  - Criar uma nova conta fornecendo nome, e-mail e senha.
+  - Realizar a recuperação de senha (se necessário).
+- **Cadastro de Despesas Pessoais**:
+  - Adicionar uma transação (entrada ou saída) com valor, categoria e descrição.
+  - Editar uma transação existente e verificar a alteração no extrato financeiro.
+- **Criação e Edição de Categorias**:
+  - Criar uma nova categoria de transação (ex: Alimentação).
+  - Editar uma categoria existente.
+- **Criação de Grupos de Despesas Compartilhadas**:
+  - Criar um grupo de despesas e adicionar participantes.
+  - Adicionar despesas ao grupo, informando valor, descrição e divisão entre os participantes.
+- **Gestão de Saldos do Grupo**:
+  - Verificar se o aplicativo gera automaticamente o saldo de cada participante após a adição de despesas.
+  - Marcar uma despesa como "pagamento" e verificar o ajuste do saldo.
+- **Geração de Relatórios Gráficos**:
+  - Gerar um gráfico de gastos por categoria.
+  - Gerar um gráfico de evolução mensal das receitas e despesas.
 
 ## Dados a Serem Coletados
 
-1. **Satisfação do Usuário**:
-   - Coletar feedback sobre a experiência geral após cada tarefa por meio de questionários ou entrevistas curtas.
-   
-2. **Tempo de Execução**:
-   - Registrar o tempo que os participantes levam para completar cada atividade, como login, cadastro de transações e criação de grupos.
-
-3. **Número de Cliques**:
-   - Contar quantos cliques são necessários para concluir cada tarefa, como registrar uma transação ou dividir uma despesa em um grupo.
-
-4. **Erros e Desvios**:
-   - Observar se os participantes cometem erros, como dificuldades ao recuperar a senha, ao editar transações, ou ao dividir as despesas entre os membros de um grupo.
+- **Satisfação do Usuário**: 
+  - Coletar feedback sobre a experiência geral após cada tarefa por meio de questionários ou entrevistas curtas.
+- **Tempo de Execução**:
+  - Registrar o tempo que os participantes levam para completar cada atividade, como login, cadastro de transações e criação de grupos.
+- **Número de Cliques**:
+  - Contar quantos cliques são necessários para concluir cada tarefa, como registrar uma transação ou dividir uma despesa em um grupo.
+- **Erros e Desvios**:
+  - Observar se os participantes cometem erros, como dificuldades ao recuperar a senha, ao editar transações, ou ao dividir as despesas entre os membros de um grupo.
 
 ## Ordem de Execução
 
 As tarefas serão realizadas na seguinte ordem:
+
 1. Login e cadastro de conta.
 2. Cadastro de despesas pessoais.
 3. Criação e edição de categorias.
@@ -82,28 +68,20 @@ As tarefas serão realizadas na seguinte ordem:
 
 ## Métricas Coletadas
 
-1. **Feedback do Usuário**:
-   - Coleta de respostas dos participantes através de questionários de satisfação, focando na facilidade de uso, clareza das informações e eficiência das funcionalidades.
-
-2. **Eficácia do Uso**:
-   - Análise da quantidade de erros cometidos, o tempo necessário para completar as tarefas e o número de cliques para concluir cada atividade.
-
-3. **Interação com o Sistema**:
-   - Medir com que frequência os usuários utilizam as funcionalidades principais, como registrar despesas, dividir despesas em grupo, gerar relatórios e criar categorias, além de identificar áreas que causam dificuldades.
+- **Feedback do Usuário**: 
+  - Coleta de respostas dos participantes através de questionários de satisfação, focando na facilidade de uso, clareza das informações e eficiência das funcionalidades.
+- **Eficácia do Uso**:
+  - Análise da quantidade de erros cometidos, o tempo necessário para completar as tarefas e o número de cliques para concluir cada atividade.
+- **Interação com o Sistema**:
+  - Medir com que frequência os usuários utilizam as funcionalidades principais, como registrar despesas, dividir despesas em grupo, gerar relatórios e criar categorias, além de identificar áreas que causam dificuldades.
 
 ## Observações Finais
 
-Todos os dados coletados serão tratados de forma anônima, em conformidade com a LGPD (Lei Geral de Proteção de Dados). O feedback será fundamental para aprimorar o design e as funcionalidades do Wally, garantindo que ele seja intuitivo, eficiente e eficaz para diferentes perfis de usuários. 
+Todos os dados coletados serão tratados de forma anônima, em conformidade com a LGPD (Lei Geral de Proteção de Dados). O feedback será fundamental para aprimorar o design e as funcionalidades do Wally, garantindo que ele seja intuitivo, eficiente e eficaz para diferentes perfis de usuários.
 
-A equipe de desenvolvimento também deve garantir que o aplicativo atenda aos requisitos não funcionais, como compatibilidade com dispositivos Android e iOS (RNF-001), interface simples e intuitiva (RNF-002) e segurança dos dados coletados (RNF-004), priorizando a experiência do usuário.
+Além disso, montamos um guia prático para o plano de usabilidade. Cada tarefa, relacionada às funcionalidades principais, é descrita junto com seu critério de sucesso e os aspectos a serem avaliados. O intuito é oferecer uma visão clara da experiência do usuário, focando em usabilidade, eficiência e satisfação.
 
-## Guia Prático para o Plano de Usabilidade
 
-Cada tarefa, relacionada às funcionalidades principais, é descrita junto com suas classificações de sucesso e os aspectos a serem avaliados. O objetivo é oferecer uma visão clara da experiência do usuário, focando em usabilidade, eficiência e satisfação.
-
-# Guia Prático para o Plano de Usabilidade - **Aplicativo Wally**
-
-Cada tarefa, relacionada às funcionalidades principais do aplicativo Wally, é descrita junto com suas classificações de sucesso e os aspectos a serem avaliados. O objetivo é fornecer uma visão clara da experiência do usuário, focando em usabilidade, eficiência e satisfação.
 
 | **Tarefa**                                          | **Critério de Êxito**                                                                                          | **O que será avaliado**                                                                                                                                       |
 |-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
