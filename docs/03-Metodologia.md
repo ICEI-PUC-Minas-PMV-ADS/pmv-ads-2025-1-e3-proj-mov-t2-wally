@@ -40,20 +40,15 @@ etiquetas:
 
 ## Gerenciamento de Projeto
 
-### Divisão de Papéis (a definir)
+### Divisão de Papéis
 
 Apresente a divisão de papéis entre os membros do grupo.
 
-Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. A equipe está organizada da seguinte maneira:
-- Scrum Master: Felipe Domingos;
-- Product Owner: Rommel Carneiro;
-- Equipe de Desenvolvimento: Pedro Penna, Pedro Ivo, Rodrigo Richard;
-- Equipe de Design: Simone Nogueira.
+- Scrum Master: A definir
+- Product Owner: A definir
+- Equipe de Desenvolvimento: Alexsander, Ariane, Danielle, Estevão, Raphael, Vinicius
+- Equipe de Design: Ariane
 
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-> - [Os papéis do Scrum e a verdade sobre cargos nessa técnica](https://www.atlassian.com/br/agile/scrum/roles)
 
 ### Processo
 
@@ -67,6 +62,7 @@ O desenvolvimento do projeto segue a metodologia **Scrum**, garantindo flexibili
 - **Sprint Backlog**: Conjunto de tarefas selecionadas para a sprint atual.
 - **Revisão e Retrospectiva**: Ao final de cada sprint, o time avalia os resultados e ajusta processos conforme necessário.
 
+
 ### Uso do GitHub Projects
 
 - **Quadro Kanban**: Utilizado para visualizar e gerenciar as tarefas em colunas como "To Do", "In Progress" e "Done".
@@ -74,6 +70,11 @@ O desenvolvimento do projeto segue a metodologia **Scrum**, garantindo flexibili
 - **Etiquetas e Assignees**: As tarefas recebem etiquetas categorizando seu tipo (bug, feature, enhancement) e são atribuídas a membros responsáveis.
 
 Esse processo possibilita uma gestão ágil e colaborativa, garantindo que todas as funcionalidades sejam entregues com qualidade e dentro do prazo estabelecido.
+![image](https://github.com/user-attachments/assets/d020a57e-3f55-4258-807a-8ee11bca1882)
+- Imagem 1 - Quadro Kanban (23/03/2025)
+
+![image](https://github.com/user-attachments/assets/c66fc692-ff35-4f9a-8425-cb1e55063e67)
+- Imagem 2 - Status das contribuições dos membros do time (23/03/2025)
 
 ### Ferramentas
 
