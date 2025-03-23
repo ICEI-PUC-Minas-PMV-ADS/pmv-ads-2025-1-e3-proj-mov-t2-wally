@@ -73,7 +73,8 @@ Esse processo possibilita uma gestão ágil e colaborativa, garantindo que todas
 ![image](https://github.com/user-attachments/assets/d020a57e-3f55-4258-807a-8ee11bca1882)
 - Imagem 1 - Quadro Kanban (23/03/2025)
 
-![image](https://github.com/user-attachments/assets/c66fc692-ff35-4f9a-8425-cb1e55063e67)
+![image](https://github.com/user-attachments/assets/b6335d43-ddbd-4f2e-a276-2a02083f88a0)
+
 - Imagem 2 - Status das contribuições dos membros do time (23/03/2025)
 
 ### Ferramentas
