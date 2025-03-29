@@ -6,6 +6,13 @@
 
 `3º Semestre/2025`
 
+<div align="center">
+
+![image](https://github.com/user-attachments/assets/1dfe0158-3208-401a-b55d-bc164f5ec9d8)
+
+</div>
+
+
 O **Wally** é mais do que um simples aplicativo de gestão financeira – é o aliado ideal para quem busca **controle**, **clareza** e **praticidade** no dia a dia. 
 Projetado para simplificar o gerenciamento de **ganhos** e **despesas**, tanto individuais quanto compartilhadas, o Wally oferece uma experiência intuitiva, acessível e eficiente para transformar a forma como você lida com seu dinheiro. </br>
 
