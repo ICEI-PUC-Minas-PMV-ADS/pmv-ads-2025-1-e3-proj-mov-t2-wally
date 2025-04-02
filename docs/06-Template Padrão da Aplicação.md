@@ -3,6 +3,13 @@
 O **Wally** é um aplicativo mobile de gestão financeira que busca transmitir praticidade, modernidade e confiança. Para alcançar esse objetivo, desenvolvemos uma identidade visual consistente e alinhada aos valores e à proposta do app. A seguir, apresentamos os principais elementos que compõem essa identidade.
 
 ### Logo
+
+<div align="center">
+<img width="416" alt="image" src="https://github.com/user-attachments/assets/b771c1a8-d771-4380-834a-ad678e378283" />
+</div>
+
+<br>
+
 - **Conceito:** O nome Wally faz referência direta a uma carteira (**wallet**, em inglês), objeto que simboliza o controle e a organização financeira. Por isso, a logomarca representa graficamente uma carteira estilizada, reforçando o conceito de segurança e praticidade no gerenciamento de finanças.
   
 - **Forma:** A forma da carteira apresenta linhas suaves e fluidas, sugerindo agilidade e dinamismo – atributos que refletem a facilidade de uso do aplicativo.
