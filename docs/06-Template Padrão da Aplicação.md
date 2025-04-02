@@ -16,6 +16,13 @@ O **Wally** é um aplicativo mobile de gestão financeira que busca transmitir p
   
 - **Ícone do cifrão:** O detalhe do cifrão no bolso lateral reforça a ideia de finanças e dinheiro, deixando clara a proposta do app.
 
+
+<div align="center">
+<img width="326" alt="image" src="https://github.com/user-attachments/assets/b78071f9-2da1-4a31-85b7-069049e3890e" />
+
+<img width="326" alt="image" src="https://github.com/user-attachments/assets/3f97fbfb-ba10-4bbb-b842-2c131b9f796e" />
+</div>
+
 ### Cores
  
 **Paleta de Cores:**
