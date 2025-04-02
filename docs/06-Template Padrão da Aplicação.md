@@ -10,28 +10,34 @@ O **Wally** é um aplicativo mobile de gestão financeira que busca transmitir p
 - **Ícone do cifrão:** O detalhe do cifrão no bolso lateral reforça a ideia de finanças e dinheiro, deixando clara a proposta do app.
 
 ### Cores
+ 
+**Paleta de Cores:**
 
-**Paleta de Cores**
+<div align="center">
+<img width="596" alt="image" src="https://github.com/user-attachments/assets/38a875f7-4eed-45a7-bae0-decb9789675e" />
+</div>
+
+<br>
 
 Utilizamos diferentes variações de verde-azulado e turquesa como cores principais do Wally, garantindo uma identidade visual moderna e equilibrada.
 
 **Significado e Psicologia das Cores**
 
-─ O **verde** é amplamente associado ao dinheiro, prosperidade e crescimento financeiro, tornando-se uma escolha natural para um aplicativo de **gestão financeira**.
+– O **verde** é amplamente associado ao dinheiro, prosperidade e crescimento financeiro, tornando-se uma escolha natural para um aplicativo de **gestão financeira**.
 
-─ Simboliza **equilíbrio e estabilidade**, características essenciais para quem busca controle sobre suas finanças.
+– Simboliza **equilíbrio e estabilidade**, características essenciais para quem busca controle sobre suas finanças.
 
-─ O tom **verde-azulado** traz uma sensação de modernidade e inovação, transmitindo confiança ao usuário ao lidar com seus recursos.
+– O tom **verde-azulado** traz uma sensação de modernidade e inovação, transmitindo confiança ao usuário ao lidar com seus recursos.
 
-─ O contraste entre as diferentes tonalidades de verde reforça a hierarquia visual dentro do app, garantindo que as informações mais importantes se destaquem de forma intuitiva.
+– O contraste entre as diferentes tonalidades de verde reforça a hierarquia visual dentro do app, garantindo que as informações mais importantes se destaquem de forma intuitiva.
 
 **Propósito no Design**
 
-─ A escolha de tons **mais sóbrios** garante um aspecto profissional e confiável.
+– A escolha de tons **mais sóbrios** garante um aspecto profissional e confiável.
 
-─ O uso do **turquesa e variações mais vibrantes** traz frescor e acessibilidade, tornando o Wally um app agradável de usar.
+– O uso do **turquesa e variações mais vibrantes** traz frescor e acessibilidade, tornando o Wally um app agradável de usar.
 
-─ Além de representar **dinheiro e crescimento**, o verde também está ligado a um sentimento de **renovação e progresso**, incentivando os usuários a manterem um controle saudável sobre suas finanças.
+– Além de representar **dinheiro e crescimento**, o verde também está ligado a um sentimento de **renovação e progresso**, incentivando os usuários a manterem um controle saudável sobre suas finanças.
 
 ### Tipografia
 
@@ -63,9 +69,9 @@ Para textos corridos, descrições e conteúdos mais extensos, optamos pela Inte
 
 **Elementos visuais:**
 
-─ **Ícones e ilustrações:** As ilustrações são minimalistas, com traços simples e cores que seguem a paleta principal do Wally. Dessa forma, a experiência visual do usuário permanece coerente e harmônica em todos os pontos de contato.
+– **Ícones e ilustrações:** As ilustrações são minimalistas, com traços simples e cores que seguem a paleta principal do Wally. Dessa forma, a experiência visual do usuário permanece coerente e harmônica em todos os pontos de contato.
 
-─ **Forma orgânica:** Os elementos arredondados e fluidos, ajudam a transmitir a sensação de movimento e simplicidade, atributos que norteiam a usabilidade do app.
+– **Forma orgânica:** Os elementos arredondados e fluidos, ajudam a transmitir a sensação de movimento e simplicidade, atributos que norteiam a usabilidade do app.
 
 ### Template da Aplicação
 
