@@ -57,25 +57,40 @@ Utilizamos diferentes variações de verde-azulado e turquesa como cores princip
 
 **1.	Fonte da Logomarca:**
 
-Fonte-family:
+*Font-family:*
 
-•	*Julius Sans One*
+<br>
+
+<img width="426" alt="image" src="https://github.com/user-attachments/assets/1ff6b8c6-91d6-4ebb-8aff-7949945e2cfd" />
+
+<br>
+<br>
 
 Escolhida por sua elegância minimalista e linhas retas, que reforçam a ideia de modernidade. Essa fonte é usada exclusivamente na assinatura da marca (logomarca), dando destaque e exclusividade ao nome “Wally”.
 
 **2.	Fonte Secundária:**
 
-Fonte-family:
+*Font-family:*
 
-•	*Poppins*
+<br>
+
+<img width="226" alt="image" src="https://github.com/user-attachments/assets/b8e79d2a-8820-4d0d-b1b2-8e2c0c3a8399" />
+
+<br>
+<br>
 
 A Poppins foi selecionada por ser uma fonte sem serifa, limpa e bem balanceada, combinando com o estilo contemporâneo do aplicativo. É recomendada para títulos, subtítulos e elementos que precisem de maior destaque na interface.
 
 **3.	Fonte de Texto:**
    
-Fonte-family:
+*Font-family:*
 
-•	*Inter*
+<br>
+
+<img width="118" alt="image" src="https://github.com/user-attachments/assets/98556400-132d-4acd-847f-3062ffa20673" />
+
+<br>
+<br>
 
 Para textos corridos, descrições e conteúdos mais extensos, optamos pela Inter. Trata-se de uma fonte projetada especialmente para interfaces digitais, garantindo legibilidade e conforto de leitura em diferentes tamanhos de tela.
 
