@@ -98,6 +98,12 @@ Para textos corridos, descrições e conteúdos mais extensos, optamos pela Inte
 
 **Elementos visuais:**
 
+<div align="right">
+<img width="416" alt="image" src="https://github.com/user-attachments/assets/d7ef6c34-4e5c-41d1-b10a-3f0229c49493" />
+</div>
+
+<br>
+
 – **Ícones e ilustrações:** As ilustrações são minimalistas, com traços simples e cores que seguem a paleta principal do Wally. Dessa forma, a experiência visual do usuário permanece coerente e harmônica em todos os pontos de contato.
 
 – **Forma orgânica:** Os elementos arredondados e fluidos, ajudam a transmitir a sensação de movimento e simplicidade, atributos que norteiam a usabilidade do app.
