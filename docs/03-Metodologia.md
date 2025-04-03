@@ -13,13 +13,13 @@ Os artefatos do projeto serão desenvolvidos utilizando **React Native** como fr
 
 | Ambiente | Plataforma | Link de Acesso |
 |---------------|----------------------------------------------|----------------|
-| Design e Prototipação | Figma | |
+| Design e Prototipação | Figma | https://www.figma.com/proto/MiuZNsY107HDiJqKnMdyIm/Projeto-Wally?page-id=0%3A1&node-id=1-14&viewport=215%2C293%2C0.81&t=uLjzv6SkBrleFN8Z-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A14 |
 | Desenvolvimento | React Native, Expo e Node.js | |
 | Testes | Emuladores (Android Studio, iOS Simulator) e dispositivos físicos|
 | Produção | Google Play Store, Apple App Store | |
 | Documentação do Projeto | Github | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e3-proj-mov-t2-wally |
 | Repositório do Código Fonte | Github | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e3-proj-mov-t2-wally/tree/main/src |
-| Gerenciamento de Tarefas do Projeto | GitHub Projects | |
+| Gerenciamento de Tarefas do Projeto | GitHub Projects | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/1894 |
 | Hospedagem | a definir | |
 
 Durante o desenvolvimento, utilizaremos **Expo** para facilitar a criação e teste da aplicação, permitindo a execução em dispositivos físicos por meio do aplicativo **Expo Go**. Além disso, os emuladores serão utilizados para validação do funcionamento da aplicação em diferentes cenários.
@@ -34,9 +34,9 @@ As principais **branches** adotadas são:
 - `dev`: A branch de desenvolvimento e homologação, onde todas as novas features e correções de bugs são mescladas. Funciona como o ambiente de testes e preparação para a versão de produção.
 - `testing`: Esta branch pode ser utilizada para versões que estão sendo testadas antes de serem validadas para a **dev** ou **main**.
 
-O fluxo de trabalho permite que a **dev** seja continuamente atualizada com novas funcionalidades e correções de bugs, sendo, então, mesclada à **main** quando uma versão estável e testada estiver pronta para lançamento.
+O fluxo de trabalho permite que a **dev** seja continuamente atualizada com novas funcionalidades e correções de bugs, sendo, então, mesclada à **main** quando uma versão estável e testada estiver pronta para lançamento. O gerenciamento de **issues** no GitHub é utilizado para organizar e priorizar o trabalho do projeto. O sistema de **labels** (etiquetas) foi adotado para categorizar e facilitar o acompanhamento das atividades. 
 
-O gerenciamento de **issues** no GitHub é utilizado para organizar e priorizar o trabalho do projeto. O sistema de **labels** (etiquetas) foi adotado para categorizar e facilitar o acompanhamento das atividades. As etiquetas são as seguintes:
+As etiquetas são as seguintes:
 
 - `documentation`: Utilizada para melhorar ou adicionar informações à documentação do projeto.
 - `bug`: Usada quando uma funcionalidade ou parte do sistema apresenta erros ou problemas que precisam ser corrigidos.
@@ -52,10 +52,14 @@ Cada issue é atribuída a um membro da equipe, e o progresso das tarefas é mon
 Com base na organização de papéis do método ágil SCRUM, a equipe foi estruturada para garantir uma colaboração eficaz e o alcance dos objetivos do projeto de maneira eficiente e coordenada. A abordagem é baseada na distribuição de responsabilidades claras e bem definidas, o que facilita o processo de desenvolvimento e promove a entrega de valor contínuo ao cliente.
 
 A estrutura organizacional da equipe foi definida da seguinte forma:
-- **Scrum Master:** Danielle.
-- **Product Owner:** Ariane.
-- **Equipe de Desenvolvimento:** Alexsander, Ariane, Danielle, Estevão, Raphael e Vinicius.
-- **Equipe de Design:** Ariane.
+
+– **Scrum Master:** Danielle.
+<br>
+– **Product Owner:** Ariane.
+<br>
+– **Equipe de Desenvolvimento:** Alexsander, Ariane, Danielle, Estevão, Raphael e Vinicius.
+<br>
+– **Equipe de Design:** Ariane.
 
 Cada membro desempenha um papel fundamental dentro do time, garantindo que todos os aspectos do desenvolvimento sejam abordados de maneira eficaz e alinhada com os objetivos do projeto. Essa estrutura de papéis bem definida assegura uma gestão eficiente do projeto, facilitando a comunicação entre os membros da equipe.
 
@@ -69,7 +73,9 @@ Para a implementação do SCRUM, adotamos uma série de práticas ágeis que gar
 - **Sprint Planning:** Ao início de cada Sprint, a equipe realiza uma reunião de planejamento, onde os itens do **Backlog do Produto** são selecionados e detalhados. A principal tarefa dessa cerimônia é definir as metas para a Sprint, atribuindo tarefas específicas aos membros da equipe e garantindo que todos compreendam claramente as atividades a serem realizadas.
  
 - **Daily Standup:** São reuniões diárias rápidas, com duração de aproximadamente 15 minutos, nas quais cada membro da equipe compartilha seu progresso, os desafios encontrados e as tarefas que serão executadas até o próximo encontro. Essas reuniões são essenciais para manter todos os membros alinhados e identificar rapidamente quaisquer impedimentos que possam surgir.
+  
 - **Sprint Review:** Ao final de cada Sprint, a equipe realiza uma reunião de revisão, onde o trabalho realizado é apresentado ao Product Owner e outros stakeholders. Essa cerimônia tem como objetivo obter feedback sobre as entregas da Sprint, verificar se as expectativas foram atendidas e ajustar o trabalho para a próxima iteração, se necessário.
+  
 - **Sprint Retrospective:** Após a Sprint Review, a equipe realiza uma reunião de retrospectiva. Neste encontro, a equipe reflete sobre o processo de trabalho da Sprint anterior, identificando pontos positivos, oportunidades de melhoria e ações concretas para otimizar a produtividade e a qualidade no próximo ciclo.
 
 *Gestão do Projeto no GitHub:*
@@ -77,8 +83,11 @@ Para a implementação do SCRUM, adotamos uma série de práticas ágeis que gar
 Para facilitar a organização e o acompanhamento das atividades, a equipe utiliza o **GitHub Project**. Através do **Quadro Kanban**, as tarefas são distribuídas de forma visual e clara, garantindo que todos os membros da equipe saibam o status de cada atividade. O quadro está organizado da seguinte forma:
 
 - **Product Backlog:** Esta lista contém todas as tarefas, funcionalidades e melhorias a serem implementadas ao longo do projeto. Representa o Backlog do Produto, onde todas as atividades são inicialmente registradas e priorizadas conforme as necessidades do cliente.
+  
 - **To Do:** Aqui estão as tarefas que foram selecionadas para a Sprint atual, também conhecidas como *Sprint Backlog*. Essas atividades estão prontas para serem iniciadas e são a base para o trabalho da equipe durante o ciclo da Sprint.
+  
 - **In Progress:** Esta lista contém as tarefas que já foram iniciadas. À medida que os membros da equipe começam a trabalhar nas atividades, elas são movidas para essa coluna, garantindo visibilidade do progresso do trabalho em andamento.
+  
 - **Done:** As tarefas que foram concluídas, testadas e validadas entram nesta lista. Elas estão prontas para serem entregues ao cliente ou stakeholders e são consideradas entregas finalizadas. A movimentação para essa lista indica que as atividades passaram pelos controles de qualidade e estão de acordo com os requisitos definidos.
 
 <h4 align="center">Etapa 1:</h4>
@@ -119,7 +128,7 @@ Durante essa fase, a equipe estruturou toda a documentação de contexto e espec
 
 ![FIGURA 02 - Quadro de Kanban](https://github.com/user-attachments/assets/3a463d7d-f2e8-4e12-82ba-42b4af877485)
 
-<h4 align="center">FIGURA 02 - Quadro Kanban</h4>
+<h4 align="center">FIGURA 08 - Quadro Kanban</h4>
 
 **Planejamento:**
 
