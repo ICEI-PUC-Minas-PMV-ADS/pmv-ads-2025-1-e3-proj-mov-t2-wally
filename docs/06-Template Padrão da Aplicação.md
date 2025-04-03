@@ -2,9 +2,7 @@
 
 O **Wally** é um aplicativo mobile de gestão financeira que busca transmitir praticidade, modernidade e confiança. Para alcançar esse objetivo, desenvolvemos uma identidade visual consistente e alinhada aos valores e à proposta do app. A seguir, apresentamos os principais elementos que compõem essa identidade.
 
-> A **interatividade** do fluxo do usuário no Wally, incluindo a **transição entre telas**, poderá ser acessada através do link disponibilizado. Esse fluxo foi cuidadosamente estruturado para garantir uma navegação simples, intuitiva e fluida, proporcionando uma experiência otimizada para os usuários: [Protótipo Interativo - Figma](https://www.figma.com/proto/MiuZNsY107HDiJqKnMdyIm/Projeto-Wally?page-id=0%3A1&node-id=1-14&viewport=215%2C293%2C0.81&t=uLjzv6SkBrleFN8Z-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A14).
-
-<img width="5258" alt="userflow" src="https://github.com/user-attachments/assets/613c3a40-5d50-4cab-b758-9e3ebc6d2960" />
+A **interatividade** do fluxo do usuário pode ser acessada através do link: [Protótipo Interativo - Wally](https://www.figma.com/proto/MiuZNsY107HDiJqKnMdyIm/Projeto-Wally?page-id=0%3A1&node-id=1-14&viewport=215%2C293%2C0.81&t=uLjzv6SkBrleFN8Z-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A14).
 
 ### Logo
 
@@ -139,4 +137,4 @@ Para textos corridos, descrições e conteúdos mais extensos, optamos pela Inte
 
 <br>
 
-A **identidade visual** do Wally foi desenvolvida para transmitir confiabilidade, modernidade e simplicidade, refletindo a proposta de um app de finanças intuitivo e eficiente. O conjunto de cores, formas e tipografias trabalha em harmonia para criar uma experiência agradável e funcional para o usuário, reforçando o compromisso do Wally em facilitar o controle e a gestão financeira de forma ágil e segura.
+> A **identidade visual** do Wally foi desenvolvida para transmitir confiabilidade, modernidade e simplicidade, refletindo a proposta de um app de finanças intuitivo e eficiente. O conjunto de cores, formas e tipografias trabalha em harmonia para criar uma experiência agradável e funcional para o usuário, reforçando o compromisso do Wally em facilitar o controle e a gestão financeira de forma ágil e segura.
