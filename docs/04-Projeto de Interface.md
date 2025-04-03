@@ -3,7 +3,7 @@
 
 A **interface** do Wally foi projetada para oferecer uma experiência intuitiva e eficiente na gestão financeira pessoal e em grupo. Cada tela será cuidadosamente desenvolvida para garantir usabilidade, clareza e acessibilidade, atendendo às necessidades dos usuários de forma prática e organizada. Além disso, o projeto será estruturado com base na norma técnica de qualidade de software **NBR ISO/IEC 9126-1:2001**, garantindo altos padrões de usabilidade, eficiência e confiabilidade no desenvolvimento do Wally. 
 
-> **interatividade** do fluxo do usuário, incluindo a **transição entre telas**, poderá ser acessada através do link disponibilizado, permitindo uma navegação simples, fluida e intuitiva: [Protótipo Interativo - Wally](https://www.figma.com/proto/MiuZNsY107HDiJqKnMdyIm/Projeto-Wally?page-id=0%3A1&node-id=1-14&viewport=215%2C293%2C0.81&t=uLjzv6SkBrleFN8Z-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A14).
+> A **interatividade** do fluxo do usuário, incluindo a **transição entre telas**, poderá ser acessada através do link disponibilizado, permitindo uma navegação simples, fluida e intuitiva: [Protótipo Interativo - Wally](https://www.figma.com/proto/MiuZNsY107HDiJqKnMdyIm/Projeto-Wally?page-id=0%3A1&node-id=1-14&viewport=215%2C293%2C0.81&t=uLjzv6SkBrleFN8Z-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A14).
 
 <img width="5258" alt="userflow" src="https://github.com/user-attachments/assets/613c3a40-5d50-4cab-b758-9e3ebc6d2960" />
 
