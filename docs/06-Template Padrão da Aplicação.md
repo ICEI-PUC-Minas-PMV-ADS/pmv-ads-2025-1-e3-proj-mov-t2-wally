@@ -2,12 +2,14 @@
 
 O **Wally** é um aplicativo mobile de gestão financeira que busca transmitir praticidade, modernidade e confiança. Para alcançar esse objetivo, desenvolvemos uma identidade visual consistente e alinhada aos valores e à proposta do app. A seguir, apresentamos os principais elementos que compõem essa identidade.
 
-A **interatividade** do fluxo do usuário no Wally, incluindo a **transição entre telas**, poderá ser acessada através do link disponibilizado. Esse fluxo foi cuidadosamente estruturado para garantir uma navegação simples, intuitiva e fluida, proporcionando uma experiência otimizada para os usuários: [Protótipo Interativo - Figma](https://www.figma.com/proto/MiuZNsY107HDiJqKnMdyIm/Projeto-Wally?page-id=0%3A1&node-id=1-14&viewport=215%2C293%2C0.81&t=uLjzv6SkBrleFN8Z-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A14).
+> A **interatividade** do fluxo do usuário no Wally, incluindo a **transição entre telas**, poderá ser acessada através do link disponibilizado. Esse fluxo foi cuidadosamente estruturado para garantir uma navegação simples, intuitiva e fluida, proporcionando uma experiência otimizada para os usuários: [Protótipo Interativo - Figma](https://www.figma.com/proto/MiuZNsY107HDiJqKnMdyIm/Projeto-Wally?page-id=0%3A1&node-id=1-14&viewport=215%2C293%2C0.81&t=uLjzv6SkBrleFN8Z-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A14).
+
+<img width="5258" alt="userflow" src="https://github.com/user-attachments/assets/613c3a40-5d50-4cab-b758-9e3ebc6d2960" />
 
 ### Logo
 
 <div align="center">
-<img width="416" alt="image" src="https://github.com/user-attachments/assets/b771c1a8-d771-4380-834a-ad678e378283" />
+<img width="316" alt="image" src="https://github.com/user-attachments/assets/b771c1a8-d771-4380-834a-ad678e378283" />
 </div>
 
 <br>
@@ -113,7 +115,7 @@ Para textos corridos, descrições e conteúdos mais extensos, optamos pela Inte
 
 <div align="center">
   
-![image](https://github.com/user-attachments/assets/7c247910-b234-49ae-bb83-38ee0ee94575)
+<img width="266" alt="image" src="https://github.com/user-attachments/assets/707926bb-6313-46b3-9708-e616ca2edbae" />
 
 
 </div>
@@ -128,10 +130,13 @@ Para textos corridos, descrições e conteúdos mais extensos, optamos pela Inte
 
 <div align="center">
   
-![image](https://github.com/user-attachments/assets/1443e99b-a7f7-4402-a2dc-606707db97cc)
+<img width="316" alt="image" src="https://github.com/user-attachments/assets/3283c26b-8d81-4781-9492-db8007cbd58b" />
 
-![image](https://github.com/user-attachments/assets/1518fdbe-1c0c-4f90-a019-57b22dae211e)
+
+<img width="316" alt="image" src="https://github.com/user-attachments/assets/1b21dac2-59e2-48c3-9bc3-3a8d61e51a52" />
 
 </div>
 
-A identidade visual do Wally foi desenvolvida para transmitir confiabilidade, modernidade e simplicidade, refletindo a proposta de um app de finanças intuitivo e eficiente. O conjunto de cores, formas e tipografias trabalha em harmonia para criar uma experiência agradável e funcional para o usuário, reforçando o compromisso do Wally em facilitar o controle e a gestão financeira de forma ágil e segura.
+<br>
+
+A **identidade visual** do Wally foi desenvolvida para transmitir confiabilidade, modernidade e simplicidade, refletindo a proposta de um app de finanças intuitivo e eficiente. O conjunto de cores, formas e tipografias trabalha em harmonia para criar uma experiência agradável e funcional para o usuário, reforçando o compromisso do Wally em facilitar o controle e a gestão financeira de forma ágil e segura.
