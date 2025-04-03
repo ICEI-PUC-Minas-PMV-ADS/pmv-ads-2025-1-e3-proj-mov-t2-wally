@@ -1,11 +1,5 @@
 # Arquitetura da Solução
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>
-
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
-
-![Arquitetura da Solução](img/02-mob-arch.png)
-
 ## Diagrama de Classes
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
@@ -39,15 +33,15 @@ Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do ba
 
 Para o desenvolvimento do Wally, um aplicativo mobile de gestão financeira, utilizaremos um conjunto de tecnologias modernas que garantem eficiência, escalabilidade e uma experiência de usuário fluida. A seguir, apresentamos as **principais ferramentas** e **tecnologias** adotadas, abrangendo desde o design do aplicativo até a estrutura de banco de dados e o back-end da solução:
 
-> **React Native:** Framework utilizado para o desenvolvimento do aplicativo mobile, permitindo a criação de interfaces nativas para Android e iOS a partir de um único código.
+> **React Native:**  Framework utilizado para o desenvolvimento do aplicativo mobile, permitindo a criação de interfaces nativas para Android e iOS a partir de um único código, proporcionando uma experiência fluida e responsiva.
 
 > **JavaScript/TypeScript:** Linguagens principais do desenvolvimento do Wally, garantindo tipagem segura e maior confiabilidade no código.
 
 > **Node.js:** Ambiente de execução para o back-end do aplicativo, proporcionando alta performance e escalabilidade para as operações do sistema.
 
-> **SQL:** Banco de dados relacional utilizado para armazenamento e gerenciamento de informações financeiras dos usuários.
+> **PostgreSQL:** Banco de dados relacional utilizado para armazenamento e gerenciamento de informações financeiras dos usuários, garantindo segurança, integridade e eficiência no tratamento dos dados.
 
-> **Docker:** Utilizado para containerização da aplicação, garantindo que o ambiente de desenvolvimento e produção sejam consistentes e simplificando a implantação.
+> **Docker:** Utilizado para containerização da aplicação, garantindo que o ambiente de desenvolvimento e produção sejam consistentes e permitindo que o aplicativo seja executado em diferentes sistemas operacionais, incluindo Windows, macOS e Linux, sem conflitos de dependências.
 
 > **Expo:** Ferramenta que facilita o desenvolvimento e a visualização do aplicativo durante a fase de prototipação e testes.
 
@@ -67,13 +61,16 @@ O fluxo de interação do usuário no Wally será conduzido da seguinte forma:
 
   **2. Front-End (React Native):** A interface processa as interações do usuário e envia solicitações ao back-end.
 
-  **3. Back-End (Node.js + SQL):** As requisições são processadas pelo servidor, que interage com o banco de dados para armazenar ou recuperar informações.
+  **3. Back-End (Node.js):** As requisições são processadas pelo servidor, que executa a lógica de negócio e interage com o banco de dados.
 
-  **4. Banco de Dados (SQL):** Gerencia e armazena os dados financeiros dos usuários, garantindo segurança e integridade das informações.
+  **4. Banco de Dados (PostgreSQL):** Gerencia e armazena os dados financeiros dos usuários, garantindo segurança, consistência e eficiência nas consultas.
 
-  **5. Resposta ao Usuário:** O back-end retorna os dados processados ao front-end, que os apresenta ao usuário na interface do aplicativo.
+  **5. Resposta ao Usuário:** O back-end retorna os dados processados ao front-end, que os apresenta ao usuário na interface do aplicativo, garantindo uma experiência fluida e intuitiva.
 
 <!-- Além disso, a arquitetura e a implementação do Wally serão estruturadas com base na norma técnica de qualidade de software **ISO/IEC 25010:2011**, garantindo altos padrões de usabilidade, eficiência e confiabilidade. Isso reforça nosso compromisso em oferecer um aplicativo seguro, intuitivo e de alto desempenho para a gestão financeira dos usuários. -->
+
+![React Native](https://github.com/user-attachments/assets/b79e5a70-9259-4bfd-ba69-af17519786ef)
+
 
  <!--  ## Hospedagem
 
