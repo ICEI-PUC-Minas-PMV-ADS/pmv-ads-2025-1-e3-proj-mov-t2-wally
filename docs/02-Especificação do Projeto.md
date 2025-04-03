@@ -178,7 +178,8 @@ O projeto está **restrito** pelos itens apresentados na tabela a seguir:
 
 ## Diagrama de Casos de Uso
 
-![casodeuso](https://github.com/user-attachments/assets/2d80c5aa-768d-4893-bbd3-b2ba6e834226)
+![{21201CD7-CD30-4682-A6CF-5CA656761698}](https://github.com/user-attachments/assets/70de0489-a48b-4ad3-99da-c2d056532555)
+
 
 <h4 align="center">FIGURA 03 - Diagrama de Casos de Uso</h4>
 
