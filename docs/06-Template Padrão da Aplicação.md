@@ -2,6 +2,8 @@
 
 O **Wally** é um aplicativo mobile de gestão financeira que busca transmitir praticidade, modernidade e confiança. Para alcançar esse objetivo, desenvolvemos uma identidade visual consistente e alinhada aos valores e à proposta do app. A seguir, apresentamos os principais elementos que compõem essa identidade.
 
+A **interatividade** do fluxo do usuário no Wally, incluindo a **transição entre telas**, poderá ser acessada através do link disponibilizado. Esse fluxo foi cuidadosamente estruturado para garantir uma navegação simples, intuitiva e fluida, proporcionando uma experiência otimizada para os usuários: [Protótipo Interativo - Figma](https://www.figma.com/proto/MiuZNsY107HDiJqKnMdyIm/Projeto-Wally?page-id=0%3A1&node-id=1-14&viewport=215%2C293%2C0.81&t=uLjzv6SkBrleFN8Z-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A14).
+
 ### Logo
 
 <div align="center">
