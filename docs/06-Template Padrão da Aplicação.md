@@ -108,6 +108,14 @@ Para textos corridos, descrições e conteúdos mais extensos, optamos pela Inte
 
 – **Forma orgânica:** Os elementos arredondados e fluidos, ajudam a transmitir a sensação de movimento e simplicidade, atributos que norteiam a usabilidade do app.
 
+
+<div align="center">
+  
+![image](https://github.com/user-attachments/assets/7c247910-b234-49ae-bb83-38ee0ee94575)
+
+
+</div>
+
 ### Template da Aplicação
 
 - **Layout Minimalista:** As telas do aplicativo seguem um design clean, priorizando o conteúdo e a experiência do usuário. Espaços em branco são usados de forma estratégica para destacar informações relevantes, como gráficos e dados financeiros.
@@ -115,5 +123,13 @@ Para textos corridos, descrições e conteúdos mais extensos, optamos pela Inte
 - **Hierarquia Visual:** Cores, tipografia e ícones são aplicados para criar uma hierarquia clara. Títulos e seções principais em Poppins, texto base em Inter e a logomarca em Julius Sans One no topo das telas ou na splash screen.
 
 - **Botões e Ações:** Os botões seguem a paleta de verdes, mantendo coerência visual e destacando as ações primordiais dentro do app.
+
+<div align="center">
+  
+![image](https://github.com/user-attachments/assets/1443e99b-a7f7-4402-a2dc-606707db97cc)
+
+![image](https://github.com/user-attachments/assets/1518fdbe-1c0c-4f90-a019-57b22dae211e)
+
+</div>
 
 A identidade visual do Wally foi desenvolvida para transmitir confiabilidade, modernidade e simplicidade, refletindo a proposta de um app de finanças intuitivo e eficiente. O conjunto de cores, formas e tipografias trabalha em harmonia para criar uma experiência agradável e funcional para o usuário, reforçando o compromisso do Wally em facilitar o controle e a gestão financeira de forma ágil e segura.
