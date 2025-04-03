@@ -9,7 +9,7 @@ A **interface** do Wally foi projetada para oferecer uma experiência intuitiva 
 
 ## Diagrama de Fluxo
 
-<!-- COLOQUE AQUI O FLUXOGRAMA E APAGUE A MENSAGEM -->
+![_Fluxograma](https://github.com/user-attachments/assets/0317ce81-dbef-4f85-80f3-790c1e2beeda)
 
 ## Wireframes
 
