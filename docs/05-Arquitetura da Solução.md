@@ -4,17 +4,27 @@
 
 ![wally-diagrama-de-classes](https://github.com/user-attachments/assets/1fa1fc4c-37c0-47b6-a367-aa2106713611)
 
+<h4 align="center">FIGURA 26 - Diagrama de Classes do Wally</h4>
+
 ## Modelo ER
 
 ![wally-diagrama-er](https://github.com/user-attachments/assets/89748024-49b9-4ec0-9a31-7755a1d77b2a)
+
+<h4 align="center">FIGURA 27 - Diagrama Entidade-Relacionamento do Wally</h4>
 
 ## Esquema Relacional
 
 ![wally-esquema-relacional](https://github.com/user-attachments/assets/df6e22bc-06a5-4170-aeee-da422e4e660d)
 
+<h4 align="center">FIGURA 28 - Diagrama ER de Banco de Dados</h4>
+
 ## Modelo Físico
 
-Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do banco de dados. Este arquivo deverá ser incluído dentro da pasta src\bd.
+Para garantir a estruturação eficiente dos dados no Wally, foi desenvolvido o **modelo físico do banco de dados**. Esse modelo define a criação das **tabelas**, relacionamentos e restrições, assegurando a integridade e o bom desempenho das operações no sistema.
+
+O arquivo `banco.sql` contém os scripts necessários para essa implementação e está localizado na pasta `src\bd`.
+
+🔗 Acesse o arquivo pelo link: [banco.sql](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e3-proj-mov-t2-wally/blob/main/src/bd/banco.sql).
 
 ## Tecnologias Utilizadas
 
@@ -58,6 +68,7 @@ O fluxo de interação do usuário no Wally será conduzido da seguinte forma:
 
 ![React Native](https://github.com/user-attachments/assets/b79e5a70-9259-4bfd-ba69-af17519786ef)
 
+<h4 align="center">FIGURA 29 - Fluxo de Interação do Usuário com o Sistema</h4>
 
  <!--  ## Hospedagem
 
