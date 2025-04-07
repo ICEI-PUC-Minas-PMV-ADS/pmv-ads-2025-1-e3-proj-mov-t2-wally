@@ -10,6 +10,8 @@ A **interatividade** do fluxo do usuário pode ser acessada através do link: [P
 <img width="316" alt="image" src="https://github.com/user-attachments/assets/b771c1a8-d771-4380-834a-ad678e378283" />
 </div>
 
+<h4 align="center">FIGURA 30 - Logomarca do Wally</h4>
+
 <br>
 
 - **Conceito:** O nome Wally faz referência direta a uma carteira (**wallet**, em inglês), objeto que simboliza o controle e a organização financeira. Por isso, a logomarca representa graficamente uma carteira estilizada, reforçando o conceito de segurança e praticidade no gerenciamento de finanças.
@@ -24,6 +26,8 @@ A **interatividade** do fluxo do usuário pode ser acessada através do link: [P
 <img width="326" alt="image" src="https://github.com/user-attachments/assets/3f97fbfb-ba10-4bbb-b842-2c131b9f796e" />
 </div>
 
+<h4 align="center">FIGURA 31 - Logomarca do Wally</h4>
+
 ## Cores
  
 **Paleta de Cores:**
@@ -31,6 +35,8 @@ A **interatividade** do fluxo do usuário pode ser acessada através do link: [P
 <div align="center">
 <img width="596" alt="image" src="https://github.com/user-attachments/assets/38a875f7-4eed-45a7-bae0-decb9789675e" />
 </div>
+
+<h4 align="center">FIGURA 32 - Esquema de Cores do Wally</h4>
 
 <br>
 
@@ -103,6 +109,8 @@ Para textos corridos, descrições e conteúdos mais extensos, optamos pela Inte
 <img width="416" alt="image" src="https://github.com/user-attachments/assets/d7ef6c34-4e5c-41d1-b10a-3f0229c49493" />
 </div>
 
+<h4 align="center">FIGURA 33 - Ilustração da Tela Inicial do Wally</h4>
+
 <br>
 
 – **Ícones e ilustrações:** As ilustrações são minimalistas, com traços simples e cores que seguem a paleta principal do Wally. Dessa forma, a experiência visual do usuário permanece coerente e harmônica em todos os pontos de contato.
@@ -116,6 +124,8 @@ Para textos corridos, descrições e conteúdos mais extensos, optamos pela Inte
 <img width="266" alt="image" src="https://github.com/user-attachments/assets/707926bb-6313-46b3-9708-e616ca2edbae" />
 
 </div>
+
+<h4 align="center">FIGURA 34</h4>
 
 ## Template da Aplicação
 
@@ -134,6 +144,8 @@ Para textos corridos, descrições e conteúdos mais extensos, optamos pela Inte
 <img width="316" alt="image" src="https://github.com/user-attachments/assets/1b21dac2-59e2-48c3-9bc3-3a8d61e51a52" />
 
 </div>
+
+<h4 align="center">FIGURA 35</h4>
 
 <br>
 <br>
@@ -155,3 +167,5 @@ Para textos corridos, descrições e conteúdos mais extensos, optamos pela Inte
 <img width="216" alt="image" src="https://github.com/user-attachments/assets/9178a701-9e3c-45d4-b62c-630cf9989d06" />
 
 </div>
+
+<h4 align="center">FIGURA 36</h4>
