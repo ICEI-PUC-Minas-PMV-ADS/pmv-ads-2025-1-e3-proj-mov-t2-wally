@@ -9,7 +9,8 @@ type BlueButtonProps = {
 function BlueButton({ text, color }: BlueButtonProps) {
     return(
         <>
-        <Pressable style={[styles.container, styles[color]]}>
+        <Pressable style={[styles.container, styles[color]]} android_ripple={{color: "#dddddd"}}
+        >
             <Text style={styles.text}>{text}</Text>
         </Pressable>
         </>
@@ -32,8 +33,11 @@ const styles = StyleSheet.create({
         backgroundColor: "#9ACBD0",
     },
     text: {
+        width: 98,
         color: "#fff",
-        textAlign: "center"
+        textAlign: "center",
+        fontFamily: "Poppins_700Bold",
+        
     }
 })
 
