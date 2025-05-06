@@ -1,5 +1,7 @@
 import fastify from "fastify"
 import "reflect-metadata"
+import { AppDataSource } from "./data-source"
+import { UsuariosRepositorio } from "./repositorios/UsuariosRepositorio";
 
 const server = fastify({
     logger: true
@@ -7,6 +9,10 @@ const server = fastify({
 
 
 const users = []
+
+
+const usuariosRepositorio = new UsuariosRepositorio()
+
 
 server.get("/users", (request, reply) => {
     return reply.send(users)
@@ -24,12 +30,25 @@ server.get("/users/:email", (request, reply) => {
     return reply.send(user)
 })
 
-server.post("/users", (request, reply) => {
-    const { id, name, email } = request.body
+server.post("/users", async (request, reply) => {
+    const { email, nome, senha, avatar_url } = request.body
 
-    users.push({ id, name, email })
+    const emailUtilizado = await usuariosRepositorio.findByEmail(email)
 
-    return reply.status(201).send({ id, name, email })
+    if (emailUtilizado) {
+        return reply.status(400).send({ message: "Email já cadastrado" })
+    }
+
+    //
+
+    const usuario = await usuariosRepositorio.create({
+        email,
+        nome,
+        senha,
+        avatar_url
+    })
+
+    return reply.status(201).send(usuario)
 })
 
 server.put("/users/:id", (request, reply) => {
@@ -67,5 +86,9 @@ server.delete("/users/:id", (request, reply) => {
 })
 
 server.listen({ port: 3333 }).then(() => {
-    console.log("HTTP server running!")
+    AppDataSource.initialize().then(() => {
+        console.log("Database connected")
+    }).catch(error => console.log(error))
+
+    console.log("Server HTTP is running on port 3333")
 })
