@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Text, Image, TouchableOpacity, Pressable, ScrollView, StatusBar, Platform } from "react-native";
 import { useState } from "react";
 import { AntDesign } from '@expo/vector-icons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
@@ -10,44 +10,67 @@ export default function Wallet() {
   const receitas = 12428.00;
   const despesas = 10082.00;
 
+  const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBar.currentHeight;
+
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
+      <StatusBar backgroundColor="#9ACBD0" barStyle="dark-content" />
+      <View style={[styles.header, { paddingTop: STATUSBAR_HEIGHT }]} />
+
+      <View style={styles.logoContainer}>
         <Image
           source={require('../../assets/images/logo.png')}
           style={styles.logo}
         />
       </View>
 
-      <View style={styles.cartaoSaldo}>
-        <TouchableOpacity style={styles.monthSelector}>
-          <Text style={styles.monthText}>{currentMonth}</Text>
-          <MaterialIcons name="keyboard-arrow-down" size={24} color="black" />
-        </TouchableOpacity>
+      <ScrollView
+        style={styles.scrollView}
+        contentContainerStyle={styles.scrollViewContent}
+        showsVerticalScrollIndicator={false}>
 
-        <View style={styles.containerSaldo}>
-          <Text style={styles.tituloSaldo}>Saldo</Text>
-          <Text style={styles.valorSaldo}>R${saldo.toFixed(2).replace('.', ',')}</Text>
-        </View>
+        <View style={styles.cartaoSaldo}>
+          <TouchableOpacity style={styles.monthSelector}>
+            <Text style={styles.monthText}>{currentMonth}</Text>
+            <MaterialIcons name="keyboard-arrow-down" size={24} color="#000" />
+          </TouchableOpacity>
 
-        <View style={styles.containerResumo}>
-          <View style={styles.itemResumo}>
-            <View style={styles.linhaTitulo}>
-              <SimpleLineIcons name="arrow-up-circle" size={24} color="#249B24" style={styles.icone} />
-              <Text style={styles.tituloResumo}>Receitas</Text>
-            </View>
-            <Text style={styles.valorReceita}>R${receitas.toFixed(2).replace('.', ',')}</Text>
+          <View style={styles.containerSaldo}>
+            <Text style={styles.tituloSaldo}>Saldo</Text>
+            <Text style={styles.valorSaldo}>R${saldo.toFixed(2).replace('.', ',')}</Text>
           </View>
 
-          <View style={styles.itemResumo}>
-            <View style={styles.linhaTitulo}>
-              <SimpleLineIcons name="arrow-down-circle" size={24} color="#EA1919" style={styles.icone} />
-              <Text style={styles.tituloResumo}>Despesas</Text>
+          <View style={styles.containerResumo}>
+            <View style={styles.itemResumo}>
+              <View style={styles.linhaTitulo}>
+                <SimpleLineIcons name="arrow-up-circle" size={24} color="#249B24" style={styles.icone} />
+                <Text style={styles.tituloResumo}>Receitas</Text>
+              </View>
+              <Text style={styles.valorReceita}>R${receitas.toFixed(2).replace('.', ',')}</Text>
             </View>
-            <Text style={styles.valorDespesa}>R${despesas.toFixed(2).replace('.', ',')}</Text>
+
+            <View style={styles.itemResumo}>
+              <View style={styles.linhaTitulo}>
+                <SimpleLineIcons name="arrow-down-circle" size={24} color="#EA1919" style={styles.icone} />
+                <Text style={styles.tituloResumo}>Despesas</Text>
+              </View>
+              <Text style={styles.valorDespesa}>R${despesas.toFixed(2).replace('.', ',')}</Text>
+            </View>
           </View>
         </View>
-      </View>
+
+        <View style={styles.containerBotoes}>
+          <Pressable style={styles.botaoAdicionar} onPress={() => { }}>
+            <MaterialIcons name="add-circle" size={28} color="#249B24" />
+            <Text style={styles.textoAdicionar}>Adicionar Receita</Text>
+          </Pressable>
+          <Pressable style={styles.botaoAdicionar} onPress={() => { }}>
+            <MaterialIcons name="add-circle" size={28} color="#EA1919" />
+            <Text style={styles.textoAdicionar}>Adicionar Despesa</Text>
+          </Pressable>
+        </View>
+
+      </ScrollView>
     </View>
   );
 }
@@ -60,23 +83,40 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: '#9ACBD0',
     height: 100,
-    paddingTop: 60,
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    zIndex: 1,
+  },
+  logoContainer: {
+    position: 'absolute',
+    top: 80,
+    alignSelf: 'center',
   },
   logo: {
     width: 96,
     height: 96,
-    marginTop: 80,
-    alignSelf: 'center',
+    top: 40
+  },
+  scrollView: {
+    flex: 1,
+    marginTop: 100,
+  },
+  scrollViewContent: {
+    paddingTop: 80,
+    paddingBottom: 30,
   },
   cartaoSaldo: {
     backgroundColor: '#ffff',
     borderRadius: 8,
     margin: 16,
-    marginTop: 180,
+    marginTop: 80,
     padding: 36,
     shadowColor: '#000',
     shadowOpacity: 0.1,
     shadowRadius: 8,
+    elevation: 4,
   },
   monthSelector: {
     flexDirection: 'row',
@@ -132,4 +172,29 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#EA1919',
   },
+  containerBotoes: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    margin: 16,
+    marginBottom: 50,
+  },
+  botaoAdicionar: {
+    width: 165,
+    height: 100,
+    backgroundColor: '#ffff',
+    borderRadius: 8,
+    padding: 20,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  textoAdicionar: {
+    fontSize: 14,
+    color: '#000',
+    marginTop: 10,
+  }
 });
+
+
