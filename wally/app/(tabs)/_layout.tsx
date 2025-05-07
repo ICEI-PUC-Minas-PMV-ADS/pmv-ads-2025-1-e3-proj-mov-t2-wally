@@ -1,9 +1,9 @@
-/*import { Tabs } from 'expo-router';
+import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
 
 import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
@@ -20,26 +20,30 @@ export default function TabLayout() {
         tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
           ios: {
-            // Use a transparent background on iOS to show the blur effect
+
             position: 'absolute',
           },
           default: {},
         }),
       }}>
       <Tabs.Screen
+        name="perfil"
+        options={{
+          title: 'Perfil',
+          tabBarIcon: ({ color }) => <MaterialIcons name="person" size={24} color="black" />,
+        }} />
+      <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
+          title: 'Wallet',
+          tabBarIcon: ({ color }) => <MaterialIcons name="account-balance-wallet" size={26} color="black" />,
+        }} />
       <Tabs.Screen
-        name="explore"
+        name="grupos"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+          title: 'Grupos',
+          tabBarIcon: ({ color }) => <MaterialIcons name="groups" size={32} color="black" />,
+        }} />
     </Tabs>
   );
-}*/
+}
