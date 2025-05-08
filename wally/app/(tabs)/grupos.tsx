@@ -1,5 +1,15 @@
-import { View, StyleSheet, Image, StatusBar, SafeAreaView, FlatList, Text, Pressable } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Image,
+  StatusBar,
+  SafeAreaView,
+  FlatList,
+  Text,
+  Pressable
+} from 'react-native';
 import React from 'react';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function TabTwoScreen() {
 
@@ -23,8 +33,7 @@ export default function TabTwoScreen() {
         <Image
           source={require('../../assets/images/logo.png')}
           style={styles.logo}
-          resizeMode="contain"
-        />
+          resizeMode="contain" />
       </View>
 
       <View style={styles.listaGrupos}>
@@ -39,6 +48,32 @@ export default function TabTwoScreen() {
           )}
           showsVerticalScrollIndicator={false}
         />
+      </View>
+
+      <View style={styles.containerBotao}>
+        <Pressable
+          style={styles.botaoCriarGrupo}
+          onPress={() => { }}
+          accessible={true}
+          accessibilityLabel="Criar grupo"
+          accessibilityHint="Toque para criar um novo grupo"
+          accessibilityRole="button"
+        >
+          <MaterialIcons name="group-add" size={28} color="#fff" />
+          <Text style={styles.textoBotao}>CRIAR GRUPO</Text>
+        </Pressable>
+      </View>
+      <View style={styles.containerBotao}>
+        <Pressable
+          style={styles.botaoCriarGrupo}
+          onPress={() => { }}
+          accessible={true}
+          accessibilityLabel="Criar grupo"
+          accessibilityHint="Toque para criar um novo grupo"
+          accessibilityRole="button">
+          <MaterialIcons name="group-add" size={28} color="#fff" />
+          <Text style={styles.textoBotao}>CRIAR GRUPO</Text>
+        </Pressable>
       </View>
 
     </SafeAreaView>
@@ -96,5 +131,29 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter',
     fontSize: 16,
     color: '#000',
+  },
+  botaoCriarGrupo: {
+    width: 330,
+    height: 52,
+    backgroundColor: '#48A6A7',
+    borderRadius: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  textoBotao: {
+    color: "#fff",
+    textAlign: "center",
+    alignSelf: "center",
+    fontFamily: "Poppins_700Bold",
+    fontSize: 16,
+    marginLeft: 10,
+  },
+  containerBotao: {
+    position: 'absolute',
+    bottom: 40,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
   },
 });
