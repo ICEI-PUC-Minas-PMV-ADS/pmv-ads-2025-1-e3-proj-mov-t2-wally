@@ -13,7 +13,7 @@ export class Transacao {
     @Column({ type: "decimal", precision: 10, scale: 2 })
     valor: number
 
-    @Column({ type: "varchar", length: 100 })
+    @Column({ type: "enum", enum: ["RECEITA", "DESPESA"] })
     tipo: string
 
     @ManyToOne(() => Usuario)

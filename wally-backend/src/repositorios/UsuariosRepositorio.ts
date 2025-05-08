@@ -17,4 +17,24 @@ export class UsuariosRepositorio {
 
         return usuario
     }
+
+    async findById(id: string): Promise<Usuario | null> {
+        const usuario = await this.repositorio.findOneBy({ id })
+
+        return usuario
+    }
+
+    async findAll(): Promise<Usuario[]> {
+        const usuarios = await this.repositorio.find()
+
+        return usuarios
+    }
+
+    async update(usuario: Usuario): Promise<Usuario> {
+        return this.repositorio.save(usuario)
+    }
+
+    async delete(usuario: Usuario): Promise<void> {
+        await this.repositorio.delete(usuario.id)
+    }
 }
