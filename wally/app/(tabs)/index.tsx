@@ -10,6 +10,7 @@ import {
   SafeAreaView,
   TextInput
 } from "react-native";
+import React from "react";
 import { useState } from "react";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
