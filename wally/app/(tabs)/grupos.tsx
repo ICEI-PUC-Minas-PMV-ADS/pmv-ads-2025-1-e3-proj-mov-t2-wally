@@ -8,10 +8,13 @@ import {
   Text,
   Pressable
 } from 'react-native';
+import { useRouter } from 'expo-router';
 import React from 'react';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function TabTwoScreen() {
+
+  const router = useRouter();
 
   const items = [
     { id: '1', title: 'Apartamento 106' },
@@ -19,7 +22,7 @@ export default function TabTwoScreen() {
     { id: '3', title: 'Empresa X' },
     { id: '4', title: 'Escritório' },
   ];
-
+  
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar
@@ -47,14 +50,13 @@ export default function TabTwoScreen() {
             </View>
           )}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={styles.listContent}
         />
       </View>
 
       <View style={styles.containerBotao}>
         <Pressable
           style={styles.botaoCriarGrupo}
-          onPress={() => { }}
+          onPress={() => router.push('/criar-grupo')}
           accessible={true}
           accessibilityLabel="Criar grupo"
           accessibilityHint="Toque para criar um novo grupo"
@@ -103,9 +105,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginVertical: 20,
-  },
-  listContent: {
-    paddingBottom: 20,
   },
   item: {
     backgroundColor: '#FFF',
