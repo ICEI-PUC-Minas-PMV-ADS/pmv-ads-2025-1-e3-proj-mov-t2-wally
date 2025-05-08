@@ -7,7 +7,8 @@ import {
   Pressable, 
   ScrollView, 
   StatusBar, 
-  SafeAreaView
+  SafeAreaView,
+  TextInput
 } from "react-native";
 import { useState } from "react";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
@@ -102,6 +103,14 @@ export default function Wallet() {
             <MaterialIcons name="add-circle" size={28} color="#EA1919" />
             <Text style={styles.textoAdicionar}>Adicionar Despesa</Text>
           </Pressable>
+        </View>
+
+        <View style={styles.barraPesquisa}>
+        <MaterialIcons style={styles.iconSearch} name="search" size={20} color="#666" />
+        <TextInput
+        style={styles.inputSearch}
+        placeholder="Filtrar transações..."
+        placeholderTextColor="#000"/>
         </View>
 
       </ScrollView>
@@ -211,7 +220,7 @@ const styles = StyleSheet.create({
   containerBotoes: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 70,
+    marginBottom: 20,
   },
   botaoAdicionar: {
     backgroundColor: '#ffffff',
@@ -232,5 +241,26 @@ const styles = StyleSheet.create({
     color: '#000',
     marginTop: 10,
     textAlign: 'center',
-  }
+  },
+  barraPesquisa: {
+    flexDirection: 'row',
+    alignItems: "center",
+    backgroundColor: "#fff", 
+    padding: 8, 
+    borderRadius: 8,
+    shadowColor: "#000",          
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2, 
+  },
+  inputSearch: {
+    flex: 1,                       
+    fontSize: 16,
+    color: "#000",
+    height: 40,                    
+  },
+  iconSearch: {
+    marginRight: 6, 
+    padding: 8,               
+  },
 });
