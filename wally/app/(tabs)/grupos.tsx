@@ -1,12 +1,12 @@
-import { 
-  View, 
-  StyleSheet, 
-  Image, 
-  StatusBar, 
-  SafeAreaView, 
-  FlatList, 
-  Text, 
-  Pressable 
+import {
+  View,
+  StyleSheet,
+  Image,
+  StatusBar,
+  SafeAreaView,
+  FlatList,
+  Text,
+  Pressable
 } from 'react-native';
 import React from 'react';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
@@ -18,17 +18,15 @@ export default function TabTwoScreen() {
     { id: '2', title: 'Viagem Europa' },
     { id: '3', title: 'Empresa X' },
     { id: '4', title: 'Escritório' },
-  ]
+  ];
 
   return (
     <SafeAreaView style={styles.container}>
-
       <StatusBar
         backgroundColor="#9ACBD0"
         barStyle={'dark-content'} />
 
       <View style={styles.header} />
-
       <View style={styles.logoContainer}>
         <Image
           source={require('../../assets/images/logo.png')}
@@ -36,8 +34,10 @@ export default function TabTwoScreen() {
           resizeMode="contain" />
       </View>
 
-      <View style={styles.listaGrupos}>
+      <View style={styles.mainContent}>
+
         <Text style={styles.titulo}>GRUPOS</Text>
+
         <FlatList
           data={items}
           keyExtractor={item => item.id}
@@ -47,9 +47,10 @@ export default function TabTwoScreen() {
             </View>
           )}
           showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.listContent}
         />
-        
       </View>
+
       <View style={styles.containerBotao}>
         <Pressable
           style={styles.botaoCriarGrupo}
@@ -62,7 +63,6 @@ export default function TabTwoScreen() {
           <Text style={styles.textoBotao}>CRIAR GRUPO</Text>
         </Pressable>
       </View>
-
     </SafeAreaView>
   );
 }
@@ -79,16 +79,22 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     top: 0,
+    zIndex: 1,
   },
   logoContainer: {
-    position: 'absolute',
     alignSelf: 'center',
     top: 80,
+    zIndex: 2,
   },
   logo: {
     width: 96,
     height: 96,
-    top: 80,
+  },
+  mainContent: {
+    flex: 1,
+    paddingTop: 100,
+    paddingBottom: 100,
+    paddingHorizontal: 30,
   },
   titulo: {
     fontFamily: 'Poppins_300Light',
@@ -96,12 +102,10 @@ const styles = StyleSheet.create({
     color: '#000',
     fontWeight: 'bold',
     textAlign: 'center',
-    marginTop: 10,
-    marginBottom: 28,
+    marginVertical: 20,
   },
-  listaGrupos: {
-    top: 200,
-    padding: 30,
+  listContent: {
+    paddingBottom: 20,
   },
   item: {
     backgroundColor: '#FFF',
@@ -119,7 +123,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#000',
   },
+  containerBotao: {
+    position: 'absolute',
+    bottom: 70,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+    paddingVertical: 10,
+    zIndex: 3,
+  },
   botaoCriarGrupo: {
+    top: 60,
     width: 330,
     height: 52,
     backgroundColor: '#48A6A7',
@@ -131,16 +145,8 @@ const styles = StyleSheet.create({
   textoBotao: {
     color: "#fff",
     textAlign: "center",
-    alignSelf: "center",
     fontFamily: "Poppins_700Bold",
     fontSize: 16,
     marginLeft: 10,
-  },
-  containerBotao: {
-    position: 'absolute',
-    bottom: 40,
-    left: 0,
-    right: 0,
-    alignItems: 'center',
   },
 });
