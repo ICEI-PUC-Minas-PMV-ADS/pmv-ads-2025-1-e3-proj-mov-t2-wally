@@ -1,6 +1,15 @@
-import { View, StyleSheet, Text, Image, TouchableOpacity, Pressable, ScrollView, StatusBar, Platform } from "react-native";
+import { 
+  View, 
+  StyleSheet, 
+  Text, 
+  Image, 
+  TouchableOpacity, 
+  Pressable, 
+  ScrollView, 
+  StatusBar, 
+  SafeAreaView
+} from "react-native";
 import { useState } from "react";
-import { AntDesign } from '@expo/vector-icons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
 
@@ -10,17 +19,24 @@ export default function Wallet() {
   const receitas = 12428.00;
   const despesas = 10082.00;
 
-  const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : StatusBar.currentHeight;
+  const formatCurrency = (value) => {
+    return `R$${value.toFixed(2).replace('.', ',')}`;
+  };
 
   return (
-    <View style={styles.container}>
-      <StatusBar backgroundColor="#9ACBD0" barStyle="dark-content" />
-      <View style={[styles.header, { paddingTop: STATUSBAR_HEIGHT }]} />
+    <SafeAreaView style={styles.container}>
+      <StatusBar 
+        backgroundColor="#9ACBD0" 
+        barStyle={'dark-content'}
+      />
+      
+      <View style={styles.header} />
 
       <View style={styles.logoContainer}>
         <Image
           source={require('../../assets/images/logo.png')}
           style={styles.logo}
+          resizeMode="contain"
         />
       </View>
 
@@ -30,14 +46,19 @@ export default function Wallet() {
         showsVerticalScrollIndicator={false}>
 
         <View style={styles.cartaoSaldo}>
-          <TouchableOpacity style={styles.monthSelector}>
+          <TouchableOpacity 
+            style={styles.monthSelector}
+            accessible={true}
+            accessibilityLabel={`Selecionar mês. Mês atual: ${currentMonth}`}
+            accessibilityHint="Toque para mudar o mês"
+          >
             <Text style={styles.monthText}>{currentMonth}</Text>
             <MaterialIcons name="keyboard-arrow-down" size={24} color="#000" />
           </TouchableOpacity>
 
           <View style={styles.containerSaldo}>
             <Text style={styles.tituloSaldo}>Saldo</Text>
-            <Text style={styles.valorSaldo}>R${saldo.toFixed(2).replace('.', ',')}</Text>
+            <Text style={styles.valorSaldo}>{formatCurrency(saldo)}</Text>
           </View>
 
           <View style={styles.containerResumo}>
@@ -46,7 +67,7 @@ export default function Wallet() {
                 <SimpleLineIcons name="arrow-up-circle" size={24} color="#249B24" style={styles.icone} />
                 <Text style={styles.tituloResumo}>Receitas</Text>
               </View>
-              <Text style={styles.valorReceita}>R${receitas.toFixed(2).replace('.', ',')}</Text>
+              <Text style={styles.valorReceita}>{formatCurrency(receitas)}</Text>
             </View>
 
             <View style={styles.itemResumo}>
@@ -54,24 +75,38 @@ export default function Wallet() {
                 <SimpleLineIcons name="arrow-down-circle" size={24} color="#EA1919" style={styles.icone} />
                 <Text style={styles.tituloResumo}>Despesas</Text>
               </View>
-              <Text style={styles.valorDespesa}>R${despesas.toFixed(2).replace('.', ',')}</Text>
+              <Text style={styles.valorDespesa}>{formatCurrency(despesas)}</Text>
             </View>
           </View>
         </View>
 
         <View style={styles.containerBotoes}>
-          <Pressable style={styles.botaoAdicionar} onPress={() => { }}>
+          <Pressable 
+            style={styles.botaoAdicionar} 
+            onPress={() => {}}
+            accessible={true}
+            accessibilityLabel="Adicionar Receita"
+            accessibilityHint="Toque para adicionar uma nova receita"
+          >
             <MaterialIcons name="add-circle" size={28} color="#249B24" />
             <Text style={styles.textoAdicionar}>Adicionar Receita</Text>
           </Pressable>
-          <Pressable style={styles.botaoAdicionar} onPress={() => { }}>
+          
+          <Pressable 
+            style={styles.botaoAdicionar} 
+            onPress={() => {}}
+            accessible={true}
+            accessibilityLabel="Adicionar Despesa"
+            accessibilityHint="Toque para adicionar uma nova despesa"
+          >
             <MaterialIcons name="add-circle" size={28} color="#EA1919" />
             <Text style={styles.textoAdicionar}>Adicionar Despesa</Text>
           </Pressable>
         </View>
 
       </ScrollView>
-    </View>
+    
+    </SafeAreaView>
   );
 }
 
@@ -82,47 +117,48 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: '#9ACBD0',
-    height: 100,
+    height: 120,
     position: 'absolute',
     left: 0,
     right: 0,
     top: 0,
-    zIndex: 1,
   },
   logoContainer: {
     position: 'absolute',
-    top: 80,
     alignSelf: 'center',
+    top: 80,
+
   },
   logo: {
     width: 96,
     height: 96,
-    top: 40
+    top: 40,
   },
   scrollView: {
     flex: 1,
-    marginTop: 100,
+    marginTop: 80,
   },
   scrollViewContent: {
-    paddingTop: 80,
+    paddingTop: 100,
     paddingBottom: 30,
+    paddingHorizontal: 16,
   },
   cartaoSaldo: {
-    backgroundColor: '#ffff',
-    borderRadius: 8,
-    margin: 16,
-    marginTop: 80,
-    padding: 36,
+    backgroundColor: '#ffffff',
+    borderRadius: 16,
+    padding: '8%',
     shadowColor: '#000',
     shadowOpacity: 0.1,
     shadowRadius: 8,
+    shadowOffset: { width: 0, height: 2 },
     elevation: 4,
+    marginBottom: 20,
   },
   monthSelector: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 46,
+    marginBottom: '12%',
   },
   monthText: {
     fontSize: 16,
@@ -131,7 +167,7 @@ const styles = StyleSheet.create({
   },
   containerSaldo: {
     alignItems: 'center',
-    marginBottom: 60,
+    marginBottom: '15%',
   },
   tituloSaldo: {
     fontSize: 16,
@@ -139,7 +175,7 @@ const styles = StyleSheet.create({
     marginBottom: 6,
   },
   valorSaldo: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
     color: '#000',
   },
@@ -175,26 +211,26 @@ const styles = StyleSheet.create({
   containerBotoes: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    margin: 16,
-    marginBottom: 50,
+    marginBottom: 70,
   },
   botaoAdicionar: {
-    width: 165,
-    height: 100,
-    backgroundColor: '#ffff',
-    borderRadius: 8,
+    backgroundColor: '#ffffff',
+    borderRadius: 16,
     padding: 20,
     alignItems: 'center',
+    justifyContent: 'center',
+    height: 100,
+    width: '48%',
     shadowColor: '#000',
     shadowOpacity: 0.1,
     shadowRadius: 4,
+    shadowOffset: { width: 0, height: 1 },
     elevation: 2,
   },
   textoAdicionar: {
     fontSize: 14,
     color: '#000',
     marginTop: 10,
+    textAlign: 'center',
   }
 });
-
-
