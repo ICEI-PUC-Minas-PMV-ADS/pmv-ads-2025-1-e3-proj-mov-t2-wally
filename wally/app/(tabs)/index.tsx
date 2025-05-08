@@ -136,16 +136,15 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignSelf: 'center',
     top: 80,
-
   },
   logo: {
     width: 96,
     height: 96,
-    top: 40,
+    top: 80,
   },
   scrollView: {
     flex: 1,
-    marginTop: 80,
+    marginTop: 90,
   },
   scrollViewContent: {
     paddingTop: 100,
@@ -161,6 +160,7 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     shadowOffset: { width: 0, height: 2 },
     elevation: 4,
+    marginTop: 40,
     marginBottom: 20,
   },
   monthSelector: {
