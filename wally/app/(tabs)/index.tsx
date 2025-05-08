@@ -8,12 +8,14 @@ import {
   ScrollView, 
   StatusBar, 
   SafeAreaView,
-  TextInput
+  Platform
 } from "react-native";
 import React from "react";
 import { useState } from "react";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
+import { Button, Dialog, Portal, PaperProvider,TextInput,} from 'react-native-paper';
+import DatePicker from "@react-native-community/datetimepicker";
 
 export default function Wallet() {
   const [currentMonth, setCurrentMonth] = useState("Março");
@@ -21,11 +23,81 @@ export default function Wallet() {
   const receitas = 12428.00;
   const despesas = 10082.00;
 
+  const [visible_receita, setVisible_receita] = React.useState(false);
+  const [visible_despesa, setVisible_despesa] = React.useState(false);
+
+
+
+  const showDialog_receita = () => setVisible_receita(true);
+
+  const hideDialog_receita = () => setVisible_receita(false);
+
+  const showDialog_despesa = () => setVisible_despesa(true);
+
+  const hideDialog_despesa = () => setVisible_despesa(false);
+
+  const [data_receita,setData_receita]=React.useState(new Date());
+  const [data_despesa,setData_despesa]=React.useState(new Date());
+  const [data_da_receita,setData_da_receita]=React.useState("")
+  const [data_da_despesa,setData_da_despesa]=React.useState("")
+  
+
+  const [valor_receita,setValor_receita]=React.useState("");
+  const [valor_despesa,setValor_despesa]=React.useState("");
+  const [todas_despeas,setTodas_despesas]=React.useState("");
+
+  const [descricao_receita, setDescricao_receita] =React.useState('');
+  const [descricao_despesa, setDescricao_despesa] =React.useState('');
+
+  const [total_receita,setTotal_receita]=React.useState(0.0)
+  const [total_despesa,setTotal_despesa]=React.useState(0.0)
+
+  
+
+  const [showPicker,setShowPicker]=React.useState(false);
+
+  const toggleDataPicker= () =>{
+    setShowPicker(!showPicker);
+  };
+
+  const formatarDataCompleta = (data) => {
+    return data.toLocaleDateString('pt-BR', {
+      weekday: 'long',
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    });
+  };
+  
+
+  const onChange = ({type},selectedDate) =>{
+    if(type=='set'){
+      const currentDate = selectedDate;
+      setData_receita(currentDate);
+      setData_despesa(currentDate);
+      if(Platform.OS==="android"){
+        toggleDataPicker();
+        setData_da_receita(formatarDataCompleta(currentDate));
+        setData_da_despesa(formatarDataCompleta(currentDate));
+      }
+      else{
+        toggleDataPicker();
+      }
+
+    }
+    else{
+      toggleDataPicker();
+    }
+
+  }
+
+
   const formatCurrency = (value) => {
     return `R$${value.toFixed(2).replace('.', ',')}`;
   };
 
   return (
+    <PaperProvider>
     <SafeAreaView style={styles.container}>
       <StatusBar 
         backgroundColor="#9ACBD0" 
@@ -85,18 +157,88 @@ export default function Wallet() {
         <View style={styles.containerBotoes}>
           <Pressable 
             style={styles.botaoAdicionar} 
-            onPress={() => {}}
+            onPress={showDialog_receita}
             accessible={true}
             accessibilityLabel="Adicionar Receita"
             accessibilityHint="Toque para adicionar uma nova receita"
+            
           >
             <MaterialIcons name="add-circle" size={28} color="#249B24" />
             <Text style={styles.textoAdicionar}>Adicionar Receita</Text>
           </Pressable>
+          <Portal>
+          <Dialog visible={visible_receita} onDismiss={hideDialog_receita}>
+            <View style={styles.view_teste} >
+              
+              <MaterialIcons name="add-circle" size={28} color="#249B24" />
+            <Text style={styles.textoAdicionar}>Adicionar Receita</Text>
+            </View>
+            <Dialog.Content>
+             <View style={styles.view_dialog}>
+              <TextInput style={styles.dialog_input_despesa}
+              label='Valor '
+              keyboardType='decimal-pad'
+              value={valor_receita}
+              onChangeText={setValor_receita}>
+              
+
+              </TextInput>
+
+               {showPicker &&( <DatePicker 
+                mode='date'
+                display='spinner'
+                value={data_receita}
+                onChange={onChange}
+                minimumDate={new Date('2025-1-1')}
+                maximumDate={new Date('2025-12-31')}>
+
+                </DatePicker>)}
+                {!showPicker &&(
+              <Pressable onPress={toggleDataPicker}>
+              <TextInput style={styles.input_dialog_date}
+              placeholder='Data'
+              value={data_da_receita}
+              onChangeText={setData_da_receita}
+              editable={false}
+             >
+
+              </TextInput>
+              </Pressable>
+            )}
+                
+             </View>
+             <View style={styles.view_dialog_input}>
+             <TextInput  
+             style={styles.input_dialog}
+             label="Descrição (opcional)"
+             value={descricao_receita}
+             onChangeText={setDescricao_receita}>
+              
+             </TextInput>
+             <Button  style={styles.button_dialog}
+             mode='contained'
+             onPress={() => {
+              const receita = parseFloat(valor_receita) || 0;
+              const despesa = parseFloat(valor_despesa) || 0;
+              const nova_receita = total_receita + receita
+              setTotal_receita (nova_receita) 
+              setValor_receita("");
+              
+              
+              hideDialog_receita();
+            }}
+            >ADICIONAR</Button>
+             </View>
+            </Dialog.Content>
+            <Dialog.Actions>
+              <Button onPress={hideDialog_receita}>Fechar</Button>
+            </Dialog.Actions>
+          </Dialog>
+        </Portal>
           
           <Pressable 
             style={styles.botaoAdicionar} 
-            onPress={() => {}}
+            onPress={showDialog_despesa}
             accessible={true}
             accessibilityLabel="Adicionar Despesa"
             accessibilityHint="Toque para adicionar uma nova despesa"
@@ -104,6 +246,77 @@ export default function Wallet() {
             <MaterialIcons name="add-circle" size={28} color="#EA1919" />
             <Text style={styles.textoAdicionar}>Adicionar Despesa</Text>
           </Pressable>
+          <Portal>
+          <Dialog visible={visible_despesa} onDismiss={hideDialog_despesa}>
+            <View style={styles.view_teste}>
+              
+               <MaterialIcons name="add-circle" size={28} color="#EA1919" />
+            <Text style={styles.textoAdicionar}>Adicionar Despesa</Text>
+            </View>
+            <Dialog.Content>
+             <View style={styles.view_dialog}>
+              <TextInput
+              style={styles.dialog_input_despesa}
+              label='Valor '
+              keyboardType='decimal-pad'
+              value={valor_despesa}
+              onChangeText={setValor_despesa}>
+              
+
+              </TextInput>
+
+               {showPicker &&( <DatePicker 
+                mode='date'
+                display='spinner'
+                value={data_despesa}
+                onChange={onChange}
+                minimumDate={new Date('2025-1-1')}
+                maximumDate={new Date('2025-12-31')}>
+
+                </DatePicker>)}
+                {!showPicker &&(
+              <Pressable onPress={toggleDataPicker}>
+              <TextInput style={styles.input_dialog_date}
+              placeholder='Data'
+              value={data_da_despesa}
+              onChangeText={setData_da_despesa}
+              editable={false}
+             >
+
+              </TextInput>
+              </Pressable>
+            )}
+                
+             </View>
+             <View style={styles.view_dialog_input}>
+             <TextInput 
+             style={styles.input_dialog}
+             label="Descrição (opcional)"
+             value={descricao_despesa}
+             onChangeText={setDescricao_despesa}>
+              
+             </TextInput>
+             <Button  style={styles.button_dialog}
+             mode='contained'
+             onPress={() => {
+              const despesa = parseFloat(valor_despesa) || 0;
+
+              const novo_total_despesa = total_despesa + despesa;
+              setTotal_despesa(novo_total_despesa);
+             
+              setTodas_despesas(valor_despesa);
+              setValor_despesa("");
+              hideDialog_despesa();
+            }}
+            >ADICIONAR</Button>
+             </View>
+            </Dialog.Content>
+            <Dialog.Actions>
+              <Button onPress={hideDialog_despesa}>Fechar</Button>
+            </Dialog.Actions>
+          </Dialog>
+        </Portal>
+          
         </View>
 
         <View style={styles.barraPesquisa}>
@@ -117,6 +330,7 @@ export default function Wallet() {
       </ScrollView>
     
     </SafeAreaView>
+    </PaperProvider>
   );
 }
 
@@ -183,6 +397,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#949292',
     marginBottom: 6,
+  },
+  dialog_input_despesa:{
+    backgroundColor:"white",
+    borderRadius:10,
+    width:125,
+
+    
   },
   valorSaldo: {
     fontSize: 24,
@@ -258,10 +479,126 @@ const styles = StyleSheet.create({
     flex: 1,                       
     fontSize: 16,
     color: "#000",
-    height: 40,                    
+    height: 40,
+    backgroundColor:"white"                    
   },
   iconSearch: {
     marginRight: 6, 
     padding: 8,               
   },
+  //Inicio estevão
+
+  
+  imagem: {
+    marginBottom: 16,
+  },
+  texto: {
+    fontWeight: 'bold',
+    fontSize: 40,
+  },
+  card: {
+    backgroundColor: "white",
+    width: '90%',
+    height: 250,
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 20,
+    borderRadius: 10,
+  },
+  texto2: {
+    fontSize: 26,
+  },
+  containerCardButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+    paddingHorizontal: 10,
+    marginTop: 20,
+  },
+  cardButton: {
+    width: '40%',
+    height: 180,
+    backgroundColor: 'white',
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 20,
+  },
+  button_receita: {
+    height: 45,
+    borderRadius: 100, 
+    backgroundColor: 'green',
+    justifyContent: 'center',
+  },
+  button_despesa: {
+    backgroundColor: "red",
+    height: 45,
+    borderRadius: 100, 
+    justifyContent: 'center',
+  },
+  texto_button: {
+    fontSize: 18,
+    marginTop: 10,
+    textAlign: 'center',
+    
+  },
+  texto_button_card:{
+    color:'white',
+    fontSize:20,
+  },
+  view_dialog_image:{
+    justifyContent:"center",
+    alignItems:"center",
+  },
+  imagem_dialog:{
+    width:50,
+    height:50,
+    },
+    view_dialog:{
+      flexDirection:"row",
+      alignItems:'center',
+      justifyContent:'center',
+      gap:16,
+      width:"auto"
+      
+    },
+    input_dialog:{
+      
+      width:"85%",
+      borderRadius:10,
+      backgroundColor:"white"
+    },
+    view_dialog_input:{
+      
+      justifyContent:'center',
+      alignItems:'center',
+      padding:10,
+      
+    },
+    button_dialog:{
+      marginTop:10,
+      backgroundColor:"#006A71",
+      borderRadius:5
+    },
+    input_dialog_date:{
+      width:125,
+      backgroundColor:"white",
+      borderRadius:10,
+      
+    },
+    view_despesa_receita:{
+      flexDirection:"row",
+      justifyContent:"space-evenly"
+
+    },
+    view_capeta:{
+      flexDirection:"column",
+      justifyContent:"flex-start"
+    },
+    view_teste:{
+      justifyContent:"center",
+      alignItems:"center",
+      marginBottom:10
+    }
+
+
 });
