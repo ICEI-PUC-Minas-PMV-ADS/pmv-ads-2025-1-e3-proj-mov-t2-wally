@@ -1,12 +1,12 @@
-import {
-  View,
-  StyleSheet,
-  Image,
-  StatusBar,
-  SafeAreaView,
-  FlatList,
-  Text,
-  Pressable
+import { 
+  View, 
+  StyleSheet, 
+  Image, 
+  StatusBar, 
+  SafeAreaView, 
+  FlatList, 
+  Text, 
+  Pressable 
 } from 'react-native';
 import React from 'react';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
@@ -48,20 +48,7 @@ export default function TabTwoScreen() {
           )}
           showsVerticalScrollIndicator={false}
         />
-      </View>
-
-      <View style={styles.containerBotao}>
-        <Pressable
-          style={styles.botaoCriarGrupo}
-          onPress={() => { }}
-          accessible={true}
-          accessibilityLabel="Criar grupo"
-          accessibilityHint="Toque para criar um novo grupo"
-          accessibilityRole="button"
-        >
-          <MaterialIcons name="group-add" size={28} color="#fff" />
-          <Text style={styles.textoBotao}>CRIAR GRUPO</Text>
-        </Pressable>
+        
       </View>
       <View style={styles.containerBotao}>
         <Pressable
