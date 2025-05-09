@@ -22,7 +22,7 @@ export default function TabTwoScreen() {
     { id: '3', title: 'Empresa X' },
     { id: '4', title: 'Escritório' },
   ];
-  
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar
@@ -109,6 +109,8 @@ const styles = StyleSheet.create({
   item: {
     backgroundColor: '#FFF',
     padding: 20,
+    borderWidth: 1,
+    borderColor: '#9ACBD0',
     marginBottom: 8,
     borderRadius: 8,
     shadowColor: '#000',

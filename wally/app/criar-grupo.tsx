@@ -6,7 +6,7 @@ import {
   TextInput,
   Pressable
 } from 'react-native';
-import { useRouter } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
@@ -24,18 +24,28 @@ export default function CriarGrupoScreen() {
   ];
 
   return (
-    <SafeAreaView style={styles.container}>
+    <>
+    <Stack.Screen
+      options={{
+        headerShown: true,
+        headerTitle: 'Criar Grupo',
+        headerBackVisible: true,
+        headerBackTitle: 'Voltar',
+        headerTintColor: '#006A71',
+        headerStyle: { backgroundColor: '#F4F2F2' },
+      }} />
+      
+      <SafeAreaView style={styles.container}>
 
-      <View style={styles.mainContent}>
+        <View style={styles.mainContent}>
 
-      <Text style={styles.labelNome}>Nome do Grupo</Text>
+          <Text style={styles.labelNome}>Nome do Grupo</Text>
 
           <TextInput
             style={styles.input}
             placeholder="Nome do Grupo"
             value={nomeGrupo}
-            onChangeText={setNomeGrupo}
-          />
+            onChangeText={setNomeGrupo} />
 
           <Text style={styles.labelTipo}>Tipo</Text>
 
@@ -50,9 +60,6 @@ export default function CriarGrupoScreen() {
                     tipoSelecionado === tipo.id && styles.tipoItemSelecionado,
                   ]}
                   onPress={() => setTipoSelecionado(tipo.id)}
-                  accessible={true}
-                  accessibilityLabel={`Tipo de grupo ${tipo.label}`}
-                  accessibilityRole="button"
                 >
                   <IconComponent name={tipo.icon as any} size={28} color="#48A6A7" />
                 </Pressable>
@@ -61,29 +68,29 @@ export default function CriarGrupoScreen() {
           </View>
         </View>
 
-      <View style={styles.containerBotao}>
+        <View style={styles.containerBotao}>
 
-      <Pressable
-          style={styles.botaoAddmebro}
-          accessible={true}
-          accessibilityLabel="Adicionar membro"
-          accessibilityHint="Toque para adicionar um novo membro ao grupo"
-          accessibilityRole="button">
-          <MaterialIcons name="group-add" size={28} color="#fff" />
-          <Text style={styles.textoBotaoAddmebro}>ADICIONAR MEMBRO</Text>
-        </Pressable>
+          <Pressable
+            style={styles.botaoAddmebro}
+            accessible={true}
+            accessibilityLabel="Adicionar membro"
+            accessibilityHint="Toque para adicionar um novo membro ao grupo"
+            accessibilityRole="button">
+            <MaterialIcons name="group-add" size={28} color="#fff" />
+            <Text style={styles.textoBotaoAddmebro}>ADICIONAR MEMBROS</Text>
+          </Pressable>
 
-        <Pressable
-          style={styles.botaoCriar}
-          accessible={true}
-          accessibilityLabel="Criar grupo"
-          accessibilityHint="Toque para criar um novo grupo"
-          accessibilityRole="button">
-          <Text style={styles.textoBotao}>CRIAR</Text>
-        </Pressable>
-      </View>
+          <Pressable
+            style={styles.botaoCriar}
+            accessible={true}
+            accessibilityLabel="Criar grupo"
+            accessibilityHint="Toque para criar um novo grupo"
+            accessibilityRole="button">
+            <Text style={styles.textoBotao}>CRIAR</Text>
+          </Pressable>
+        </View>
 
-    </SafeAreaView>
+      </SafeAreaView></>
   );
 }
 
@@ -95,6 +102,7 @@ const styles = StyleSheet.create({
   mainContent: {
     flex: 1,
     paddingHorizontal: 20,
+    margin: 8,
   },
   input: {
     height: 60,
@@ -103,23 +111,21 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingHorizontal: 16,
     fontSize: 16,
-    backgroundColor: 'white',
+    backgroundColor: '#fff',
   },
   labelNome: {
-    fontFamily: 'Poppins_300Light',
+    fontFamily: 'Inter',
     padding: 8,
     fontSize: 16,
-    color: '#000',
-    fontWeight: 'bold',
+    color: '#777',
     marginBottom: 10,
     marginTop: 56,
   },
   labelTipo: {
-    fontFamily: 'Poppins_300Light',
+    fontFamily: 'Inter',
     padding: 8,
     fontSize: 16,
-    color: '#000',
-    fontWeight: 'bold',
+    color: '#777',
     marginBottom: 10,
     marginTop: 40,
   },
