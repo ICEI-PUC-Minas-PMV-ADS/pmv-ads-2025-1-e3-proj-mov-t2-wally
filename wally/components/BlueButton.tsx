@@ -1,15 +1,21 @@
 import React from "react";
 import { StyleSheet, Pressable, Text } from "react-native";
+import { router } from "expo-router";
 
 type BlueButtonProps = {
     text: string;
     color: "blue" | "lightblue";
+    source: string;
 }
 
-function BlueButton({ text, color }: BlueButtonProps) {
+function BlueButton({ text, color, source }: BlueButtonProps) {
     return(
         <>
-        <Pressable style={[styles.container, styles[color]]} android_ripple={{color: "#dddddd"}}
+        <Pressable 
+        style={[styles.container, styles[color]]} 
+        android_ripple={{color: "#dddddd"} }
+        onPress={() => router.navigate(source as any)}
+
         >
             <Text style={styles.text}>{text}</Text>
         </Pressable>
