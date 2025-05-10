@@ -1,109 +1,155 @@
-import { StyleSheet, Image, Platform } from 'react-native';
-
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { IconSymbol } from '@/components/ui/IconSymbol';
+import React from 'react';
+import { View, StyleSheet, Text, TextInput, TouchableOpacity, SafeAreaView, StatusBar } from 'react-native';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 export default function TabTwoScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
-          style={styles.headerImage}
+    <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor="#9ACBD0" barStyle={'dark-content'} />
+      
+      <View style={styles.header}>
+        <TouchableOpacity style={styles.closeIcon}>
+          <AntDesign name="close" size={24} color="white" />
+        </TouchableOpacity>
+        <Text style={styles.headerText}></Text>
+      </View>
+
+      <View style={styles.mainContent}>
+        <View style={styles.titleContainer}>
+          <MaterialIcons name="add-a-photo" size={48} color="black" style={styles.iconStyle} />
+          <Text style={styles.addPhotoText}>Adicionar foto de perfil</Text>
+        </View>
+
+        <TextInput 
+          style={[styles.inputBox, { marginTop: 6 }]}  
+          placeholder="Editar nome"  
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Perfil</ThemedText>
-      </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
-        </ThemedText>
-      </Collapsible>
-      <Collapsible title="Images">
-        <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
-        </ThemedText>
-        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Custom fonts">
-        <ThemedText>
-          Open <ThemedText type="defaultSemiBold">app/_layout.tsx</ThemedText> to see how to load{' '}
-          <ThemedText style={{ fontFamily: 'SpaceMono' }}>
-            custom fonts such as this one.
-          </ThemedText>
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user's current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText>{' '}
-          library to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
-      </Collapsible>
-    </ParallaxScrollView>
+
+        <TextInput 
+          style={[styles.inputBox, { marginTop: 15 }]}  
+          placeholder="Alterar e-mail"  
+        />
+
+        <TextInput 
+          style={[styles.inputBox, { marginTop: 15 }]}  
+          placeholder="Atualizar celular (00) 0000 0000"  
+        />
+
+        <TouchableOpacity style={styles.trashIconContainer}>
+          <Ionicons name="trash-bin" size={24} color="black" />
+        </TouchableOpacity>
+
+        <Text style={styles.deleteAccountText}>Excluir conta</Text>
+
+        <TouchableOpacity style={styles.inputButton}>  
+          <Text style={styles.buttonText}>Salvar</Text>  
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.footer}>
+        <Text style={styles.footerText}> </Text>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  header: {
+    backgroundColor: '#9ACBD0',
+    height: 120,
     position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    paddingTop: 20,
+  },
+  closeIcon: {
+    position: 'absolute',
+    top: 20,
+    left: 20,
+    zIndex: 2,
+  },
+  headerText: {
+    fontFamily: 'Poppins_700Bold',
+    fontSize: 22,
+    color: '#fff',
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  mainContent: {
+    paddingTop: 140,
+    paddingHorizontal: 20,
   },
   titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 45,
+  },
+  iconStyle: {
+    marginBottom: 100,
+  },
+  addPhotoText: {
+    fontSize: 12,
+    color: '#808080',
+    textAlign: 'center',
+  },
+  inputBox: {
+    height: 40,
+    borderColor: 'rgba(72, 166, 167, 1)',
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingLeft: 10,
+    fontSize: 16,
+    backgroundColor: '#fff',
+  },
+  inputButton: {
+    width: 330,
+    height: 52,
+    backgroundColor: 'rgba(72, 166, 167, 1)',
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 80,
+    alignSelf: 'center',
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+
+  trashIconContainer: {
+    alignItems: 'center',
+    marginTop: 100,
+  },
+
+  deleteAccountText: {
+    fontSize: 14,
+    color: '#808080',
+    textAlign: 'center',
+    marginTop: 5,
+  },
+
+  footer: {
+    height: 20,
+    backgroundColor: '#f1f1f1',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 5,
+  },
+  footerText: {
+    fontSize: 12,
+    color: '#333',
   },
 });
