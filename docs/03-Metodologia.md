@@ -153,6 +153,37 @@ Com a estrutura do projeto bem definida, a equipe iniciou as implementações es
 - Arquitetura da aplicação documentada e validada, garantindo alinhamento com os requisitos do projeto;
 - Registros dos planos de teste estruturados, assegurando a cobertura necessária para futuras avaliações de qualidade.
 
+<h4 align="center">Etapa 3:</h4>
+
+![FIGURA 03 - Quadro de Kanban](https://github.com/user-attachments/assets/3a463d7d-f2e8-4e12-82ba-42b4af877485)
+
+<h4 align="center">FIGURA 08 - Quadro Kanban</h4>
+
+**Planejamento:**
+
+Na terceira etapa, a equipe concentrou-se na ampliação do desenvolvimento da solução e na implementação de funcionalidades prioritárias. Esta fase teve como objetivo consolidar os avanços obtidos nas etapas anteriores e avançar na construção da aplicação móvel, com foco na qualidade e alinhamento dos requisitos. As atividades planejadas incluiram:
+
+- Desenvolvimento do modelo físico parcial do banco de dados, com geração dos scripts SQL (DML);
+- Implementação de funcionalidades de alta prioridade e de maior valor de negócio;
+- Integração de mecanismos de autenticação para controle de acesso à aplicação;
+- Atualização e detalhamento dos planos de teste de funcionalidade e usabilidade;
+- Estabelecimeto de padrões de codificação e verificação de aderências às normas de qualidade de software;
+
+**Execução**
+
+Com base no planejamento estabelecido, a equipe iniciou o desenvolvimento de funcionalidades essenciais, priorizando os aspectos estruturais de segurança. As principais ações realizadas foram:
+- Geração e aplicação dos scripts SQL de criação e manipulação de dados no banco de dados;
+- Codificação das funcionalidades críticas da aplicação. seguindo os requisitos funcionais definidos;
+Implementação do sistema de autenticação dos usuários, garantindo segurança no acesso;
+- Atualização dos casos de teste e início dos registros de testes aplicados à aplicação;
+- Revisão e padronização do código-fonte, assegurando a clareza, organização e manutenção futura;
+
+**Evidências**
+- Scripts SQL e DML gerados e aplicados, representando um modelo físico e parcial do banco;
+- Funcionalidade de autenticação e módulos principais da aplicação implementados;
+- Casos de teste atualizados e primeiros testes executados, com registros documentados;
+- Quando Kanban atualizado no GitHub, evidenciando o gerenciamento contínuo do projeto;
+
 ### Ferramentas
 
 Para garantir um desenvolvimento eficiente e colaborativo, adotamos diversas ferramentas que auxiliam na comunicação, organização, versionamento de código, design e implementação do projeto. Cada ferramenta foi selecionada com base em suas funcionalidades e na sua capacidade de atender às necessidades da equipe.

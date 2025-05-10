@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { StyleSheet, View, Text, Image, StatusBar } from "react-native";
 import { useFonts, Poppins_700Bold, Poppins_300Light } from "@expo-google-fonts/poppins";
 import BlueButton from "@/components/BlueButton";
 import Logo from '../assets/images/index_logo.png';
@@ -13,8 +13,10 @@ export default function HomeScreen() {
   });
 
   return (
+    <>
+      <StatusBar backgroundColor="#9ACBD0" barStyle="light-content" />
+      <View style={styles.greenLine}></View>
     <View style={styles.container}>
-      
       <View>
       <Image source={Logo} style={{ width: 80, height: 80 }} />
       <Text style={styles.logoText}>WALLY</Text>
@@ -25,14 +27,12 @@ export default function HomeScreen() {
         <Text style={styles.textSection}>
           Com sua nova carteira inteligente, gerenciar despesas pessoais e em grupo nunca foi tão fácil - controle tudo de forma fácil e eficiente!
         </Text>
-        <BlueButton text="CRIAR CONTA" color="blue" />
-        <BlueButton text="ENTRAR" color="lightblue" />
+        <BlueButton text="CRIAR CONTA" color="blue" source="/(tabs)/cadastro"/>
+        <BlueButton text="ENTRAR" color="lightblue" source="/(tabs)/login"/>
 
-        <Pressable onPress={() => router.navigate("/(tabs)")}>
-          <Text>Wallet</Text>
-        </Pressable>
       </View>
     </View>
+    </>
   );
 }
 
@@ -61,4 +61,9 @@ const styles = StyleSheet.create({
     width: 310,
     marginBottom: 15
   },
-});
+  greenLine: {
+    backgroundColor: "#9ACBD0",
+    width: "100%",
+    height: 80
+  }
+})
