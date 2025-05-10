@@ -155,9 +155,10 @@ Com a estrutura do projeto bem definida, a equipe iniciou as implementações es
 
 <h4 align="center">Etapa 3:</h4>
 
-![FIGURA 03 - Quadro de Kanban](https://github.com/user-attachments/assets/3a463d7d-f2e8-4e12-82ba-42b4af877485)
+![FIGURA 03 - Quadro de Kanban](https://github.com/user-attachments/assets/27bb8328-6c1a-4d1a-ba99-742b3ec66d48)
 
-<h4 align="center">FIGURA 08 - Quadro Kanban</h4>
+
+<h4 align="center">FIGURA 09 - Quadro Kanban</h4>
 
 **Planejamento:**
 
