@@ -5,7 +5,9 @@ interface SignUpUseCaseParams {
   email: string
   senha: string
   nome: string
-  avatar_url: string
+  telefone?: string
+  dataNascimento?: string
+  avatarUrl?: string
 }
 
 interface SignUpUseCaseResponse {
@@ -21,8 +23,11 @@ export class SignUpUseCase {
     email,
     senha,
     nome,
-    avatar_url,
+    telefone,
+    dataNascimento,
+    avatarUrl,
   }: SignUpUseCaseParams): Promise<SignUpUseCaseResponse> {
+    console.log(email, senha, nome, telefone, dataNascimento, avatarUrl)
     const usuarioExistente = await this.usuariosRepositorio.findByEmail(email)
 
     if (usuarioExistente) {
@@ -37,7 +42,9 @@ export class SignUpUseCase {
       email,
       senha,
       nome,
-      avatar_url,
+      telefone,
+      data_nascimento: dataNascimento,
+      avatar_url: avatarUrl,
     })
 
     return {

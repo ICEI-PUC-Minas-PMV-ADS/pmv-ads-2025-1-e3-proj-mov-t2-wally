@@ -5,27 +5,25 @@ import { router } from "expo-router";
 type BlueButtonProps = {
     text: string;
     color: "blue" | "lightblue";
-    source: string;
+    onPress: () => void;
 }
 
-function BlueButton({ text, color, source }: BlueButtonProps) {
-    return(
-        <>
-        <Pressable 
-        style={[styles.container, styles[color]]} 
-        android_ripple={{color: "#dddddd"} }
-        onPress={() => router.navigate(source as any)}
+function BlueButton({ text, color, onPress }: BlueButtonProps) {
+    return (
+        <Pressable
+            style={[styles.container, styles[color]]}
+            android_ripple={{ color: "#dddddd" }}
+            onPress={onPress}
 
         >
             <Text style={styles.text}>{text}</Text>
         </Pressable>
-        </>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        
+
         width: 300,
         paddingVertical: 15,
         paddingHorizontal: 110,
@@ -43,7 +41,7 @@ const styles = StyleSheet.create({
         color: "#fff",
         textAlign: "center",
         fontFamily: "Poppins_700Bold",
-        
+
     }
 })
 

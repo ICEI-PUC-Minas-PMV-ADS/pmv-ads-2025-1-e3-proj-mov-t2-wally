@@ -15,6 +15,8 @@ export class UsuarioStatusController {
         data_final: string
       }
 
+      console.log({ usuario_id, data_inicial, data_final })
+
       const params = {
         ...(usuario_id && { usuario_id }),
         ...(data_inicial && { data_inicial: new Date(data_inicial) }),

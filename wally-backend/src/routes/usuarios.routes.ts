@@ -5,24 +5,32 @@ import { authMiddleware } from '../middleware'
 const usuariosController = new UsuariosController()
 
 export async function usuariosRoutes(app: FastifyInstance) {
-  app.get('/users', { preHandler: authMiddleware }, usuariosController.findAll)
+  app.get(
+    '/usuarios',
+    { preHandler: authMiddleware },
+    usuariosController.findAll,
+  )
 
   app.get(
-    '/users/:email',
+    '/usuarios/:email',
     { preHandler: authMiddleware },
     usuariosController.findByEmail,
   )
 
-  app.post('/users', { preHandler: authMiddleware }, usuariosController.create)
+  app.post(
+    '/usuarios',
+    { preHandler: authMiddleware },
+    usuariosController.create,
+  )
 
   app.put(
-    '/users/:id',
+    '/usuarios/:id',
     { preHandler: authMiddleware },
     usuariosController.update,
   )
 
   app.delete(
-    '/users/:id',
+    '/usuarios/:id',
     { preHandler: authMiddleware },
     usuariosController.delete,
   )
