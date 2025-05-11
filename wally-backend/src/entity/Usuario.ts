@@ -1,29 +1,41 @@
+import {
+  Column,
+  CreateDateColumn,
+  DeleteDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm'
 
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
-
-@Entity({ name: "usuarios" })
+@Entity({ name: 'usuarios' })
 export class Usuario {
-    @PrimaryGeneratedColumn("uuid")
-    id: string
+  @PrimaryGeneratedColumn('uuid')
+  id: string
 
-    @Column({ type: "varchar", length: 120, unique: true })
-    email: string
+  @Column({ type: 'varchar', length: 120, unique: true })
+  email: string
 
-    @Column({ type: "varchar", length: 100 })
-    nome: string
+  @Column({ type: 'varchar', length: 100 })
+  nome: string
 
-    @Column({ type: "varchar", length: 255 })
-    senha: string
+  @Column({ type: 'varchar', length: 255 })
+  senha: string
 
-    @Column({ type: "varchar", length: 255, nullable: true })
-    avatar_url: string
+  @Column({ type: 'varchar', length: 255, nullable: true })
+  avatar_url: string
 
-    @CreateDateColumn()
-    data_criacao: Date
+  @Column({ type: 'varchar', length: 20, nullable: true })
+  telefone: string
 
-    @UpdateDateColumn({ nullable: true })
-    data_atualizacao: Date
+  @Column({ type: 'date', nullable: true })
+  data_nascimento: Date
 
-    @DeleteDateColumn({ nullable: true })
-    data_exclusao: Date
+  @CreateDateColumn()
+  data_criacao: Date
+
+  @UpdateDateColumn({ nullable: true })
+  data_atualizacao: Date
+
+  @DeleteDateColumn({ nullable: true })
+  data_exclusao: Date
 }

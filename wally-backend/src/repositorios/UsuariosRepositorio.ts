@@ -1,40 +1,53 @@
-import { CriarUsuarioDTO } from "../../dtos/CriarUsuarioDTO";
-import { AppDataSource } from "../data-source";
-import { Usuario } from "../entity/Usuario";
+import { CriarUsuarioDTO } from '../../dtos/CriarUsuarioDTO'
+import { AppDataSource } from '../data-source'
+import { Usuario } from '../entity/Usuario'
 
 export class UsuariosRepositorio {
-    private repositorio = AppDataSource.getRepository(Usuario)
+  private repositorio = AppDataSource.getRepository(Usuario)
 
-    async create({ avatar_url, email, nome, senha }: CriarUsuarioDTO): Promise<Usuario> {
-        const usuario = this.repositorio.create({ avatar_url, email, nome, senha })
+  async create({
+    avatar_url,
+    email,
+    nome,
+    senha,
+    telefone,
+    data_nascimento,
+  }: CriarUsuarioDTO): Promise<Usuario> {
+    const usuario = this.repositorio.create({
+      avatar_url,
+      email,
+      nome,
+      senha,
+      telefone,
+      data_nascimento,
+    })
 
+    return this.repositorio.save(usuario)
+  }
 
-        return this.repositorio.save(usuario)
-    }
+  async findByEmail(email: string): Promise<Usuario | null> {
+    const usuario = await this.repositorio.findOneBy({ email })
 
-    async findByEmail(email: string): Promise<Usuario | null> {
-        const usuario = await this.repositorio.findOneBy({ email })
+    return usuario
+  }
 
-        return usuario
-    }
+  async findById(id: string): Promise<Usuario | null> {
+    const usuario = await this.repositorio.findOneBy({ id })
 
-    async findById(id: string): Promise<Usuario | null> {
-        const usuario = await this.repositorio.findOneBy({ id })
+    return usuario
+  }
 
-        return usuario
-    }
+  async findAll(): Promise<Usuario[]> {
+    const usuarios = await this.repositorio.find()
 
-    async findAll(): Promise<Usuario[]> {
-        const usuarios = await this.repositorio.find()
+    return usuarios
+  }
 
-        return usuarios
-    }
+  async update(usuario: Usuario): Promise<Usuario> {
+    return this.repositorio.save(usuario)
+  }
 
-    async update(usuario: Usuario): Promise<Usuario> {
-        return this.repositorio.save(usuario)
-    }
-
-    async delete(usuario: Usuario): Promise<void> {
-        await this.repositorio.delete(usuario.id)
-    }
+  async delete(usuario: Usuario): Promise<void> {
+    await this.repositorio.delete(usuario.id)
+  }
 }
