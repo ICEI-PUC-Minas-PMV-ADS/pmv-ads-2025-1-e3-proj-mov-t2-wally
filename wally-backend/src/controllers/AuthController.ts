@@ -15,8 +15,6 @@ export class AuthController {
         senha: string
       }
 
-      console.log({ email, senha })
-
       const signInUseCase = new SignInUseCase(usuariosRepositorio)
 
       const { success, auth, error } = await signInUseCase.execute(email, senha)
@@ -38,11 +36,12 @@ export class AuthController {
 
   async signUp(request: FastifyRequest, reply: FastifyReply) {
     try {
-      const { email, senha, nome, avatar_url } = request.body as {
+      const { email, senha, nome, telefone, dataNascimento } = request.body as {
         email: string
         senha: string
         nome: string
-        avatar_url: string
+        telefone: string
+        dataNascimento: string
       }
 
       const signUpUseCase = new SignUpUseCase(usuariosRepositorio)
@@ -51,7 +50,8 @@ export class AuthController {
         email,
         senha,
         nome,
-        avatar_url,
+        telefone,
+        dataNascimento,
       })
 
       if (!success) {
@@ -62,6 +62,8 @@ export class AuthController {
 
       return reply.status(201).send(usuario)
     } catch (error) {
+      console.log({ error })
+
       return reply
         .status(500)
         .send({ message: 'Erro interno do servidor', error })

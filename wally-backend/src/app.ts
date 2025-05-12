@@ -1,15 +1,21 @@
+import 'dotenv/config'
 import fastify from 'fastify'
 import 'reflect-metadata'
 import { AppDataSource } from './data-source'
 import { routes } from './routes'
+import cors from '@fastify/cors'
 
 const server = fastify({
   logger: true,
 })
 
-server.register(routes)
+server.register(cors, {
+  origin: '*',
+})
 
-server.listen({ port: 3333 }).then(() => {
+server.register(routes, { prefix: '/wally' })
+
+server.listen({ port: 3333, host: '0.0.0.0' }).then(() => {
   AppDataSource.initialize()
     .then(() => {
       console.log('Database connected')

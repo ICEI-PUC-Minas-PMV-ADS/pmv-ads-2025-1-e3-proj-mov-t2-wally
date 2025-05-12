@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text, Image, TextInput, Pressable, Alert } from "react-native";
 import { useFonts, Poppins_700Bold, Poppins_300Light } from "@expo-google-fonts/poppins";
-import Logo from '../assets/images/index_logo.png';
+import Logo from '../../assets/images/index_logo.png';
 import { router } from "expo-router";
 
 export default function RecuperarSenha() {

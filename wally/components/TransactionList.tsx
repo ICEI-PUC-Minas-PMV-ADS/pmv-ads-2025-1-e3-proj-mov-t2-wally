@@ -5,9 +5,21 @@ import { EmptyState } from "./EmptyState"
 import { Transaction, TransactionGroup } from "@/app/types"
 import { format, isToday } from "date-fns"
 import { ptBR } from "date-fns/locale"
+import { useMemo } from "react"
+
 
 type TransactionListProps = {
-  transactions: Transaction[]
+  transactions: {
+    id: string,
+    nome: string,
+    valor: string,
+    tipo: string,
+    usuario_id: string,
+    data: string,
+    data_criacao: string,
+    data_atualizacao: string | null,
+    data_exclusao: string | null,
+  }[]
   searchQuery: string
   onSearchChange: (query: string) => void
   formatCurrency: (value: number) => string
@@ -37,10 +49,12 @@ export const TransactionList = ({
   }
 
   const groupTransactionsByDate = (transactions: Transaction[]): TransactionGroup[] => {
+    if (!transactions) return []
+
     const groups: { [key: string]: Transaction[] } = {}
 
     transactions.forEach((transaction) => {
-      const dateKey = format(transaction.date, "yyyy-MM-dd")
+      const dateKey = format(new Date(transaction.data), "yyyy-MM-dd")
 
       if (!groups[dateKey]) {
         groups[dateKey] = []
@@ -57,7 +71,7 @@ export const TransactionList = ({
       }))
   }
 
-  const groupedTransactions = groupTransactionsByDate(transactions)
+  const groupedTransactions = useMemo(() => groupTransactionsByDate(transactions), [transactions])
 
   return (
     <>

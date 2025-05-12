@@ -2,6 +2,7 @@ import { View, Pressable, StyleSheet, Text } from "react-native"
 import { Dialog, Button, TextInput } from "react-native-paper"
 import { MaterialIcons } from "@expo/vector-icons"
 import { TransactionType } from "@/app/types"
+import { UseFormReturn, Controller } from "react-hook-form"
 
 type AddTransactionDialogProps = {
   visible: boolean
@@ -13,7 +14,8 @@ type AddTransactionDialogProps = {
   onTransactionDescriptionChange: (value: string) => void
   formattedDate: string
   onDatePress: () => void
-  onAddTransaction: () => void
+  handleSubmitTransaction: () => void
+  transactionForm: UseFormReturn<any>
 }
 
 export const AddTransactionDialog = ({
@@ -26,14 +28,15 @@ export const AddTransactionDialog = ({
   onTransactionDescriptionChange,
   formattedDate,
   onDatePress,
-  onAddTransaction,
+  handleSubmitTransaction,
+  transactionForm,
 }: AddTransactionDialogProps) => {
   const getColorByType = (type: TransactionType) => {
-    return type === "receita" ? "#249B24" : "#EA1919"
+    return type === "RECEITA" ? "#249B24" : "#EA1919"
   }
 
   const getTitleByType = (type: TransactionType) => {
-    return type === "receita" ? "Adicionar Receita" : "Adicionar Despesa"
+    return type === "RECEITA" ? "Adicionar Receita" : "Adicionar Despesa"
   }
 
   return (
@@ -55,50 +58,72 @@ export const AddTransactionDialog = ({
       </Dialog.Title>
 
       <View style={styles.dialogRow}>
-        <TextInput
-          label="Valor"
-          value={transactionValue}
-          onChangeText={onTransactionValueChange}
-          keyboardType="decimal-pad"
-          style={styles.dialogInput}
-          mode="outlined"
-          outlineColor="#DADADA"
-          activeOutlineColor="#A6A6A6"
-          left={<TextInput.Affix text="R$" />}
-          accessible={true}
-          accessibilityLabel={`Valor da ${activeTransactionType === "receita" ? "receita" : "despesa"}`}
-          accessibilityHint={`Digite o valor da ${activeTransactionType === "receita" ? "receita" : "despesa"}`}
+        <Controller
+          control={transactionForm.control}
+          name="valor"
+          render={({ field }) => (
+            <TextInput
+              label="Valor"
+              value={field.value}
+              onChangeText={(text) => {
+                console.log("onChangeText", text)
+                field.onChange(Number(text))
+                onTransactionValueChange(text)
+              }}
+              keyboardType="decimal-pad"
+              style={styles.dialogInput}
+              mode="outlined"
+              outlineColor="#DADADA"
+              activeOutlineColor="#A6A6A6"
+              left={<TextInput.Affix text="R$" />}
+              accessible={true}
+              accessibilityLabel={`Valor da ${activeTransactionType === "RECEITA" ? "receita" : "despesa"}`}
+              accessibilityHint={`Digite o valor da ${activeTransactionType === "RECEITA" ? "receita" : "despesa"}`}
+            />
+          )}
         />
 
         <Pressable onPress={onDatePress} style={styles.datePickerButton}>
-          <TextInput
-            label="Data"
-            value={formattedDate}
-            editable={false}
-            style={styles.dialogInput}
-            mode="outlined"
-            outlineColor="#DADADA"
-            activeOutlineColor="#A6A6A6"
-            right={<TextInput.Icon icon="calendar" onPress={onDatePress} />}
-            accessible={true}
-            accessibilityLabel={`Data: ${formattedDate}`}
-            accessibilityHint="Toque para selecionar uma data"
+          <Controller
+            control={transactionForm.control}
+            name="data"
+            render={({ field }) => (
+              <TextInput
+                label="Data"
+                value={formattedDate}
+                editable={false}
+                style={styles.dialogInput}
+                mode="outlined"
+                outlineColor="#DADADA"
+                activeOutlineColor="#A6A6A6"
+                right={<TextInput.Icon icon="calendar" onPress={onDatePress} />}
+                accessible={true}
+                accessibilityLabel={`Data: ${formattedDate}`}
+                accessibilityHint="Toque para selecionar uma data"
+              />
+            )}
           />
         </Pressable>
       </View>
 
       <View style={styles.dialogRow}>
-        <TextInput
-          label="Descrição"
-          value={transactionDescription}
-          onChangeText={onTransactionDescriptionChange}
-          style={[styles.dialogInput]}
-          mode="outlined"
-          outlineColor="#DADADA"
-          activeOutlineColor="#A6A6A6"
-          accessible={true}
-          accessibilityLabel={`Descrição da ${activeTransactionType === "receita" ? "receita" : "despesa"}`}
-          accessibilityHint={`Digite uma descrição para a ${activeTransactionType === "receita" ? "receita" : "despesa"}`}
+        <Controller
+          control={transactionForm.control}
+          name="nome"
+          render={({ field }) => (
+            <TextInput
+              label="Descrição"
+              value={field.value}
+              onChangeText={field.onChange}
+              style={[styles.dialogInput]}
+              mode="outlined"
+              outlineColor="#DADADA"
+              activeOutlineColor="#A6A6A6"
+              accessible={true}
+              accessibilityLabel={`Descrição da ${activeTransactionType === "RECEITA" ? "receita" : "despesa"}`}
+              accessibilityHint={`Digite uma descrição para a ${activeTransactionType === "RECEITA" ? "receita" : "despesa"}`}
+            />
+          )}
         />
       </View>
 
@@ -113,12 +138,12 @@ export const AddTransactionDialog = ({
           CANCELAR
         </Button>
         <Button
-          onPress={onAddTransaction}
+          onPress={handleSubmitTransaction}
           mode="contained"
-          buttonColor={activeTransactionType === "receita" ? "#249B24" : "#EA1919"}
+          buttonColor={activeTransactionType === "RECEITA" ? "#249B24" : "#EA1919"}
           style={styles.dialogButton}
           accessible={true}
-          accessibilityLabel={`Adicionar ${activeTransactionType === "receita" ? "receita" : "despesa"}`}
+          accessibilityLabel={`Adicionar ${activeTransactionType === "RECEITA" ? "receita" : "despesa"}`}
         >
           ADICIONAR
         </Button>

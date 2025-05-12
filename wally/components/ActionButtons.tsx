@@ -11,7 +11,7 @@ export const ActionButtons = ({ onAddTransaction }: ActionButtonsProps) => {
     <View style={styles.containerBotoes}>
       <TouchableOpacity
         style={styles.botaoAdicionar}
-        onPress={() => onAddTransaction("receita")}
+        onPress={() => onAddTransaction("RECEITA")}
         accessible={true}
         accessibilityLabel="Adicionar Receita"
         accessibilityHint="Toque para adicionar uma nova receita"
@@ -25,7 +25,7 @@ export const ActionButtons = ({ onAddTransaction }: ActionButtonsProps) => {
 
       <TouchableOpacity
         style={styles.botaoAdicionar}
-        onPress={() => onAddTransaction("despesa")}
+        onPress={() => onAddTransaction("DESPESA")}
         accessible={true}
         accessibilityLabel="Adicionar Despesa"
         accessibilityHint="Toque para adicionar uma nova despesa"

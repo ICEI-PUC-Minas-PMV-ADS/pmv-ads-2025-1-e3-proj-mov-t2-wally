@@ -11,6 +11,7 @@ import {
 import { useRouter } from 'expo-router';
 import React from 'react';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { useGruposViewModel } from '@/viewModels/useGruposViewModel';
 
 export default function TabTwoScreen() {
 
@@ -22,6 +23,8 @@ export default function TabTwoScreen() {
     { id: '3', title: 'Empresa X' },
     { id: '4', title: 'Escritório' },
   ];
+
+  const { grupos } = useGruposViewModel()
 
   return (
     <SafeAreaView style={styles.container}>
@@ -42,11 +45,11 @@ export default function TabTwoScreen() {
         <Text style={styles.titulo}>GRUPOS</Text>
 
         <FlatList
-          data={items}
+          data={grupos}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
             <View style={styles.item}>
-              <Text style={styles.itemTexto}>{item.title}</Text>
+              <Text style={styles.itemTexto}>{item.nome}</Text>
             </View>
           )}
           showsVerticalScrollIndicator={false}
