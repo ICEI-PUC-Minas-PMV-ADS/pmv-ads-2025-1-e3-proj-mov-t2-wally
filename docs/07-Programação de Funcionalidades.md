@@ -1,15 +1,127 @@
 # Programação de Funcionalidades
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="4-Metodologia.md"> Metodologia</a>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="5-Arquitetura da Solução.md"> Arquitetura da Solução</a>
+## Instruções de Acesso
 
-Implementação do sistema descritas por meio dos requisitos funcionais e/ou não funcionais. Deve relacionar os requisitos atendidos os artefatos criados (código fonte) além das estruturas de dados utilizadas e as instruções para acesso e verificação da implementação que deve estar funcional no ambiente de hospedagem.
+🔗 Link de Acesso: 
 
-Para cada requisito funcional, pode ser entregue um artefato desse tipo
+**Documentação da API:**
 
-> **Links Úteis**:
->
-> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> - [JSON Tutorial](https://www.w3resource.com/JSON)
-> - [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
-> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+http://ec2-18-231-92-232.sa-east-1.compute.amazonaws.com:3333/wally/documentation
+
+**API URL:**
+
+http://ec2-18-231-92-232.sa-east-1.compute.amazonaws.com:3333/wally
+
+<br>
+
+🔐 Credenciais de Acesso (Administrador):
+
+E-mail: admin@email.com
+
+Senha: wallyadm
+
+<br>
+
+### Tela Inicial
+**Responsável:** Danielle 
+
+**Requisitos**:
+
+RF-017 | O aplicativo deve exibir uma tela incial 
+
+### Tela de Login
+**Responsável:** Vinicius
+
+**Requisitos**:
+
+RF-001 |	O aplicativo deve permitir que os usuários realizem login com e-mail e senha.
+
+### Tela de Recuperação de Senha
+**Responsável:** Vinicius
+
+**Requisitos**:
+
+RF-002 |	O aplicativo deve possibilitar a recuperação de senha.
+
+### Tela de Cadastro
+**Responsável:** Vinicius
+
+**Requisitos**:
+
+RF-003 | O aplicativo deve permitir que os usuários se cadastrem fornecendo nome, e-mail e senha.
+
+### Dashboard Principal (Wallet)
+**Responsável:** Ariane
+
+**Requisitos**:
+
+RF-006 | O aplicativo deve exibir um extrato financeiro com todas as transações do usuário.
+
+RF-007 |	O aplicativo deve permitir filtrar transações por nome, valor ou tipo de transação.
+
+RF-009 | O aplicativo deve calcular automaticamene o saldo total, as receitas e as despesas do usuário. 
+
+RF-010 | O aplicativo deve permitir que os usuários escolham o mês e ano na tela incial.
+
+### Dialog - Adicionar Receitas Pessoais
+v**Responsável:** Estevao
+
+**Requisitos**:
+
+RF-005 | O aplicativo deve permitir que os usuários adicionem receitas e despesas, informando valor, data e nome da transação.
+
+### Dialog - Adicionar Despesas Pessoais
+**Responsável:** Estevao
+
+**Requisitos**:
+
+RF-005 | O aplicativo deve permitir que os usuários adicionem receitas e despesas, informando valor, data e nome da transação.
+
+### Tela Grupos
+**Responsável:** Raphael
+
+**Requisitos**:
+
+RF-016 | O aplicativo deve exibir uma tela com a lista de grupos do usuário.
+
+### Tela de Criação de Grupo
+**Responsável:** Ariane
+
+**Requisitos**:
+
+RF-011 | O aplicativo deve permitir a criação de grupos para divisão de despesas. 
+
+### Modal – Adicionar Membros
+**Responsável:** Raphael
+
+**Requisitos**:
+
+RF-015 | O aplicativo deve permitir que os usuários adicionem membros aos grupo. 
+
+### Tela do Grupo
+**Responsável:** Ariane
+
+**Requisitos**:
+
+RF-013 | O aplicativo deve calcular automaticamente o saldo de cada participante do grupo.|
+
+RF-014 |O aplicativo deve exibir um histórico de despesas do grupo.
+
+### Tela de Adicionar Despesa do Grupo
+**Responsáveis:** Ariane e Raphael
+
+**Requisitos**:
+
+RF-012 | O aplicativo deve permitir que os usuários adicionem despesas ao grupo, informando valor, nome da despesa e divisão entre participantes. 
+
+### Tela de Perfil
+**Responsável:** Alesxander
+
+**Requisitos**:
+
+RF-004 |	O aplicativo deve permitir que os usuários editem seu perfil (nome, foto, senha).
+
+### Banco de Dados e Back-End (Node.js):
+**Responsáveis:** Raphael e Ariane
+
+
