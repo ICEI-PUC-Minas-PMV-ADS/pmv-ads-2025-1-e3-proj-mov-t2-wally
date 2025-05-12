@@ -13,7 +13,7 @@ server.register(cors, {
   origin: '*',
 })
 
-server.register(routes)
+server.register(routes, { prefix: '/wally' })
 
 server.listen({ port: 3333 }).then(() => {
   AppDataSource.initialize()
