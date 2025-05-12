@@ -1,50 +1,87 @@
-# Welcome to your Expo app 👋
+# Instruções de utilização
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+O Wally é um **aplicativo mobile** desenvolvido para auxiliar usuários no controle de suas finanças pessoais e de grupos compartilhados,
+oferecendo uma experiência simples, intuitiva e repleta de recursos de análise.
 
-## Get started
+## Instruções de Acesso:
 
-1. Install dependencies
+`🔗 Link de Acesso:`
 
-   ```bash
-   npm install
-   ```
+**Documentação da API:** http://ec2-18-231-92-232.sa-east-1.compute.amazonaws.com:3333/wally/documentation
 
-2. Start the app
+**API URL:** http://ec2-18-231-92-232.sa-east-1.compute.amazonaws.com:3333/wally
 
-   ```bash
-    npx expo start
-   ```
+`🔐 Credenciais de Acesso (Administrador):`
 
-In the output, you'll find options to open the app in a
+**E-mail:** admin@email.com
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+**Senha:** wallyadm
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## ▶️ Como Rodar o App no Simulador com Expo
 
-## Get a fresh project
+Siga os passos abaixo para executar o Wally em um emulador ou dispositivo físico via Expo:
 
-When you're ready, run:
+### 1. Pré-requisitos:
 
-```bash
-npm run reset-project
-```
+- **Node.js** instalado (versão recomendada: 18+)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- **Expo CLI** instalado globalmente:
 
-## Learn more
+`npm install -g expo-cli`
 
-To learn more about developing your project with Expo, look at the following resources:
+**Emulador Android** (AVD) ou **Simulador iOS** (Xcode) configurado ou o app **Expo Go** no seu smartphone.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 2. Passos:
 
-## Join the community
+**Clone** o repositório oficial:
 
-Join our community of developers creating universal apps.
+`git clone https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e3-proj-mov-t2-wally.git`
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+**Navegue** até a pasta do projeto mobile:
+
+`cd wally`
+
+**Instale** as dependências:
+
+`npm install`
+
+**Inicie** o servidor Expo:
+
+`npx expo start`
+
+**Abra** o app:
+
+- No navegador de dev que abrirá após `expo start`, escaneie o **QR Code** com o **Expo Go** no celular.
+- No **emulador Android**, pressione `a` no terminal.
+- No **simulador iOS** (macOS + Xcode), pressione `i`.
+
+## Tecnologias Utilizadas
+
+### Front-end (Mobile)
+
+- **React Native:** estrutura principal para criação de interfaces nativas multiplataforma (iOS e Android).
+
+- **Expo:** framework que acelera o desenvolvimento e facilita o deploy, com ferramentas de build, gerenciamento de ativos e hot-reloading.
+
+- **TypeScript:** adiciona tipagem estática ao JavaScript, melhorando a robustez do código e a produtividade durante o desenvolvimento.
+
+### Back-end
+
+- **Node.js:** runtime JavaScript orientado a eventos, responsável por executar a lógica de aplicação no servidor.
+
+- **Fastify:** framework web de alta performance sobre Node.js, que oferece roteamento rápido e plugin-architecture para escalabilidade.
+
+### Banco de Dados
+
+- **PostgreSQL:** sistema de gerenciamento de banco relacional, usado para armazenar transações, usuários, grupos e configurações, garantindo integridade e suporte a consultas complexas.
+
+### Infraestrutura / Deploy
+
+- **AWS (Amazon Web Services)**: é uma plataforma de serviços em nuvem usada para hospedar e escalar o back-end do aplicativo. Ela permite armazenar dados, rodar o servidor, salvar arquivos e manter o sistema disponível com segurança, sem precisar se preocupar com servidores físicos.
+
+
+<!-- ## Histórico de versões
+
+### [0.1.0] - DD/MM/AAAA
+#### Adicionado
+- Adicionado ... --!>
