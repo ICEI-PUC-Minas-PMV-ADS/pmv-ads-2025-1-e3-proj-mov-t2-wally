@@ -4,7 +4,7 @@ import {
   Text,
   SafeAreaView,
   TextInput,
-  Pressable
+  Pressable,
 } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 import React, { useState } from 'react';
@@ -63,6 +63,7 @@ export default function CriarGrupoScreen() {
                 >
                   <IconComponent name={tipo.icon as any} size={28} color="#48A6A7" />
                 </Pressable>
+
               );
             })}
           </View>
@@ -82,6 +83,7 @@ export default function CriarGrupoScreen() {
 
           <Pressable
             style={styles.botaoCriar}
+            onPress={() => router.push('/grupo')}
             accessible={true}
             accessibilityLabel="Criar grupo"
             accessibilityHint="Toque para criar um novo grupo"

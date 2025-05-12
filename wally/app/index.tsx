@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, View, Text, Image, StatusBar } from "react-native";
+import { StyleSheet, View, Text, Image, StatusBar, Pressable } from "react-native";
 import { useFonts, Poppins_700Bold, Poppins_300Light } from "@expo-google-fonts/poppins";
 import BlueButton from "@/components/BlueButton";
 import Logo from '../assets/images/index_logo.png';
 import Bckgd_Image from '../assets/images/index_img.png';
 import { router } from "expo-router";
+// import { Pressable } from "react-native-gesture-handler";
 
 export default function HomeScreen() {
   useFonts({
@@ -30,6 +31,14 @@ export default function HomeScreen() {
         <BlueButton text="CRIAR CONTA" color="blue" source="/(tabs)/cadastro"/>
         <BlueButton text="ENTRAR" color="lightblue" source="/(tabs)/login"/>
 
+       <Pressable
+          onPress={() => router.push('/(tabs)')}
+          accessible={true}
+          accessibilityLabel="Criar grupo"
+          accessibilityHint="Toque para criar um novo grupo"
+          accessibilityRole="button">
+          <Text>CRIAR GRUPO</Text>
+        </Pressable>
       </View>
     </View>
     </>
