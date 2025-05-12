@@ -30,14 +30,20 @@ export function useLoginViewModel() {
                 },
             })
 
-            return response.json()
+            console.log({ response })
+            const responseData = await response.json()
+            console.log({ responseData })
+
+            return responseData
         }
     })
 
     const handleSubmitLogin = useCallback(() => {
         try {
             handleSubmit(async (data) => {
+                console.log({ data })
                 const { token, usuario } = await signIn(data)
+                console.log({ token, usuario })
                 await login(token, usuario)
 
                 router.replace("/(tabs)")

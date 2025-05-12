@@ -35,6 +35,7 @@ import { Transaction, TransactionType } from "@/app/types"
 import { router } from "expo-router"
 import { useAuthStore } from "@/store/authStore"
 import { useWalletViewModel } from "@/viewModels/useWalletViewModel"
+import { Controller } from "react-hook-form"
 
 
 export default function Wallet() {
@@ -150,11 +151,21 @@ export default function Wallet() {
           transactionForm={transactionForm}
         />
 
-        <TransactionDatePicker
-          visible={showPicker}
-          onClose={() => setShowPicker(false)}
-          date={transactionDate}
-          onChange={handleDateChange}
+        <Controller
+          control={transactionForm.control}
+          name="data"
+          render={({ field }) => (
+            <TransactionDatePicker
+              visible={showPicker}
+              onClose={() => setShowPicker(false)}
+              date={field.value}
+              onChange={(set, date) => {
+                handleDateChange(set, date)
+
+                field.onChange(date)
+              }}
+            />
+          )}
         />
       </SafeAreaView>
     </PaperProvider>

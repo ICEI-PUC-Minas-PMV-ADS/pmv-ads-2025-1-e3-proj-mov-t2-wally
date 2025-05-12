@@ -10,7 +10,6 @@ import { API_URL } from '@env';
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
-
 console.log({ API_URL })
 
 export default function RootLayout() {

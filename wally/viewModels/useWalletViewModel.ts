@@ -46,8 +46,6 @@ export function useWalletViewModel() {
     const [activeDateTab, setActiveDateTab] = useState<"month" | "year">("month")
     const [searchQuery, setSearchQuery] = useState("")
 
-   
-
     const [transactions, setTransactions] = useState<Transaction[]>([])
     const [dialogVisible, setDialogVisible] = useState(false)
     const [showPicker, setShowPicker] = useState(false)
@@ -66,7 +64,12 @@ export function useWalletViewModel() {
     const [dataInicial, setDataInicial] = useState(firstDayOfMonth)
     const [dataFinal, setDataFinal] = useState(lastDayOfMonth)
 
-    const { data: statusUsuario, refetch: refetchStatusUsuario } = useQuery<StatusUsuario>({
+    const { data: statusUsuario = {
+        saldo: 0,
+        totalReceitas: 0,
+        totalDespesas: 0,
+        transacoes: [],
+    }, refetch: refetchStatusUsuario } = useQuery<StatusUsuario>({
         queryKey: ["statusUsuario", dataInicial, dataFinal],
         queryFn: async () => {
             const searchParams = new URLSearchParams({
@@ -88,7 +91,7 @@ export function useWalletViewModel() {
         enabled: !!token && !!usuario,
     })
 
-
+    console.log({ statusUsuario })
     const currencyFormatter = new Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: "BRL",
@@ -205,14 +208,17 @@ export function useWalletViewModel() {
         setShowPicker(!showPicker)
     }
 
-    const handleDateChange = ({ type }: any, selectedDate?: Date) => {
+    const handleDateChange = useCallback(({ type }: any, selectedDate?: Date) => {
+        console.log({ type, selectedDate })
         if (type === "set" && selectedDate) {
-            if (isFuture(selectedDate)) {
-                Alert.alert("Data inválida", "Não é possível adicionar transações com datas futuras.", [{ text: "OK" }])
-                return
-            }
+            // if (isFuture(selectedDate)) {
+            //     Alert.alert("Data inválida", "Não é possível adicionar transações com datas futuras.", [{ text: "OK" }])
+            //     return
+            // }
 
             setTransactionDate(selectedDate)
+
+            
 
             if (Platform.OS === "android") {
                 setShowPicker(false)
@@ -220,7 +226,7 @@ export function useWalletViewModel() {
         } else {
             setShowPicker(false)
         }
-    }
+    }, [])
 
     const isValidTransactionValue = (value: string): boolean => {
         if (!value) return false

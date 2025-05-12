@@ -6,11 +6,25 @@ import {
   FlatList,
   TouchableOpacity,
 } from 'react-native';
-import { Stack, useRouter } from 'expo-router';
+import { Stack, useRouter, useLocalSearchParams } from 'expo-router';
 import React from 'react';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { useQuery } from '@tanstack/react-query';
+import { API_URL } from '@env';
+import { useAuthStore } from '@/store/authStore';
+
+type StatusGrupo = {
+  data: string
+  emprestou: boolean
+  envolvido: boolean
+  nome: string
+  usuario_id: string
+  valor_pego_emprestado: number | null
+  valor_total: number
+}
 
 export default function GrupoScreen() {
+  const { id } = useLocalSearchParams()
 
   const router = useRouter();
 
@@ -20,6 +34,23 @@ export default function GrupoScreen() {
     { id: '3', title: 'Sorveteria', value: 'Raphael pagou R82,70' },
     { id: '4', title: 'Uber', value: 'Ariane pagou R61,20' },
   ];
+
+  const token = useAuthStore((state) => state.token)
+  const usuario = useAuthStore((state) => state.user)
+
+  const { data: statusGrupo, isPending: isLoadingStatusGrupo, refetch: refetchStatusGrupo } = useQuery<StatusGrupo[]>({
+    queryKey: ['statusGrupo', id],
+    queryFn: async () => {
+      console.log({ url: `/status/grupo?grupo_id=${id}&usuario_id=${usuario?.id}` })
+      const response = await fetch(`${API_URL}/status/grupo?grupo_id=${id}&usuario_id=${usuario?.id}`, {
+        method: 'GET',
+        headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }
+      })
+      return response.json()
+    },
+    enabled: !!token && !!usuario,
+  })
+
 
   return (
     <>
@@ -59,7 +90,7 @@ export default function GrupoScreen() {
 
             <TouchableOpacity
               style={styles.botaoAdicionar}
-              onPress={() => router.push('/add-despesa')}
+              onPress={() => router.push({ pathname: '/add-despesa', params: { grupoId: id } })}
               accessible={true}
               accessibilityLabel="Adicionar Despesa"
               accessibilityHint="Toque para adicionar uma nova despesa no grupo"
@@ -75,12 +106,13 @@ export default function GrupoScreen() {
           <Text style={styles.tituloLista}>Maio 2025</Text>
 
           <FlatList
-            data={items}
+            data={statusGrupo}
             keyExtractor={item => item.id}
             renderItem={({ item }) => (
               <View style={styles.item}>
-                <Text style={styles.itemTexto}>{item.title}</Text>
-                <Text style={styles.itemTextoValor}>{item.value}</Text>
+                <Text style={styles.itemTexto}>{item.nome}</Text>
+                <Text style={styles.itemTextoValor}>{item.valor_total}</Text>
+                <Text style={styles.itemTextoValor}>{item.usuario_id}</Text>
               </View>
             )}
             showsVerticalScrollIndicator={false}

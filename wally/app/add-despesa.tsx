@@ -6,10 +6,74 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import { Stack } from 'expo-router';
-import React from 'react';
+import { router, Stack, useLocalSearchParams } from 'expo-router';
+import React, { useCallback } from 'react';
+import { useMutation } from '@tanstack/react-query';
+import { API_URL } from '@env';
+import { useAuthStore } from '@/store/authStore';
+import { Controller, useForm } from 'react-hook-form';
+
+interface Despesa {
+  valor: string;
+  data: string;
+  nome: string;
+}
 
 export default function AdicionarDespesaGrupo() {
+  const { grupoId } = useLocalSearchParams()
+  console.log({ grupoId })
+
+  const token = useAuthStore((state) => state.token)
+  const usuario = useAuthStore((state) => state.user)
+
+  const { mutateAsync: criarDespesa } = useMutation({
+    mutationFn: async (despesa: any) => {
+      console.log({url: `${API_URL}/despesas-grupo`, despesa})
+      const response = await fetch(`${API_URL}/despesas-grupo`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(despesa)
+      })
+
+      if (!response.ok) {
+        throw new Error('Erro ao criar despesa')
+      }
+
+      router.back()
+    }
+  })
+
+  const form = useForm<Despesa>({
+    defaultValues: {
+      valor: '',
+      data: '',
+      nome: '',
+    }
+  })
+
+  const handleSubmitDespesaGrupo = useCallback(form.handleSubmit(async (data) => {
+    try {
+      if (usuario && grupoId) {
+        console.log(data)
+        //await criarDespesa(data)
+
+        const usuarioId = usuario.id
+
+        await criarDespesa({
+          nome: data.nome,
+          valor: Number(data.valor),
+          usuario_id: usuarioId,
+          grupo_id: grupoId,
+          membros_participantes: [usuarioId]
+        })
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }), [criarDespesa])
 
   return (
     <>
@@ -34,15 +98,44 @@ export default function AdicionarDespesaGrupo() {
 
 
           <Text style={styles.labelNome}>Você pagou:</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Valor" />
-          <TextInput
-            style={styles.input}
-            placeholder="Data" />
-          <TextInput
-            style={styles.input}
-            placeholder="Nome da Despesa" />
+          <Controller
+            control={form.control}
+            name="valor"
+            render={({ field }) => (
+              <TextInput
+                style={styles.input}
+                placeholder="Valor"
+                value={field.value.toString()}
+                onChangeText={field.onChange}
+              />
+            )}
+          />
+
+          <Controller
+            control={form.control}
+            name="data"
+            render={({ field }) => (
+              <TextInput
+                style={styles.input}
+                placeholder="Data"
+                value={field.value}
+                onChangeText={field.onChange}
+              />
+            )}
+          />
+
+          <Controller
+            control={form.control}
+            name="nome"
+            render={({ field }) => (
+              <TextInput
+                style={styles.input}
+                placeholder="Nome da Despesa"
+                value={field.value}
+                onChangeText={field.onChange}
+              />
+            )}
+          />
 
           <Text style={styles.labelNome}>Dividir por todos:</Text>
 
@@ -51,7 +144,8 @@ export default function AdicionarDespesaGrupo() {
             accessible={true}
             accessibilityLabel="Salvar"
             accessibilityHint="Toque para salvar despesa"
-            accessibilityRole="button">
+            accessibilityRole="button"
+            onPress={handleSubmitDespesaGrupo}>
             <Text style={styles.textoBotao}>SALVAR</Text>
           </TouchableOpacity>
         </View>

@@ -1,7 +1,5 @@
-import React from "react";
-import { StyleSheet, View, Text, Image, StatusBar, Pressable } from "react-native";
+import { StyleSheet, View, Text, Image, StatusBar, Pressable, ActivityIndicator } from "react-native";
 import React, { useEffect } from "react";
-import { StyleSheet, View, Text, Image, StatusBar, ActivityIndicator } from "react-native";
 import { useFonts, Poppins_700Bold, Poppins_300Light } from "@expo-google-fonts/poppins";
 import BlueButton from "@/components/BlueButton";
 import Logo from '../assets/images/index_logo.png';

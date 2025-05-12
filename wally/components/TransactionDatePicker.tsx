@@ -2,6 +2,7 @@ import { View, Modal, TouchableOpacity, Text, StyleSheet, Platform } from "react
 import { MaterialIcons } from "@expo/vector-icons"
 import { Button } from "react-native-paper"
 import DatePicker from "@react-native-community/datetimepicker"
+import { add } from "date-fns"
 
 type TransactionDatePickerProps = {
   visible: boolean
@@ -31,8 +32,8 @@ export const TransactionDatePicker = ({ visible, onClose, date, onChange }: Tran
             display={Platform.OS === "ios" ? "spinner" : "default"}
             value={date}
             onChange={onChange}
-            minimumDate={new Date(2010, 0, 1)}
-            maximumDate={new Date()}
+            minimumDate={new Date(2015, 0, 1)}
+            maximumDate={add(new Date(), { years: 1 })}
             style={styles.datePicker}
           />
           <View style={styles.datePickerActions}>

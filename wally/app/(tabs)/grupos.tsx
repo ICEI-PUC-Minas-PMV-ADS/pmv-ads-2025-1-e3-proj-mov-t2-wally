@@ -48,9 +48,16 @@ export default function TabTwoScreen() {
           data={grupos}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
-            <View style={styles.item}>
-              <Text style={styles.itemTexto}>{item.nome}</Text>
-            </View>
+            <Pressable onPress={() => router.push({
+                pathname: '/grupo',
+                params: { 
+                    id: item.id,
+                }
+            })}>
+              <View style={styles.item}>
+                <Text style={styles.itemTexto}>{item.nome}</Text>
+              </View>
+            </Pressable>
           )}
           showsVerticalScrollIndicator={false}
         />

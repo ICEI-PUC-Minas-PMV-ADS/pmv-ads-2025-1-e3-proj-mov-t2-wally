@@ -45,6 +45,8 @@ export function useGruposViewModel() {
         staleTime: 0,
     })
 
+    
+
     const grupoForm = useForm<GrupoForm>({
         defaultValues: {
             nome: '',
@@ -65,7 +67,11 @@ export function useGruposViewModel() {
                     'Authorization': `Bearer ${token}`
                 }
             })
-            return response.json()
+
+            const responseData = await response.json()
+
+            console.log({ responseData })
+            return responseData
         },
     })
 
