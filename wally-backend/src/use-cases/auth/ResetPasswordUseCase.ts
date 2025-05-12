@@ -9,8 +9,6 @@ export class ResetPasswordUseCase {
   async execute(token: string, senha: string) {
     const decoded = jwt.verify(token, JWT_SECRET)
 
-    console.log({ decoded })
-
     if (!decoded) {
       return {
         success: false,

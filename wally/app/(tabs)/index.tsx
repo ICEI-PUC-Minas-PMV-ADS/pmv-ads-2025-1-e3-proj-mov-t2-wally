@@ -77,6 +77,7 @@ export default function Wallet() {
     setTransactionDescription,
     setShowPicker,
     transactionForm,
+    handleSubmitTransaction,
   } = useWalletViewModel()
 
   return (
@@ -145,7 +146,7 @@ export default function Wallet() {
           onTransactionDescriptionChange={setTransactionDescription}
           formattedDate={formatDateForDisplay(transactionDate)}
           onDatePress={toggleDataPicker}
-          onAddTransaction={adicionarTransacao}
+          handleSubmitTransaction={handleSubmitTransaction}
           transactionForm={transactionForm}
         />
 

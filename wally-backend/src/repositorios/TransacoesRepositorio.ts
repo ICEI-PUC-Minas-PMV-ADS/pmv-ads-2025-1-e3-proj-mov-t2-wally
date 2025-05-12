@@ -39,8 +39,6 @@ export class TransacoesRepositorio {
         }),
     }
 
-    console.log({ where })
-
     const transacoes = await this.repositorio.find({
       where,
     })

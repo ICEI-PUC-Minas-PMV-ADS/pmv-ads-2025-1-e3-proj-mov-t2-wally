@@ -1,7 +1,8 @@
-import { Transaction, TransactionType } from "@/app/types"
+import { CreateTransactionFormData, Transaction, TransactionType } from "@/app/types"
 import { useAuthStore } from "@/store/authStore"
-import { useQuery } from "@tanstack/react-query"
-import { addMonths, format, getMonth, getYear, isFuture, isSameMonth, isSameYear, subMonths } from "date-fns"
+import { API_URL } from "@env"
+import { useMutation, useQuery } from "@tanstack/react-query"
+import { add, addDays, addMonths, format, getMonth, getYear, isFuture, isSameMonth, isSameYear, subMonths } from "date-fns"
 import { ptBR } from "date-fns/locale"
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { useForm } from "react-hook-form"
@@ -45,8 +46,7 @@ export function useWalletViewModel() {
     const [activeDateTab, setActiveDateTab] = useState<"month" | "year">("month")
     const [searchQuery, setSearchQuery] = useState("")
 
-    const [receitas, setReceitas] = useState(0)
-    const [despesas, setDespesas] = useState(0)
+   
 
     const [transactions, setTransactions] = useState<Transaction[]>([])
     const [dialogVisible, setDialogVisible] = useState(false)
@@ -59,17 +59,24 @@ export function useWalletViewModel() {
     const token = useAuthStore((s) => s.token)
     const usuario = useAuthStore((s) => s.user)
 
-    const { data: statusUsuario } = useQuery<StatusUsuario>({
-        queryKey: ["statusUsuario"],
+    const date = new Date()
+    const firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1)
+    const lastDayOfMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0)
+
+    const [dataInicial, setDataInicial] = useState(firstDayOfMonth)
+    const [dataFinal, setDataFinal] = useState(lastDayOfMonth)
+
+    const { data: statusUsuario, refetch: refetchStatusUsuario } = useQuery<StatusUsuario>({
+        queryKey: ["statusUsuario", dataInicial, dataFinal],
         queryFn: async () => {
             const searchParams = new URLSearchParams({
                 usuario_id: usuario?.id as string,
-                data_inicial: "2025-01-01",
-                data_final: "2025-05-31",
+                data_inicial: format(dataInicial, "yyyy-MM-dd"),
+                data_final: format(dataFinal, "yyyy-MM-dd"),
             })
 
 
-            const response = await fetch(`http://localhost:3333/status/balanco?${searchParams.toString()}`, {
+            const response = await fetch(`${API_URL}/status/balanco?${searchParams.toString()}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -99,8 +106,8 @@ export function useWalletViewModel() {
     const filteredTransactionsByMonth = useMemo(() => {
         return transactions.filter((transaction) => {
             return (
-                isSameMonth(transaction.date, new Date(currentYear, currentMonthIndex)) &&
-                isSameYear(transaction.date, new Date(currentYear, currentMonthIndex))
+                isSameMonth(transaction.data, new Date(currentYear, currentMonthIndex)) &&
+                isSameYear(transaction.data, new Date(currentYear, currentMonthIndex))
             )
         })
     }, [transactions, currentMonthIndex, currentYear])
@@ -121,26 +128,19 @@ export function useWalletViewModel() {
         }
     }, [statusUsuario?.transacoes, filteredTransactionsByMonth, searchQuery])
 
-    useEffect(() => {
-        let totalReceitas = 0
-        let totalDespesas = 0
+    
 
-        filteredTransactionsByMonth.forEach((transaction) => {
-            if (transaction.type === "receita") {
-                totalReceitas += transaction.amount
-            } else {
-                totalDespesas += transaction.amount
-            }
-        })
-
-        setReceitas(totalReceitas)
-        setDespesas(totalDespesas)
-        // setSaldo(totalReceitas - totalDespesas)
-    }, [filteredTransactionsByMonth])
-
-    const mudarMes = (direcao: "anterior" | "proximo") => {
+    const mudarMes = useCallback((direcao: "anterior" | "proximo") => {
         const dataAtual = new Date(currentYear, currentMonthIndex, 1)
         const novaData = direcao === "anterior" ? subMonths(dataAtual, 1) : addMonths(dataAtual, 1)
+
+        const firstDayOfMonth = new Date(novaData.getFullYear(), novaData.getMonth(), 1)
+        const lastDayOfMonth = new Date(novaData.getFullYear(), novaData.getMonth() + 1, 0, 23, 59, 59, 999)
+
+
+        console.log({ firstDayOfMonth, lastDayOfMonth })
+        setDataInicial(firstDayOfMonth)
+        setDataFinal(lastDayOfMonth)
 
         const novoMesIndex = getMonth(novaData)
         const novoAno = getYear(novaData)
@@ -148,29 +148,46 @@ export function useWalletViewModel() {
         setCurrentMonthIndex(novoMesIndex)
         setCurrentMonth(meses[novoMesIndex])
         setCurrentYear(novoAno)
-    }
+
+        
+    }, [currentMonthIndex, currentYear])
 
     const showDatePickerModal = (tab: "month" | "year") => {
         setActiveDateTab(tab)
         setShowDatePicker(true)
     }
 
-    const handleMonthSelect = (index: number, month: string) => {
+    const handleMonthSelect = useCallback((index: number, month: string) => {
         setCurrentMonthIndex(index)
         setCurrentMonth(month)
-        setShowDatePicker(false)
-    }
 
-    const handleYearSelect = (year: number) => {
-        setCurrentYear(year)
+
+        const firstDayOfMonth = new Date(dataInicial.getFullYear(), index, 1)
+        const lastDayOfMonth = new Date(dataInicial.getFullYear(), index + 1, 0, 23, 59, 59, 999)
+
+        setDataInicial(firstDayOfMonth)
+        setDataFinal(lastDayOfMonth)
+
         setShowDatePicker(false)
-    }
+    }, [dataInicial])
+
+    const handleYearSelect = useCallback((year: number) => {
+        //setCurrentYear(year)
+        const firstDayOfMonth = new Date(year, dataInicial.getMonth(), 1)
+        const lastDayOfMonth = new Date(year, dataInicial.getMonth() + 1, 0, 23, 59, 59, 999)
+
+        setDataInicial(firstDayOfMonth)
+        setDataFinal(lastDayOfMonth)
+
+        setShowDatePicker(false)
+    }, [dataInicial])
 
     const showTransactionDialog = useCallback((type: TransactionType) => {
         setTransactionDate(new Date())
         setTransactionValue("")
         setTransactionDescription("")
         setActiveTransactionType(type)
+        transactionForm.setValue("tipo", type)
         setDialogVisible(true)
     }, [])
 
@@ -180,6 +197,7 @@ export function useWalletViewModel() {
         setActiveTransactionType(null)
         setTransactionValue("")
         setTransactionDescription("")
+        transactionForm.reset()
     }
 
     const toggleDataPicker = () => {
@@ -210,46 +228,76 @@ export function useWalletViewModel() {
         return !isNaN(numValue) && numValue > 0
     }
 
-    const adicionarTransacao = () => {
-        if (!isValidTransactionValue(transactionValue)) {
-            Alert.alert("Erro", "Por favor, insira um valor válido")
-            return
+    const transactionForm = useForm<CreateTransactionFormData>({
+        defaultValues: {
+            nome: "",
+            valor: 0,
+            data: new Date(),
+            tipo: "",
         }
+    })
 
-        if (isFuture(transactionDate)) {
-            Alert.alert("Data inválida", "Não é possível adicionar transações com datas futuras.")
-            return
+
+    const { mutateAsync: adicionarTransacao } = useMutation({
+        mutationFn: async (transaction: CreateTransactionFormData) => {
+            console.log("Adicionando transação")
+            const response = await fetch(`${API_URL}/transacoes`, {
+                method: "POST",
+                body: JSON.stringify(transaction),
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+            return response.json()
         }
+    })
 
-        const valor = Number.parseFloat(transactionValue.replace(",", "."))
+    const handleSubmitTransaction = useCallback(async () => {
+        // if (!isValidTransactionValue(transactionValue)) {
+        //     Alert.alert("Erro", "Por favor, insira um valor válido")
+        //     return
+        // }
 
-        const novaTransacao: Transaction = {
-            id: Date.now().toString(),
-            type: activeTransactionType!,
-            amount: valor,
-            description: transactionDescription || (activeTransactionType === "receita" ? "Receita" : "Despesa"),
-            date: transactionDate,
-        }
+        // if (isFuture(transactionDate)) {
+        //     Alert.alert("Data inválida", "Não é possível adicionar transações com datas futuras.")
+        //     return
+        // }
 
-        setTransactions((prev) => [novaTransacao, ...prev])
+        // const valor = Number.parseFloat(transactionValue.replace(",", "."))
+
+        console.log("Transaction FORM")
+        transactionForm.handleSubmit(async ({ nome, data, tipo, valor }) => {
+            console.log({ nome, data, tipo, valor })
+            try {
+                const transacao = await adicionarTransacao({
+                    nome,
+                    valor,
+                    tipo,
+                    data,
+                })
+
+                console.log({ transacao })
+
+                //Add set query data
+                await refetchStatusUsuario()
+            } catch (error) {
+                console.log(error)
+            }
+        })()
+
+        console.log("Transaction FORM 2")
         hideTransactionDialog()
-    }
+    }, [activeTransactionType, transactionDescription, transactionDate, transactionValue, hideTransactionDialog])
 
     const removerTransacao = (id: string) => {
         setTransactions((prev) => prev.filter((transaction) => transaction.id !== id))
     }
 
-    const transactionForm = useForm({
-        defaultValues: {
-            nome: "",
-            valor: "",
-            data: null,
-            tipo: "",
-            usuario_id: ""
-        }
-    })
+
 
     return {
+        handleSubmitTransaction,
         currentMonth,
         currentMonthIndex,
         currentYear,

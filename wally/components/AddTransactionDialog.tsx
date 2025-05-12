@@ -14,7 +14,7 @@ type AddTransactionDialogProps = {
   onTransactionDescriptionChange: (value: string) => void
   formattedDate: string
   onDatePress: () => void
-  onAddTransaction: () => void
+  handleSubmitTransaction: () => void
   transactionForm: UseFormReturn<any>
 }
 
@@ -28,7 +28,7 @@ export const AddTransactionDialog = ({
   onTransactionDescriptionChange,
   formattedDate,
   onDatePress,
-  onAddTransaction,
+  handleSubmitTransaction,
   transactionForm,
 }: AddTransactionDialogProps) => {
   const getColorByType = (type: TransactionType) => {
@@ -65,7 +65,11 @@ export const AddTransactionDialog = ({
             <TextInput
               label="Valor"
               value={field.value}
-              onChangeText={field.onChange}
+              onChangeText={(text) => {
+                console.log("onChangeText", text)
+                field.onChange(Number(text))
+                onTransactionValueChange(text)
+              }}
               keyboardType="decimal-pad"
               style={styles.dialogInput}
               mode="outlined"
@@ -134,7 +138,7 @@ export const AddTransactionDialog = ({
           CANCELAR
         </Button>
         <Button
-          onPress={onAddTransaction}
+          onPress={handleSubmitTransaction}
           mode="contained"
           buttonColor={activeTransactionType === "RECEITA" ? "#249B24" : "#EA1919"}
           style={styles.dialogButton}

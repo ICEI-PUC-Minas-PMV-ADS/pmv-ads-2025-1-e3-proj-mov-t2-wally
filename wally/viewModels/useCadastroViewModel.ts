@@ -1,3 +1,4 @@
+import { API_URL } from "@env";
 import { useMutation } from "@tanstack/react-query";
 import { router } from "expo-router";
 import { useCallback } from "react";
@@ -28,7 +29,7 @@ export function useCadastroViewModel() {
 
     const { mutateAsync: cadastrarUsuario } = useMutation({
         mutationFn: async (data: CadastroFormData) => {
-            const response = await fetch("http://localhost:3333/sign-up", {
+            const response = await fetch(`${API_URL}/sign-up`, {
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: {

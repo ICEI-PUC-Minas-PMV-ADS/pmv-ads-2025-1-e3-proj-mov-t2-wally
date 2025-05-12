@@ -3,6 +3,7 @@ import { useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { useAuthStore } from "@/store/authStore";
 import { router } from "expo-router";
+import { API_URL } from "@env";
 
 interface LoginFormData {
     email: string
@@ -21,7 +22,7 @@ export function useLoginViewModel() {
 
     const { mutateAsync: signIn } = useMutation({
         mutationFn: async (data: LoginFormData) => {
-            const response = await fetch("http://localhost:3333/sign-in", {
+            const response = await fetch(`${API_URL}/sign-in`, {
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: {
@@ -37,7 +38,6 @@ export function useLoginViewModel() {
         try {
             handleSubmit(async (data) => {
                 const { token, usuario } = await signIn(data)
-                console.log(token, usuario)
                 await login(token, usuario)
 
                 router.replace("/(tabs)")

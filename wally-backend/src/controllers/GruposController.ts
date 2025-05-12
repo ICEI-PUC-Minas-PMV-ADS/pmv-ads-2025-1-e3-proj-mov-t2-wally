@@ -10,7 +10,7 @@ const grupoMembrosRepositorio = new GrupoMembrosRepositorio()
 export class GruposController {
   async create(request: FastifyRequest, reply: FastifyReply) {
     try {
-      const usuario_id = request.usuario_id
+      const usuario_id = request.usuario_id.id
 
       const { nome, descricao, avatar_url, membros } = request.body as {
         nome: string
@@ -18,6 +18,14 @@ export class GruposController {
         avatar_url: string
         membros: string[]
       }
+
+      console.log({
+        nome,
+        descricao,
+        avatar_url,
+        membros,
+        usuario_id,
+      })
 
       const criarGrupoUseCase = new CreateGrupoUseCase(
         gruposRepositorio,

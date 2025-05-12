@@ -15,8 +15,6 @@ export class AuthController {
         senha: string
       }
 
-      console.log({ email, senha })
-
       const signInUseCase = new SignInUseCase(usuariosRepositorio)
 
       const { success, auth, error } = await signInUseCase.execute(email, senha)

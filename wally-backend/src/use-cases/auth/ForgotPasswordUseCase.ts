@@ -27,8 +27,6 @@ export class ForgotPasswordUseCase {
 
     // await emailService.sendEmail(usuario.email, 'Redefinir senha Wally', url)
 
-    console.log({ url })
-
     return {
       success: true,
       usuario,

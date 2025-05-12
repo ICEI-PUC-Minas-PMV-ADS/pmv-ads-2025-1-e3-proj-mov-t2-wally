@@ -10,10 +10,10 @@ import { Stack, useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { useGruposViewModel } from '@/viewModels/useGruposViewModel';
+import { Controller } from 'react-hook-form';
 
 export default function CriarGrupoScreen() {
-  const router = useRouter();
-  const [nomeGrupo, setNomeGrupo] = useState('');
   const [tipoSelecionado, setTipoSelecionado] = useState<string | null>(null);
 
   const tiposGrupo = [
@@ -23,49 +23,67 @@ export default function CriarGrupoScreen() {
     { id: 'outro', icon: 'list-outline', label: 'Outro', component: Ionicons },
   ];
 
+  const { handleSubmitGrupo, grupoForm } = useGruposViewModel()
+
   return (
     <>
-    <Stack.Screen
-      options={{
-        headerShown: true,
-        headerTitle: 'Criar Grupo',
-        headerBackVisible: true,
-        headerBackTitle: 'Voltar',
-        headerTintColor: '#006A71',
-        headerStyle: { backgroundColor: '#F4F2F2' },
-      }} />
-      
+      <Stack.Screen
+        options={{
+          headerShown: true,
+          headerTitle: 'Criar Grupo',
+          headerBackVisible: true,
+          headerBackTitle: 'Voltar',
+          headerTintColor: '#006A71',
+          headerStyle: { backgroundColor: '#F4F2F2' },
+        }} />
+
       <SafeAreaView style={styles.container}>
 
         <View style={styles.mainContent}>
 
           <Text style={styles.labelNome}>Nome do Grupo</Text>
 
-          <TextInput
-            style={styles.input}
-            placeholder="Nome do Grupo"
-            value={nomeGrupo}
-            onChangeText={setNomeGrupo} />
+          <Controller
+            control={grupoForm.control}
+            name="nome"
+            render={({ field }) => (
+              <TextInput
+                style={styles.input}
+                placeholder="Nome do Grupo"
+                value={field.value}
+                onChangeText={field.onChange}
+              />
+            )}
+          />
 
           <Text style={styles.labelTipo}>Tipo</Text>
 
-          <View style={styles.tiposContainer}>
-            {tiposGrupo.map((tipo) => {
-              const IconComponent = tipo.component;
-              return (
-                <Pressable
-                  key={tipo.id}
-                  style={[
-                    styles.tipoItem,
-                    tipoSelecionado === tipo.id && styles.tipoItemSelecionado,
-                  ]}
-                  onPress={() => setTipoSelecionado(tipo.id)}
-                >
-                  <IconComponent name={tipo.icon as any} size={28} color="#48A6A7" />
-                </Pressable>
-              );
-            })}
-          </View>
+          <Controller
+            control={grupoForm.control}
+            name="descricao"
+            render={({ field }) => (
+              <View style={styles.tiposContainer}>
+                {tiposGrupo.map((tipo) => {
+                  const IconComponent = tipo.component;
+                  return (
+                    <Pressable
+                      key={tipo.id}
+                      style={[
+                        styles.tipoItem,
+                        tipoSelecionado === tipo.id && styles.tipoItemSelecionado,
+                      ]}
+                      onPress={() => {
+                        setTipoSelecionado(tipo.id)
+                        field.onChange(tipo.id)
+                      }}
+                    >
+                      <IconComponent name={tipo.icon as any} size={28} color="#48A6A7" />
+                    </Pressable>
+                  );
+                })}
+              </View>
+            )}
+          />
         </View>
 
         <View style={styles.containerBotao}>
@@ -85,12 +103,14 @@ export default function CriarGrupoScreen() {
             accessible={true}
             accessibilityLabel="Criar grupo"
             accessibilityHint="Toque para criar um novo grupo"
-            accessibilityRole="button">
+            accessibilityRole="button"
+            onPress={handleSubmitGrupo}>
             <Text style={styles.textoBotao}>CRIAR</Text>
           </Pressable>
         </View>
 
-      </SafeAreaView></>
+      </SafeAreaView>
+    </>
   );
 }
 

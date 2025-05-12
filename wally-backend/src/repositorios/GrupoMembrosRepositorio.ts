@@ -47,6 +47,7 @@ export class GrupoMembrosRepositorio {
     membros_ids: string[],
     admin_id: string,
   ): Promise<GrupoMembro[]> {
+    console.log({ grupo_id, membros_ids, admin_id })
     const grupoMembros = membros_ids.map((membro_id) =>
       this.repositorio.create({
         grupo_id,

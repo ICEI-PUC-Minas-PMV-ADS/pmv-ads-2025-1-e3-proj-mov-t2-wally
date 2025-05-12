@@ -15,7 +15,7 @@ export class TransacoesController {
         usuariosRepositorio,
       )
 
-      const usuario_id = request.usuario_id
+      const usuario_id = request.usuario_id.id
 
       const { nome, valor, tipo, data } = request.body as {
         nome: string
@@ -23,6 +23,8 @@ export class TransacoesController {
         tipo: 'RECEITA' | 'DESPESA'
         data: Date
       }
+
+      console.log({ nome, valor, tipo, data, usuario_id })
 
       const { success, transacao, error } = await criarTransacaoUsuario.execute(
         {
@@ -42,6 +44,7 @@ export class TransacoesController {
 
       return reply.status(201).send(transacao)
     } catch (error) {
+      console.log(error)
       return reply
         .status(500)
         .send({ message: 'Erro ao criar transação', error })

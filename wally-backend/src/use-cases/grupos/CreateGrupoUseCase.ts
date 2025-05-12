@@ -28,8 +28,27 @@ export class CreateGrupoUseCase {
       avatar_url,
     })
 
-    await this.grupoMembrosRepositorio.createMany(grupo.id, membros, usuario_id)
+    if (membros.length === 0) {
+      return {
+        success: false,
+        error: 'O grupo nao possui membros',
+        grupo: null,
+      }
+    }
 
-    return grupo
+    const grupoMembros = await this.grupoMembrosRepositorio.createMany(
+      grupo.id,
+      membros,
+      usuario_id,
+    )
+
+    return {
+      success: true,
+      error: null,
+      grupo: {
+        ...grupo,
+        membros: grupoMembros,
+      },
+    }
   }
 }

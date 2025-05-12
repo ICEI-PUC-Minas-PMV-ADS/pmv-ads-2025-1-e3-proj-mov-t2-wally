@@ -27,7 +27,6 @@ export class SignUpUseCase {
     dataNascimento,
     avatarUrl,
   }: SignUpUseCaseParams): Promise<SignUpUseCaseResponse> {
-    console.log(email, senha, nome, telefone, dataNascimento, avatarUrl)
     const usuarioExistente = await this.usuariosRepositorio.findByEmail(email)
 
     if (usuarioExistente) {

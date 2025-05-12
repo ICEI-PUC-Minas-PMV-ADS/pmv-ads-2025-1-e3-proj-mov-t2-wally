@@ -16,3 +16,10 @@ export type TransactionGroup = {
   date: Date
   data: Transaction[]
 }
+
+export type CreateTransactionFormData = {
+  nome: string,
+  valor: number,
+  tipo: TransactionType | "",
+  data: Date,
+}
