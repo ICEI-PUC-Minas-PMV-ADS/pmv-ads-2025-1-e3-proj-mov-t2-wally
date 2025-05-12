@@ -132,18 +132,20 @@ As tabelas a seguir apresentam uma descrição detalhada dos **requisitos funcio
 |RF-002| O aplicativo deve possibilitar a recuperação de senha. | ALTA |
 |RF-003| O aplicativo deve permitir que os usuários se cadastrem fornecendo nome, e-mail e senha. | ALTA |
 |RF-004| O aplicativo deve permitir que os usuários editem seu perfil (nome, foto, senha). | MÉDIA |
-|RF-005| O aplicativo deve permitir que os usuários adicionem ganhos e despesas, informando valor, data, categoria e descrição. | ALTA |
-|RF-006| O aplicativo deve permitir a criação e edição de categorias para transações (ex: alimentação, transporte). | ALTA |
-|RF-007| O aplicativo deve exibir um extrato financeiro com todas as transações do usuário. | ALTA |
-|RF-008| O aplicativo deve permitir filtrar transações por categoria, data ou valor. | MÉDIA |
-|RF-009| O aplicativo deve gerar gráficos simples de gastos por categoria e evolução mensal. | ALTA |
-|RF-010| O aplicativo deve permitir que os usuários definam metas financeiras e acompanhem o progresso. | BAIXA |
+|RF-005| O aplicativo deve permitir que os usuários adicionem receitas e despesas, informando valor, data e nome da transação. | ALTA |
+|RF-006| O aplicativo deve exibir um extrato financeiro com todas as transações do usuário. | ALTA |
+|RF-007| O aplicativo deve permitir filtrar transações por nome, valor ou tipo de transação. | ALTA |
+|RF-008| O aplicativo deve gerar gráficos simples de gastos por categoria e evolução mensal. | BAIXA |
+|RF-009| O aplicativo deve calcular automaticamene o saldo total, as receitas e as despesas do usuário. | ALTA |
+|RF-010| O aplicativo deve permitir que os usuários escolham o mês e ano na tela incial | ALTA |
 |RF-011| O aplicativo deve permitir a criação de grupos para divisão de despesas. | ALTA |
-|RF-012| O aplicativo deve permitir que os usuários adicionem despesas ao grupo, informando valor, descrição e divisão entre participantes. | ALTA |
-|RF-013| O aplicativo deve calcular automaticamente o saldo de cada participante do grupo. | ALTA |
-|RF-014| O aplicativo deve permitir que os usuários marquem despesas como "pagas". | ALTA |
-|RF-015| O aplicativo deve exibir um histórico de despesas do grupo. | MÉDIA |
-|RF-016| O aplicativo deve permitir que os usuários escolham a moeda. | BAIXA |
+|RF-012| O aplicativo deve permitir que os usuários adicionem despesas ao grupo, informando valor, nome da despesa e divisão entre participantes. | ALTA |
+|RF-013| O aplicativo deve calcular automaticamente o saldo de cada participante do grupo.| ALTA |
+|RF-014|O aplicativo deve exibir um histórico de despesas do grupo. | ALTA |
+|RF-015| O aplicativo deve permitir que os usuários adicionem membros aos grupo. | ALTA |
+|RF-016| O aplicativo deve exibir uma tela com a lista de grupos do usuário. | ALTA |
+|RF-017| O aplicativo deve exibir uma tela incial | ALTA |
+
 
 ### Requisitos não Funcionais
 
