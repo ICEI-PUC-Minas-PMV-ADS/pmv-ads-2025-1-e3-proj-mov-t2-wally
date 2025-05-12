@@ -1,0 +1,17 @@
+services:
+  app:
+    container_name: "wally-backend"
+    restart: always
+    build: .
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - API_SECRET=${API_SECRET}
+      - ORIGIN_URL=${ORIGIN_URL}
+      - POSTGRESQL_HOST=${POSTGRESQL_HOST}
+      - POSTGRESQL_USER=${POSTGRESQL_USER}
+      - POSTGRESQL_PASSWORD=${POSTGRESQL_PASSWORD}
+      - POSTGRESQL_DATABASE=${POSTGRESQL_DATABASE}
+      - POSTGRESQL_PORT=${POSTGRESQL_PORT}
+    ports:
+      - "3333:3333"
+    command: node ./dist/app.js

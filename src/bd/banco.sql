@@ -13,7 +13,7 @@ CREATE TABLE usuarios (
     data_atualizacao TIMESTAMP,
     data_exclusao TIMESTAMP
 );
-
+ 
 -- Tabela Transacoes
 CREATE TABLE transacoes (
     id UUID PRIMARY KEY,
