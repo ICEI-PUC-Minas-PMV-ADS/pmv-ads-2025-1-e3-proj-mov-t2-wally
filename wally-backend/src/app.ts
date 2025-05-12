@@ -1,8 +1,10 @@
+import 'dotenv/config'
 import fastify from 'fastify'
 import 'reflect-metadata'
 import { AppDataSource } from './data-source'
 import { routes } from './routes'
 import cors from '@fastify/cors'
+
 const server = fastify({
   logger: true,
 })
