@@ -15,7 +15,7 @@ server.register(cors, {
 
 server.register(routes, { prefix: '/wally' })
 
-server.listen({ port: 3333 }).then(() => {
+server.listen({ port: 3333, host: '0.0.0.0' }).then(() => {
   AppDataSource.initialize()
     .then(() => {
       console.log('Database connected')
