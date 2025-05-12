@@ -51,15 +51,6 @@ export default function HomeScreen() {
           </Text>
           <BlueButton text="CRIAR CONTA" color="blue" onPress={() => router.navigate("/cadastro")} />
           <BlueButton text="ENTRAR" color="lightblue" onPress={() => router.navigate("/login")} />
-
-       <Pressable
-          onPress={() => router.push('/(tabs)')}
-          accessible={true}
-          accessibilityLabel="Criar grupo"
-          accessibilityHint="Toque para criar um novo grupo"
-          accessibilityRole="button">
-          <Text>CRIAR GRUPO</Text>
-        </Pressable>
         </View>
       </View>
     </>
