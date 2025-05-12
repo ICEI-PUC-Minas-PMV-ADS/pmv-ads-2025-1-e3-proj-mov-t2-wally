@@ -14,13 +14,10 @@ Os artefatos do projeto serão desenvolvidos utilizando **React Native** como fr
 | Ambiente | Plataforma | Link de Acesso |
 |---------------|----------------------------------------------|----------------|
 | Design e Prototipação | Figma | https://www.figma.com/proto/MiuZNsY107HDiJqKnMdyIm/Projeto-Wally?page-id=0%3A1&node-id=1-14&viewport=215%2C293%2C0.81&t=uLjzv6SkBrleFN8Z-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A14 |
-| Desenvolvimento | React Native, Expo e Node.js | |
-| Testes | Emuladores (Android Studio, iOS Simulator) e dispositivos físicos|
-| Produção | Google Play Store, Apple App Store | |
 | Documentação do Projeto | Github | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e3-proj-mov-t2-wally |
 | Repositório do Código Fonte | Github | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e3-proj-mov-t2-wally/tree/main/src |
 | Gerenciamento de Tarefas do Projeto | GitHub Projects | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/1894 |
-| Hospedagem | a definir | |
+| Hospedagem | AWS | http://ec2-18-231-92-232.sa-east-1.compute.amazonaws.com:3333/wally |
 
 Durante o desenvolvimento, utilizaremos **Expo** para facilitar a criação e teste da aplicação, permitindo a execução em dispositivos físicos por meio do aplicativo **Expo Go**. Além disso, os emuladores serão utilizados para validação do funcionamento da aplicação em diferentes cenários.
 
