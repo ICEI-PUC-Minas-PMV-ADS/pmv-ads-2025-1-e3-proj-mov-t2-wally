@@ -5,7 +5,7 @@ import BlueButton from "@/components/BlueButton";
 import Logo from '../assets/images/index_logo.png';
 import Bckgd_Image from '../assets/images/index_img.png';
 import { router } from "expo-router";
-// import { Pressable } from "react-native-gesture-handler";
+
 import { useAuthStore } from "@/store/authStore";
 
 export default function HomeScreen() {
@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
   logoText: {
     fontFamily: "Poppins_300Light",
     textAlign: "center",
+    fontSize: 16,
   },
   textTitle: {
     fontWeight: 600,

@@ -27,9 +27,22 @@ export default function AuthLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="cadastro" options={{ headerShown: false }} />
+        <Stack.Screen 
+        name="cadastro" 
+        options={{
+          headerShown: true,
+          headerTitle: '',
+          headerStyle: { backgroundColor: '#9ACBD0' },
+        }} />
         <Stack.Screen name="login" options={{ headerShown: false }} />
-        <Stack.Screen name="recuperarsenha" options={{ headerShown: false }} />
+        <Stack.Screen 
+        name="recuperarsenha" 
+        options={{
+          headerShown: true,
+          headerTitle: '',
+          headerStyle: { backgroundColor: '#9ACBD0' },
+          headerBackVisible: false,
+        }} />
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>

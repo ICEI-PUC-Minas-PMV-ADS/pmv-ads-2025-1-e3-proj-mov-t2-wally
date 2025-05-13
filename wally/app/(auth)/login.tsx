@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, TextInput, SafeAreaView, Pressable, Image, StatusBar } from "react-native";
+import { StyleSheet, View, Text, TextInput, SafeAreaView, Pressable, TouchableOpacity, Image, StatusBar } from "react-native";
 import { useFonts, Poppins_700Bold, Poppins_300Light } from "@expo-google-fonts/poppins";
 import { router } from "expo-router";
 import { Controller } from "react-hook-form";
@@ -14,72 +14,79 @@ export default function LoginScreen() {
   const { handleSubmitLogin, control } = useLoginViewModel()
 
   return (
-
     <>
-    <SafeAreaView style={styles.container}>
+      <SafeAreaView style={styles.container}>
 
-      <StatusBar backgroundColor="#9ACBD0" barStyle="light-content" />
-  <View style={styles.botaoVoltar}>
-      <Pressable
-        onPress={() => router.push('/')}>
-        <MaterialIcons name="arrow-back-ios" size={24} color="#006A71" />
-      </Pressable>
-</View>
-      <Image
-        source={require('@/assets/images/index_logo.png')}
-        style={styles.logo} /><View style={styles.mainContent}>
+        <StatusBar backgroundColor="#9ACBD0" barStyle="light-content" />
 
-        <Text style={styles.title}>Bem-vindo(a)!</Text>
-
-        <Text style={styles.texto}>E-mail</Text>
-
-        <Controller
-          control={control}
-          name="email"
-          render={({ field }) => (
-            <TextInput
-              style={styles.input}
-              value={field.value}
-              onChangeText={field.onChange}
-              placeholder="Digite seu email"
-              keyboardType="email-address"
-              autoCapitalize="none" />
-          )} />
-
-        <Text style={styles.texto}>Senha</Text>
-
-        <Controller
-          control={control}
-          name="senha"
-          render={({ field }) => (
-            <TextInput style={styles.input} value={field.value} placeholder="Senha" onChangeText={field.onChange} secureTextEntry />
-          )} />
-
-        <View style={styles.containerBotao}>
+        <View style={styles.botaoVoltar}>
 
           <Pressable
-            style={styles.botaoEntrar}
-            onPress={() => { handleSubmitLogin(); }}
-            accessible={true}
-            accessibilityLabel="Criar grupo"
-            accessibilityHint="Toque para criar um novo grupo"
-            accessibilityRole="button">
-            <Text style={styles.textoBotao}>ENTRAR</Text>
-          </Pressable>
-
-          <Pressable
-            style={styles.botaoSenha}
-            onPress={() => router.push("/recuperarsenha")}
-            accessible={true}
-            accessibilityLabel="Adicionar membro"
-            accessibilityHint="Toque para adicionar um novo membro ao grupo"
-            accessibilityRole="button">
-            <Text style={styles.textoBotaoSenha}>ESQUECI MINHA SENHA</Text>
+            onPress={() => router.push('/')}>
+            <MaterialIcons name="arrow-back-ios" size={24} color="#006A71" />
           </Pressable>
 
         </View>
-      </View>
-    </SafeAreaView></>
+
+        <Image
+          source={require('@/assets/images/index_logo.png')}
+          style={styles.logo} />
+
+        <Text style={styles.logoText}>WALLY</Text>
+
+        <View style={styles.mainContent}>
+
+          <Text style={styles.title}>Bem-vindo(a)!</Text>
+
+          <Text style={styles.texto}>E-mail</Text>
+
+          <Controller
+            control={control}
+            name="email"
+            render={({ field }) => (
+              <TextInput
+                style={styles.input}
+                value={field.value}
+                onChangeText={field.onChange}
+                placeholder="Digite seu email"
+                keyboardType="email-address"
+                autoCapitalize="none" />
+            )} />
+
+          <Text style={styles.texto}>Senha</Text>
+
+          <Controller
+            control={control}
+            name="senha"
+            render={({ field }) => (
+              <TextInput style={styles.input} value={field.value} placeholder="Senha" onChangeText={field.onChange} secureTextEntry />
+            )} />
+
+          <View style={styles.containerBotao}>
+
+            <TouchableOpacity
+              style={styles.botaoEntrar}
+              onPress={() => { handleSubmitLogin(); }}
+              accessible={true}
+              accessibilityLabel="Entrar"
+              accessibilityHint="Toque para entrar na sua conta"
+              accessibilityRole="button">
+              <Text style={styles.textoBotao}>ENTRAR</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.botaoSenha}
+              onPress={() => router.push("/recuperarsenha")}
+              accessible={true}
+              accessibilityLabel="Esqueci minha senha"
+              accessibilityHint="Toque para redefinir senha e recuperar o acesso"
+              accessibilityRole="button">
+              <Text style={styles.textoBotaoSenha}>ESQUECI MINHA SENHA</Text>
+            </TouchableOpacity>
+
+          </View>
+        </View>
+      </SafeAreaView></>
   );
 }
 
@@ -105,6 +112,11 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 56,
   },
+  logoText: {
+    fontFamily: "Poppins_300Light",
+    textAlign: "center",
+    fontSize: 16,
+  },
   title: {
     textAlign: 'center',
     fontSize: 20,
@@ -117,7 +129,7 @@ const styles = StyleSheet.create({
   texto: {
     fontFamily: 'Poppins_300Light',
     padding: 8,
-    fontSize: 16,
+    fontSize: 14,
     color: '#777',
     marginBottom: 10,
     marginTop: 16,
@@ -128,7 +140,7 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderRadius: 8,
     paddingHorizontal: 16,
-    fontSize: 16,
+    fontSize: 14,
     backgroundColor: '#fff',
     fontFamily: 'Inter',
   },
