@@ -3,26 +3,9 @@ import {
   ScrollView,
   StatusBar,
   SafeAreaView,
-  Keyboard,
-  Alert,
-  Platform,
   Pressable,
-  Text,
 } from "react-native"
-import { useState, useEffect, useMemo } from "react"
 import { PaperProvider } from "react-native-paper"
-import {
-  format,
-  getMonth,
-  getYear,
-  addMonths,
-  subMonths,
-  isFuture,
-  isSameMonth,
-  isSameYear,
-} from "date-fns"
-import { ptBR } from "date-fns/locale"
-
 import { Header } from "@/components/Header"
 import { BalanceCard } from "@/components/BalanceCard"
 import { ActionButtons } from "@/components/ActionButtons"
@@ -30,12 +13,11 @@ import { TransactionList } from "@/components/TransactionList"
 import { DatePickerModal } from "@/components/DatePickerModal"
 import { TransactionDatePicker } from "@/components/TransactionDatePicker"
 import { AddTransactionDialog } from "@/components/AddTransactionDialog"
-
-import { Transaction, TransactionType } from "@/app/types"
 import { router } from "expo-router"
 import { useAuthStore } from "@/store/authStore"
 import { useWalletViewModel } from "@/viewModels/useWalletViewModel"
 import { Controller } from "react-hook-form"
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 
 export default function Wallet() {
@@ -87,11 +69,12 @@ export default function Wallet() {
         <StatusBar backgroundColor="#9ACBD0" barStyle="dark-content" />
 
         <Header />
-        <Pressable onPress={async () => {
-          await logout()
-          router.replace("/(auth)/login")
-        }}>
-          <Text>Logout</Text>
+        <Pressable
+          onPress={async () => {
+            await logout()
+            router.replace("/(auth)/login")
+          }}>
+          <AntDesign style={styles.logout} name="logout" size={20} color="#006A71" />
         </Pressable>
         <ScrollView
           style={styles.scrollView}
@@ -184,5 +167,10 @@ const styles = StyleSheet.create({
   scrollViewContent: {
     paddingBottom: 20,
     paddingHorizontal: 16,
+  },
+    logout: {
+    position: 'absolute',
+    bottom: 64,
+    right: 16,
   },
 })

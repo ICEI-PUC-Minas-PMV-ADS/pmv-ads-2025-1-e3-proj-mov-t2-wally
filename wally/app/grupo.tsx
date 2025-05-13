@@ -28,13 +28,6 @@ export default function GrupoScreen() {
 
   const router = useRouter();
 
-  const items = [
-    { id: '1', title: 'Festa', value: 'Ariane pagou R256' },
-    { id: '2', title: 'IFood', value: 'Raphael pagou R142,56' },
-    { id: '3', title: 'Sorveteria', value: 'Raphael pagou R82,70' },
-    { id: '4', title: 'Uber', value: 'Ariane pagou R61,20' },
-  ];
-
   const token = useAuthStore((state) => state.token)
   const usuario = useAuthStore((state) => state.user)
 
@@ -107,7 +100,6 @@ export default function GrupoScreen() {
 
           <FlatList
             data={statusGrupo}
-            keyExtractor={item => item.id}
             renderItem={({ item }) => (
               <View style={styles.item}>
                 <Text style={styles.itemTexto}>{item.nome}</Text>

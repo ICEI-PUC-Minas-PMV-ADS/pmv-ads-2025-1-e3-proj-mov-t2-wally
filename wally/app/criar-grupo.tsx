@@ -6,12 +6,13 @@ import {
   TextInput,
   Pressable,
 } from 'react-native';
-import { Stack, useRouter } from 'expo-router';
+import { Stack } from 'expo-router';
 import React, { useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useGruposViewModel } from '@/viewModels/useGruposViewModel';
 import { Controller } from 'react-hook-form';
+import { router } from "expo-router"
 
 export default function CriarGrupoScreen() {
   const [tipoSelecionado, setTipoSelecionado] = useState<string | null>(null);
@@ -23,7 +24,7 @@ export default function CriarGrupoScreen() {
     { id: 'outro', icon: 'list-outline', label: 'Outro', component: Ionicons },
   ];
 
-  const { handleSubmitGrupo, grupoForm } = useGruposViewModel()
+  const { grupoForm } = useGruposViewModel()
 
   return (
     <>
@@ -58,24 +59,6 @@ export default function CriarGrupoScreen() {
 
           <Text style={styles.labelTipo}>Tipo</Text>
 
-          <View style={styles.tiposContainer}>
-            {tiposGrupo.map((tipo) => {
-              const IconComponent = tipo.component;
-              return (
-                <Pressable
-                  key={tipo.id}
-                  style={[
-                    styles.tipoItem,
-                    tipoSelecionado === tipo.id && styles.tipoItemSelecionado,
-                  ]}
-                  onPress={() => setTipoSelecionado(tipo.id)}
-                >
-                  <IconComponent name={tipo.icon as any} size={28} color="#48A6A7" />
-                </Pressable>
-
-              );
-            })}
-          </View>
           <Controller
             control={grupoForm.control}
             name="descricao"
@@ -122,12 +105,11 @@ export default function CriarGrupoScreen() {
             accessible={true}
             accessibilityLabel="Criar grupo"
             accessibilityHint="Toque para criar um novo grupo"
-            accessibilityRole="button"
-            onPress={handleSubmitGrupo}>
+            accessibilityRole="button">
             <Text style={styles.textoBotao}>CRIAR</Text>
           </Pressable>
+          
         </View>
-
       </SafeAreaView>
     </>
   );

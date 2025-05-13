@@ -17,13 +17,6 @@ export default function TabTwoScreen() {
 
   const router = useRouter();
 
-  const items = [
-    { id: '1', title: 'Apartamento 106' },
-    { id: '2', title: 'Viagem Europa' },
-    { id: '3', title: 'Empresa X' },
-    { id: '4', title: 'Escritório' },
-  ];
-
   const { grupos } = useGruposViewModel()
 
   return (
