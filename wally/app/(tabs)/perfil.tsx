@@ -1,155 +1,168 @@
 import React from 'react';
-import { View, StyleSheet, Text, TextInput, TouchableOpacity, SafeAreaView, StatusBar } from 'react-native';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import AntDesign from 'react-native-vector-icons/AntDesign';
+import { View, StyleSheet, ScrollView, Text, TextInput, TouchableOpacity, SafeAreaView, StatusBar } from 'react-native';
+import { Stack } from 'expo-router';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function TabTwoScreen() {
+
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor="#9ACBD0" barStyle={'dark-content'} />
-      
-      <View style={styles.header}>
-        <TouchableOpacity style={styles.closeIcon}>
-          <AntDesign name="close" size={24} color="white" />
-        </TouchableOpacity>
-        <Text style={styles.headerText}></Text>
+
+      <Stack.Screen
+        options={{
+          headerShown: true,
+          headerTitle: '',
+          headerBackVisible: false,
+          headerStyle: { backgroundColor: '#9ACBD0' },
+        }} />
+
+      <StatusBar backgroundColor="#9ACBD0" barStyle="dark-content" />
+
+      <View style={styles.addPhoto}>
+        <MaterialIcons name="add-a-photo" size={40} color="#006A71" />
       </View>
 
-      <View style={styles.mainContent}>
-        <View style={styles.titleContainer}>
-          <MaterialIcons name="add-a-photo" size={48} color="black" style={styles.iconStyle} />
-          <Text style={styles.addPhotoText}>Adicionar foto de perfil</Text>
-        </View>
+      <Text style={styles.addPhotoText}>Atualizar foto de perfil</Text>
 
-        <TextInput 
-          style={[styles.inputBox, { marginTop: 6 }]}  
-          placeholder="Editar nome"  
-        />
+      <ScrollView
+        style={styles.scrollView}
+        contentContainerStyle={styles.scrollViewContent}
+        showsVerticalScrollIndicator={true} >
 
-        <TextInput 
-          style={[styles.inputBox, { marginTop: 15 }]}  
-          placeholder="Alterar e-mail"  
-        />
+        <Text style={styles.texto}>Editar nome</Text>
 
-        <TextInput 
-          style={[styles.inputBox, { marginTop: 15 }]}  
-          placeholder="Atualizar celular (00) 0000 0000"  
-        />
+        <TextInput
+          style={styles.input}
+          placeholder="Nome" />
 
-        <TouchableOpacity style={styles.trashIconContainer}>
-          <Ionicons name="trash-bin" size={24} color="black" />
+        <Text style={styles.texto}>Alterar e-mail<Text style={{ color: 'red' }}>*</Text></Text>
+
+        <TextInput
+          placeholder="E-mail"
+          style={styles.input}
+          keyboardType="email-address" />
+
+        <Text style={styles.texto}>Atualizar telefone</Text>
+
+        <TextInput
+          placeholder="(00) 0000 0000"
+          style={styles.input} />
+
+        <Text style={styles.texto}>Data de Nascimento</Text>
+
+        <TextInput placeholder="Editar data de nascimento" style={styles.input} />
+
+        <Text style={styles.texto}>Atualizar senha<Text style={{ color: 'red' }}>*</Text></Text>
+
+        <TextInput
+          placeholder="Digite sua nova senha"
+          style={styles.input} />
+
+        <Text style={styles.texto}>Confirmar nova senha<Text style={{ color: 'red' }}>*</Text></Text>
+
+        <TextInput
+          placeholder="Confirme sua nova senha"
+          style={styles.input} />
+
+      </ScrollView>
+
+      <TouchableOpacity style={styles.trashIconContainer}>
+        <Ionicons name="trash-sharp" size={24} color="#006A71" />
+      </TouchableOpacity>
+
+      <Text style={styles.deleteAccountText}>Excluir conta</Text>
+
+      <View style={styles.containerBotao}>
+
+        <TouchableOpacity
+          style={styles.botaoSalvar}
+          accessible={true}
+          accessibilityLabel="Salvar"
+          accessibilityHint="Toque para salvar as edições"
+          accessibilityRole="button">
+          <Text style={styles.textoBotao}>SALVAR</Text>
         </TouchableOpacity>
 
-        <Text style={styles.deleteAccountText}>Excluir conta</Text>
-
-        <TouchableOpacity style={styles.inputButton}>  
-          <Text style={styles.buttonText}>Salvar</Text>  
-        </TouchableOpacity>
       </View>
-
-      <View style={styles.footer}>
-        <Text style={styles.footerText}> </Text>
-      </View>
-    </SafeAreaView>
+    </SafeAreaView >
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F4F2F2',
+    padding: 20,
+    margin: 8,
   },
-  header: {
-    backgroundColor: '#9ACBD0',
-    height: 120,
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    zIndex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
-    paddingTop: 20,
-  },
-  closeIcon: {
-    position: 'absolute',
-    top: 20,
-    left: 20,
-    zIndex: 2,
-  },
-  headerText: {
-    fontFamily: 'Poppins_700Bold',
-    fontSize: 22,
-    color: '#fff',
-    textAlign: 'center',
-    fontWeight: 'bold',
-  },
-  mainContent: {
-    paddingTop: 140,
-    paddingHorizontal: 20,
-  },
-  titleContainer: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 45,
-  },
-  iconStyle: {
-    marginBottom: 100,
+  addPhoto: {
+    alignSelf: 'center',
+    marginTop: 36,
   },
   addPhotoText: {
+    fontFamily: "Poppins_300Light",
+    textAlign: "center",
     fontSize: 12,
-    color: '#808080',
-    textAlign: 'center',
+    color: '#777',
+    marginTop: 6,
+    marginBottom: 10,
   },
-  inputBox: {
-    height: 40,
-    borderColor: 'rgba(72, 166, 167, 1)',
+  scrollView: {
+    flex: 1,
+    marginTop: 20,
+  },
+  scrollViewContent: {
+    paddingBottom: 26,
+    paddingHorizontal: 16,
+  },
+  input: {
+    height: 60,
     borderWidth: 1,
-    borderRadius: 5,
-    paddingLeft: 10,
-    fontSize: 16,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    paddingHorizontal: 16,
+    fontSize: 14,
     backgroundColor: '#fff',
+    fontFamily: 'Inter',
   },
-  inputButton: {
+  texto: {
+    fontFamily: 'Poppins_300Light',
+    padding: 8,
+    fontSize: 14,
+    color: '#777',
+    marginBottom: 6,
+    marginTop: 8,
+  },
+  botaoSalvar: {
     width: 330,
     height: 52,
-    backgroundColor: 'rgba(72, 166, 167, 1)',
+    backgroundColor: '#48A6A7',
     borderRadius: 8,
-    justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 80,
-    alignSelf: 'center',
+    justifyContent: 'center',
   },
-  buttonText: {
-    color: '#fff',
+  textoBotao: {
+    color: "#fff",
+    textAlign: "center",
+    fontFamily: "Poppins_700Bold",
     fontSize: 16,
-    fontWeight: 'bold',
   },
-
+  containerBotao: {
+    alignItems: 'center',
+    padding: 10,
+    marginTop: 26,
+    marginBottom: 16,
+  },
   trashIconContainer: {
     alignItems: 'center',
-    marginTop: 100,
+    marginTop: 16,
   },
-
   deleteAccountText: {
+    fontFamily: "Poppins_300Ligth",
     fontSize: 14,
-    color: '#808080',
+    color: '#777',
     textAlign: 'center',
-    marginTop: 5,
-  },
-
-  footer: {
-    height: 20,
-    backgroundColor: '#f1f1f1',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 5,
-  },
-  footerText: {
-    fontSize: 12,
-    color: '#333',
+    marginTop: 6,
   },
 });

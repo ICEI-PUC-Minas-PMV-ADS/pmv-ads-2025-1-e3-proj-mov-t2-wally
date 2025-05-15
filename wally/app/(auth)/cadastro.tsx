@@ -2,8 +2,9 @@ import React, { useCallback } from "react";
 import { View, Text, TextInput, StyleSheet, Pressable, SafeAreaView, Image, ScrollView, TouchableOpacity } from "react-native";
 import { router } from "expo-router";
 import { Controller, useForm } from "react-hook-form";
-import { useCadastroViewModel } from "@/viewModels/useCadastroViewModel"; import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-
+import { useCadastroViewModel } from "@/viewModels/useCadastroViewModel";  
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+  
 export default function Cadastro() {
   const { handleSubmitCadastro, control } = useCadastroViewModel()
 
@@ -29,7 +30,7 @@ export default function Cadastro() {
         <ScrollView
           style={styles.scrollView}
           contentContainerStyle={styles.scrollViewContent}
-          showsVerticalScrollIndicator={false}
+          showsVerticalScrollIndicator={true}
         >
 
           <Text style={styles.texto}>Nome</Text>
@@ -58,7 +59,7 @@ export default function Cadastro() {
             control={control}
             name="telefone"
             render={({ field }) => (
-              <TextInput placeholder="Digite seu telefone" style={styles.input} value={field.value} onChangeText={field.onChange} />
+              <TextInput placeholder="(00) 0000 0000" style={styles.input} value={field.value} onChangeText={field.onChange} />
             )}
           />
 
@@ -95,7 +96,7 @@ export default function Cadastro() {
         
         <View style={styles.containerBotao}>
           <TouchableOpacity
-            style={styles.botaoEntrar}
+            style={styles.botaoCadastrar}
             onPress={() => { handleSubmitCadastro(); }}
             accessible={true}
             accessibilityLabel="Cadastrar"
@@ -126,7 +127,7 @@ const styles = StyleSheet.create({
     width: 66,
     height: 66,
     alignSelf: 'center',
-    marginTop: 56,
+    marginTop: 46,
   },
   logoText: {
     fontFamily: "Poppins_300Light",
@@ -159,7 +160,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginTop: 16,
   },
-  botaoEntrar: {
+  botaoCadastrar: {
     width: 330,
     height: 52,
     backgroundColor: '#48A6A7',

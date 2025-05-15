@@ -37,6 +37,24 @@ export default function RootLayout() {
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="(auth)" options={{ headerShown: false }} />
           <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="criar-grupo" options={{
+            headerShown: true,
+            headerTitle: '',
+            headerStyle: { backgroundColor: '#9ACBD0' },
+            headerBackVisible: false,
+          }} />
+           <Stack.Screen name="grupo" options={{
+            headerShown: true,
+            headerTitle: '',
+            headerStyle: { backgroundColor: '#9ACBD0' },
+            headerBackVisible: false,
+          }} />
+            <Stack.Screen name="add-despesa" options={{
+            headerShown: true,
+            headerTitle: '',
+            headerStyle: { backgroundColor: '#9ACBD0' },
+            headerBackVisible: false,
+          }} />
           <Stack.Screen name="+not-found" />
         </Stack>
       </QueryClientProvider>

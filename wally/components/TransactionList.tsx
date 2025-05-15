@@ -7,7 +7,6 @@ import { format, isToday } from "date-fns"
 import { ptBR } from "date-fns/locale"
 import { useMemo } from "react"
 
-
 type TransactionListProps = {
   transactions: {
     id: string,
@@ -131,6 +130,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 8,
     marginTop: 16,
-    color: "#333",
+    color: "#777",
   },
 })

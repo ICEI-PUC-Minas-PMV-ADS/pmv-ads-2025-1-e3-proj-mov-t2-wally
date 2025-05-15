@@ -79,7 +79,7 @@ export default function Wallet() {
         <ScrollView
           style={styles.scrollView}
           contentContainerStyle={styles.scrollViewContent}
-          showsVerticalScrollIndicator={false}
+          showsVerticalScrollIndicator={true}
         >
           <BalanceCard
             currentMonth={currentMonth}

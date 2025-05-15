@@ -5,6 +5,7 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { router } from "expo-router";
 
 export default function RecuperarSenha() {
+  
   useFonts({ Poppins_700Bold, Poppins_300Light });
 
   const handleEnviar = (data: { email: string }) => {

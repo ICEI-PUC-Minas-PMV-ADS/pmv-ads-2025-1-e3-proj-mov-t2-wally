@@ -2,7 +2,6 @@ import {
   View,
   StyleSheet,
   Image,
-  StatusBar,
   SafeAreaView,
   FlatList,
   Text,
@@ -10,6 +9,7 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import React from 'react';
+import { Stack } from 'expo-router';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useGruposViewModel } from '@/viewModels/useGruposViewModel';
 
@@ -21,19 +21,21 @@ export default function TabTwoScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar
-        backgroundColor="#9ACBD0"
-        barStyle={'dark-content'} />
 
-      <View style={styles.header} />
+      <Stack.Screen
+        options={{
+          headerShown: true,
+          headerTitle: '',
+          headerBackVisible: false,
+          headerStyle: { backgroundColor: '#9ACBD0' },
+        }} />
+
       <View style={styles.logoContainer}>
         <Image
           source={require('../../assets/images/logo.png')}
           style={styles.logo}
           resizeMode="contain" />
       </View>
-
-      <View style={styles.mainContent}>
 
         <Text style={styles.titulo}>GRUPOS</Text>
 
@@ -42,21 +44,20 @@ export default function TabTwoScreen() {
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
             <Pressable onPress={() => router.push({
-                pathname: '/grupo',
-                params: { 
-                    id: item.id,
-                }
-            })}>
+              pathname: '/grupo',
+              params: {
+                id: item.id,
+              }})}>
               <View style={styles.item}>
                 <Text style={styles.itemTexto}>{item.nome}</Text>
               </View>
             </Pressable>
           )}
-          showsVerticalScrollIndicator={false}
+          showsVerticalScrollIndicator={true}
         />
-      </View>
-
+   
       <View style={styles.containerBotao}>
+
         <Pressable
           style={styles.botaoCriarGrupo}
           onPress={() => router.push('/criar-grupo')}
@@ -67,6 +68,7 @@ export default function TabTwoScreen() {
           <MaterialIcons name="group-add" size={28} color="#fff" />
           <Text style={styles.textoBotao}>CRIAR GRUPO</Text>
         </Pressable>
+
       </View>
     </SafeAreaView>
   );
@@ -77,29 +79,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F4F2F2',
   },
-  header: {
-    backgroundColor: '#9ACBD0',
-    height: 120,
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    zIndex: 1,
-  },
   logoContainer: {
     alignSelf: 'center',
-    top: 80,
+    top: 36,
     zIndex: 2,
   },
   logo: {
-    width: 96,
-    height: 96,
-  },
-  mainContent: {
-    flex: 1,
-    paddingTop: 100,
-    paddingBottom: 100,
-    paddingHorizontal: 30,
+    width: 76,
+    height: 76,
   },
   titulo: {
     fontFamily: 'Poppins_300Light',
@@ -108,6 +95,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginVertical: 20,
+    marginTop: 66,
   },
   item: {
     backgroundColor: '#FFF',
@@ -129,7 +117,7 @@ const styles = StyleSheet.create({
   },
   containerBotao: {
     position: 'absolute',
-    bottom: 70,
+    bottom: 50,
     left: 0,
     right: 0,
     alignItems: 'center',
@@ -137,7 +125,7 @@ const styles = StyleSheet.create({
     zIndex: 3,
   },
   botaoCriarGrupo: {
-    top: 60,
+    top: 28,
     width: 330,
     height: 52,
     backgroundColor: '#48A6A7',

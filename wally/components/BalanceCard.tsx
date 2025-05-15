@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     fontFamily: "Inter",
     fontSize: 20,
     fontWeight: "bold",
-    color: "#000",
+    color: "#333",
     marginBottom: 8,
   },
   containerResumo: {

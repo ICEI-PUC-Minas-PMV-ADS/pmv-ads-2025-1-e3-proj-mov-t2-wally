@@ -36,7 +36,8 @@ export default function LoginScreen() {
 
         <View style={styles.mainContent}>
 
-          <Text style={styles.title}>Bem-vindo(a)!</Text>
+          <Text style={styles.textTitulo}>Bem-vindo(a)</Text>
+          <Text style={styles.title}>à sua carteira inteligente!</Text>
 
           <Text style={styles.texto}>E-mail</Text>
 
@@ -116,13 +117,22 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins_300Light",
     textAlign: "center",
     fontSize: 16,
+    marginBottom: 10,
+  },
+  textTitulo: {
+    fontFamily: "Poppins_300Light",
+    textAlign: "left",
+    alignSelf: "center",
+    color: '#777',
+    fontSize: 22,
+    marginTop: 20,
   },
   title: {
     textAlign: 'center',
     fontSize: 20,
     fontWeight: "bold",
-    marginBottom: 26,
-    marginTop: 26,
+    marginBottom: 36,
+    marginTop: 6,
     fontFamily: "Poppins_700Bold",
     color: '#00494E',
   },
@@ -144,15 +154,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     fontFamily: 'Inter',
   },
-  link: {
-    marginTop: 15,
-    color: "blue",
-    fontFamily: "Poppins_300Light",
-  },
   containerBotao: {
     alignItems: 'center',
     padding: 10,
-    marginTop: 86,
+    marginTop: 70,
   },
   botaoEntrar: {
     width: 330,
@@ -166,15 +171,14 @@ const styles = StyleSheet.create({
   botaoSenha: {
     width: 330,
     height: 52,
-    marginTop: 10,
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
   },
   textoBotaoSenha: {
-    color: "#006A71",
+    color: "#00494E",
     textAlign: "center",
-    fontFamily: "Poppins_700Bold",
+    fontFamily: "Poppins_300Ligth",
     fontSize: 12,
   },
   textoBotao: {

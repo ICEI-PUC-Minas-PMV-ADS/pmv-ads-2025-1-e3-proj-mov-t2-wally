@@ -5,13 +5,16 @@ import {
   SafeAreaView,
   FlatList,
   TouchableOpacity,
+  StatusBar,
+  Pressable,
 } from 'react-native';
-import { Stack, useRouter, useLocalSearchParams } from 'expo-router';
+import { useRouter, useLocalSearchParams } from 'expo-router';
 import React from 'react';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useQuery } from '@tanstack/react-query';
 import { API_URL } from '@env';
 import { useAuthStore } from '@/store/authStore';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 type StatusGrupo = {
   data: string
@@ -44,26 +47,25 @@ export default function GrupoScreen() {
     enabled: !!token && !!usuario,
   })
 
-
   return (
     <>
-      <Stack.Screen
-        options={{
-          headerShown: true,
-          headerTitle: '',
-          headerBackVisible: true,
-          headerBackTitle: 'Voltar',
-          headerTintColor: '#006A71',
-          headerStyle: { backgroundColor: '#F4F2F2' },
-        }} />
-
       <SafeAreaView style={styles.container}>
 
-        <View style={styles.header} />
+        <StatusBar backgroundColor="#9ACBD0" barStyle="light-content" />
+
+        <View style={styles.botaoVoltar}>
+
+          <Pressable
+            onPress={() => router.push('/(tabs)/grupos')}>
+            <MaterialIcons name="arrow-back-ios" size={24} color="#006A71" />
+          </Pressable>
+
+        </View>
 
         <View style={styles.mainContent}>
 
           <Text style={styles.titulo}>Viagem Praia 🏝️</Text>
+          
           <Text style={styles.subTitulo}>Você deve R$2.345,26</Text>
 
           <View style={styles.containerBotoes}>
@@ -76,7 +78,7 @@ export default function GrupoScreen() {
               activeOpacity={0.7}
             >
               <View style={styles.botaoIconeContainer}>
-                <MaterialIcons name="add" size={20} color="#000" />
+              <Ionicons name="close-circle-outline" size={24} color="#006A71" />
               </View>
               <Text style={styles.textoBotaoQuitar}>QUITAR CONTAS</Text>
             </TouchableOpacity>
@@ -120,14 +122,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F4F2F2',
   },
-  header: {
-    backgroundColor: '#9ACBD0',
-    height: 56,
+  botaoVoltar: {
     position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    zIndex: 1,
+    left: 8,
+    padding: 16,
   },
   mainContent: {
     flex: 1,
@@ -156,7 +154,7 @@ const styles = StyleSheet.create({
   tituloLista: {
     fontFamily: 'Poppins_700Bold',
     fontSize: 16,
-    color: '#000',
+    color: '#777',
     textAlign: 'left',
     marginBottom: 6,
     marginTop: 6,
@@ -231,6 +229,6 @@ const styles = StyleSheet.create({
   textoBotaoQuitar: {
     fontFamily: "Poppins_300Light",
     fontSize: 14,
-    color: "#000",
+    color: "#006A71",
   },
 })
