@@ -3,7 +3,7 @@ import { UsuariosRepositorio } from '../repositorios/UsuariosRepositorio'
 import { FastifyRequest, FastifyReply } from 'fastify'
 import { GetTransacoesUsuarioUseCase } from '../use-cases/transacoes/GetTransacoesUsuarioUseCase'
 import { CriarTransacaoUsuarioUseCase } from '../use-cases/transacoes/CriarTransacaoUsuarioUseCase'
-import { DeletarTransacaoUsuarioUseCase } from 'use-cases/transacoes/DeletarTransacaoUsuarioUseCase'
+import { DeletarTransacaoUsuarioUseCase } from '../use-cases/transacoes/DeletarTransacaoUsuarioUseCase'
 
 const transacoesRepositorio = new TransacoesRepositorio()
 const usuariosRepositorio = new UsuariosRepositorio()
