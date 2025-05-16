@@ -1,4 +1,4 @@
-import { GruposRepositorio } from 'repositorios/GruposRepositorio'
+import { GruposRepositorio } from '../../repositorios/GruposRepositorio'
 import { DespesasGrupoRepositorio } from '../../repositorios/DespesasGrupoRepositorio'
 import { GrupoMembrosRepositorio } from '../../repositorios/GrupoMembrosRepositorio'
 

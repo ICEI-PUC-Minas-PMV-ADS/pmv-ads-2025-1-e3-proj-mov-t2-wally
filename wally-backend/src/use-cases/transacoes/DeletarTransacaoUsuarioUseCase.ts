@@ -1,4 +1,4 @@
-import { TransacoesRepositorio } from 'repositorios/TransacoesRepositorio'
+import { TransacoesRepositorio } from '../../repositorios/TransacoesRepositorio'
 
 export class DeletarTransacaoUsuarioUseCase {
   constructor(private transacoesRepositorio: TransacoesRepositorio) {}
