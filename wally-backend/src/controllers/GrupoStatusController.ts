@@ -2,7 +2,7 @@ import { FastifyRequest, FastifyReply } from 'fastify'
 import { GetGrupoBalancoUseCase } from '../use-cases/status/GetGrupoBalancoUseCase'
 import { DespesasGrupoRepositorio } from '../repositorios/DespesasGrupoRepositorio'
 import { GrupoMembrosRepositorio } from '../repositorios/GrupoMembrosRepositorio'
-import { GruposRepositorio } from 'repositorios/GruposRepositorio'
+import { GruposRepositorio } from '../repositorios/GruposRepositorio'
 
 const grupoMembrosRepositorio = new GrupoMembrosRepositorio()
 const despesasGrupoRepositorio = new DespesasGrupoRepositorio()
