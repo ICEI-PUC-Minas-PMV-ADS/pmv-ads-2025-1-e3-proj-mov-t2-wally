@@ -146,7 +146,7 @@ export const statusRoutes = async (app: FastifyInstance) => {
   )
   app.get(
     '/status/grupo',
-    { schema: getGrupoBalancoSchema, preHandler: authMiddleware },
+    { preHandler: authMiddleware },
     grupoStatusController.getGrupoBalanco,
   )
 }

@@ -12,4 +12,8 @@ export class GruposRepositorio {
 
     return grupo
   }
+
+  async findById(id: string): Promise<Grupo | null> {
+    return this.repositorio.findOne({ where: { id } })
+  }
 }

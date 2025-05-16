@@ -9,21 +9,31 @@ import {
   Pressable,
 } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router';
-import React from 'react';
+import React, { useMemo } from 'react';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useQuery } from '@tanstack/react-query';
 import { API_URL } from '@env';
 import { useAuthStore } from '@/store/authStore';
 import Ionicons from '@expo/vector-icons/Ionicons';
-
-type StatusGrupo = {
-  data: string
-  emprestou: boolean
-  envolvido: boolean
+interface Transacao {
   nome: string
   usuario_id: string
-  valor_pego_emprestado: number | null
   valor_total: number
+  valor_pego_emprestado: number | null
+  data: Date
+  envolvido: boolean
+  emprestou: boolean
+}
+
+interface GetGrupoBalancoUseCaseResponse {
+  nome: string
+  transacoes: Transacao[]
+}
+
+interface IResponse {
+  success: boolean
+  data: GetGrupoBalancoUseCaseResponse | null
+  error: any | null
 }
 
 export default function GrupoScreen() {
@@ -34,7 +44,7 @@ export default function GrupoScreen() {
   const token = useAuthStore((state) => state.token)
   const usuario = useAuthStore((state) => state.user)
 
-  const { data: statusGrupo, isPending: isLoadingStatusGrupo, refetch: refetchStatusGrupo } = useQuery<StatusGrupo[]>({
+  const { data: statusGrupo, isPending: isLoadingStatusGrupo, refetch: refetchStatusGrupo } = useQuery<IResponse>({
     queryKey: ['statusGrupo', id],
     queryFn: async () => {
       console.log({ url: `/status/grupo?grupo_id=${id}&usuario_id=${usuario?.id}` })
@@ -44,8 +54,14 @@ export default function GrupoScreen() {
       })
       return response.json()
     },
-    enabled: !!token && !!usuario,
+    enabled: !!id && !!token && !!usuario,
+    gcTime: 0,
+    staleTime: 0,
   })
+
+  // const saldoDevedor = useMemo(() => {
+  //   return statusGrupo?.data?.transacoes.reduce((acc, current) => acc.)
+  // }, [])
 
   return (
     <>
@@ -64,7 +80,7 @@ export default function GrupoScreen() {
 
         <View style={styles.mainContent}>
 
-          <Text style={styles.titulo}>Viagem Praia 🏝️</Text>
+          <Text style={styles.titulo}>{statusGrupo?.data?.nome}</Text>
           
           <Text style={styles.subTitulo}>Você deve R$2.345,26</Text>
 
@@ -101,7 +117,7 @@ export default function GrupoScreen() {
           <Text style={styles.tituloLista}>Maio 2025</Text>
 
           <FlatList
-            data={statusGrupo}
+            data={statusGrupo?.data?.transacoes}
             renderItem={({ item }) => (
               <View style={styles.item}>
                 <Text style={styles.itemTexto}>{item.nome}</Text>

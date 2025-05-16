@@ -26,6 +26,7 @@ interface GrupoForm {
 
 export function useGruposViewModel() {
     const queryClient = useQueryClient()
+
     const token = useAuthStore((state) => state.token)
     const usuario = useAuthStore((state) => state.user)
 
@@ -44,8 +45,6 @@ export function useGruposViewModel() {
         gcTime: 0,
         staleTime: 0,
     })
-
-    
 
     const grupoForm = useForm<GrupoForm>({
         defaultValues: {
@@ -77,15 +76,21 @@ export function useGruposViewModel() {
 
 
     const handleSubmitGrupo = useCallback(async () => {
+        let grupo = {}
+
         grupoForm.handleSubmit(async (data) => {
-            await criarGrupo(data)
+           const novoGrupo = await criarGrupo(data)
 
             await queryClient.invalidateQueries({ queryKey: ['grupos', usuario?.id] })
 
             grupoForm.reset()
 
-            router.back()
+            // router.back()
+
+            grupo = novoGrupo
         })()
+
+        return grupo
     }, [criarGrupo, grupoForm, refetchGrupos])
 
     return {

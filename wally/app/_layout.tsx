@@ -10,7 +10,7 @@ import { API_URL } from '@env';
 
 SplashScreen.preventAutoHideAsync();
 
-console.log({ API_URL })
+console.log({ API_URL: API_URL })
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();

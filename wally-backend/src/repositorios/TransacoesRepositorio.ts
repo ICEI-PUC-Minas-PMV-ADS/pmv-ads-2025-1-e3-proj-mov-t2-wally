@@ -65,4 +65,8 @@ export class TransacoesRepositorio {
 
     return transacao
   }
+
+  async delete(id: string) {
+    return this.repositorio.delete(id)
+  }
 }

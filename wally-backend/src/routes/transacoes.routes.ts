@@ -129,4 +129,10 @@ export async function transacoesRoutes(app: FastifyInstance) {
     { schema: createTransacaoSchema, preHandler: authMiddleware },
     transacoesController.create,
   )
+
+  app.delete(
+    '/transacoes',
+    { preHandler: authMiddleware },
+    transacoesController.delete,
+  )
 }

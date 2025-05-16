@@ -1,3 +1,4 @@
+import { GruposRepositorio } from 'repositorios/GruposRepositorio'
 import { DespesasGrupoRepositorio } from '../../repositorios/DespesasGrupoRepositorio'
 import { GrupoMembrosRepositorio } from '../../repositorios/GrupoMembrosRepositorio'
 
@@ -6,20 +7,51 @@ interface GetGrupoBalancoUseCaseParams {
   usuario_id: string
 }
 
+interface Transacao {
+  nome: string
+  usuario_id: string
+  valor_total: number
+  valor_pego_emprestado: number | null
+  data: Date
+  envolvido: boolean
+  emprestou: boolean
+}
+
+interface GetGrupoBalancoUseCaseResponse {
+  nome: string
+  transacoes: Transacao[]
+}
+
+interface IResponse {
+  success: boolean
+  data: GetGrupoBalancoUseCaseResponse | null
+  error: any | null
+}
+
 export class GetGrupoBalancoUseCase {
   constructor(
     private readonly grupoMembrosRepositorio: GrupoMembrosRepositorio,
     private readonly despesasGruposRepositorio: DespesasGrupoRepositorio,
+    private readonly gruposRepositorio: GruposRepositorio,
   ) {}
 
-  async execute({ grupo_id, usuario_id }: GetGrupoBalancoUseCaseParams) {
+  async execute({
+    grupo_id,
+    usuario_id,
+  }: GetGrupoBalancoUseCaseParams): Promise<IResponse> {
+    const grupo = await this.gruposRepositorio.findById(grupo_id)
+
+    if (!grupo) {
+      return { success: false, data: null, error: 'Grupo não encontrado.' }
+    }
+
     const grupoMembros =
       await this.grupoMembrosRepositorio.findAllByGroupId(grupo_id)
 
     if (grupoMembros.length === 0) {
       return {
         success: false,
-        despesas: [],
+        data: null,
         error: 'Grupo não encontrado',
       }
     }
@@ -31,7 +63,7 @@ export class GetGrupoBalancoUseCase {
     if (!grupoMembro) {
       return {
         success: false,
-        despesas: [],
+        data: null,
         error: 'Usuário não encontrado no grupo',
       }
     }
@@ -48,6 +80,8 @@ export class GetGrupoBalancoUseCase {
     const despesas = transacoesGrupo.filter(
       (transacao) => transacao.tipo === 'DESPESA',
     )
+
+    console.log({ transacoesGrupo, pagamentos, despesas })
 
     const transacoes = pagamentos.map((pagamento) => {
       const valorPegoEmprestado =
@@ -78,6 +112,8 @@ export class GetGrupoBalancoUseCase {
       }
     })
 
-    return transacoes
+    console.log({ transacoes })
+
+    return { success: true, data: { ...grupo, transacoes }, error: null }
   }
 }

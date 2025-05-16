@@ -3,6 +3,7 @@ import { UsuariosRepositorio } from '../repositorios/UsuariosRepositorio'
 import { FastifyRequest, FastifyReply } from 'fastify'
 import { GetTransacoesUsuarioUseCase } from '../use-cases/transacoes/GetTransacoesUsuarioUseCase'
 import { CriarTransacaoUsuarioUseCase } from '../use-cases/transacoes/CriarTransacaoUsuarioUseCase'
+import { DeletarTransacaoUsuarioUseCase } from 'use-cases/transacoes/DeletarTransacaoUsuarioUseCase'
 
 const transacoesRepositorio = new TransacoesRepositorio()
 const usuariosRepositorio = new UsuariosRepositorio()
@@ -82,6 +83,37 @@ export class TransacoesController {
       }
 
       return reply.status(200).send(transacoes)
+    } catch (error) {
+      return reply.status(500).send({
+        message: 'Erro ao buscar transações',
+        error,
+      })
+    }
+  }
+
+  async delete(request: FastifyRequest, reply: FastifyReply) {
+    try {
+      const usuario_id = request.usuario_id
+
+      const { id } = request.query as {
+        id: string
+      }
+
+      const deletarTransacaoUsuario = new DeletarTransacaoUsuarioUseCase(
+        transacoesRepositorio,
+      )
+
+      const { success, error } = await deletarTransacaoUsuario.execute(id)
+
+      if (!success) {
+        return reply
+          .status(400)
+          .send({ message: 'Erro ao buscar transações', error })
+      }
+
+      return reply
+        .status(200)
+        .send({ success: true, message: 'Transação excluída com sucesso.' })
     } catch (error) {
       return reply.status(500).send({
         message: 'Erro ao buscar transações',

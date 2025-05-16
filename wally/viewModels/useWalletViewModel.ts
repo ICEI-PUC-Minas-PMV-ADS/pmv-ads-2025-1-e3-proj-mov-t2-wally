@@ -1,7 +1,7 @@
 import { CreateTransactionFormData, Transaction, TransactionType } from "@/app/types"
 import { useAuthStore } from "@/store/authStore"
 import { API_URL } from "@env"
-import { useMutation, useQuery } from "@tanstack/react-query"
+import { QueryClient, useMutation, useQuery } from "@tanstack/react-query"
 import { add, addDays, addMonths, format, getMonth, getYear, isFuture, isSameMonth, isSameYear, subMonths } from "date-fns"
 import { ptBR } from "date-fns/locale"
 import { useCallback, useEffect, useMemo, useState } from "react"
@@ -35,6 +35,8 @@ const anoAtual = new Date().getFullYear()
 const anos = Array.from({ length: anoAtual - 2009 }, (_, i) => 2010 + i)
 
 export function useWalletViewModel() {
+    const queryClient = new QueryClient()
+
     const dataAtual = new Date()
     const mesAtual = getMonth(dataAtual)
     const anoAtualState = getYear(dataAtual)
@@ -78,7 +80,7 @@ export function useWalletViewModel() {
                 data_final: format(dataFinal, "yyyy-MM-dd"),
             })
 
-
+            console.log({ url: `${API_URL}/status/balanco?${searchParams.toString()}` })
             const response = await fetch(`${API_URL}/status/balanco?${searchParams.toString()}`, {
                 method: "GET",
                 headers: {
@@ -131,7 +133,7 @@ export function useWalletViewModel() {
         }
     }, [statusUsuario?.transacoes, filteredTransactionsByMonth, searchQuery])
 
-    
+
 
     const mudarMes = useCallback((direcao: "anterior" | "proximo") => {
         const dataAtual = new Date(currentYear, currentMonthIndex, 1)
@@ -152,7 +154,7 @@ export function useWalletViewModel() {
         setCurrentMonth(meses[novoMesIndex])
         setCurrentYear(novoAno)
 
-        
+
     }, [currentMonthIndex, currentYear])
 
     const showDatePickerModal = (tab: "month" | "year") => {
@@ -218,7 +220,7 @@ export function useWalletViewModel() {
 
             setTransactionDate(selectedDate)
 
-            
+
 
             if (Platform.OS === "android") {
                 setShowPicker(false)
@@ -296,9 +298,25 @@ export function useWalletViewModel() {
         hideTransactionDialog()
     }, [activeTransactionType, transactionDescription, transactionDate, transactionValue, hideTransactionDialog])
 
-    const removerTransacao = (id: string) => {
-        setTransactions((prev) => prev.filter((transaction) => transaction.id !== id))
-    }
+
+    const { mutateAsync: deleteUserTransaction } = useMutation({
+        mutationFn: async (id: string) => {
+            await fetch(`${API_URL}/transacoes?id=${id}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                },
+                body: JSON.stringify({})
+            })
+        }
+    })
+
+    const removerTransacao = useCallback(async (id: string) => {
+        await deleteUserTransaction(id)
+
+        await refetchStatusUsuario()
+    }, [])
 
 
 

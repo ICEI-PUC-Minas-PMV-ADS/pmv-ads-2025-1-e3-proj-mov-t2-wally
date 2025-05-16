@@ -3,9 +3,10 @@ import { Searchbar } from "react-native-paper"
 import { TransactionItem } from "./TransactionItem"
 import { EmptyState } from "./EmptyState"
 import { Transaction, TransactionGroup } from "@/app/types"
-import { format, isToday } from "date-fns"
+import { format, isToday, parseISO, set } from "date-fns"
 import { ptBR } from "date-fns/locale"
 import { useMemo } from "react"
+import util from 'util'
 
 type TransactionListProps = {
   transactions: {
@@ -50,10 +51,17 @@ export const TransactionList = ({
   const groupTransactionsByDate = (transactions: Transaction[]): TransactionGroup[] => {
     if (!transactions) return []
 
+
+
+
+
+    const sortedGroups = transactions.sort((a, b) => b.data.localeCompare(a.data))
+
+
     const groups: { [key: string]: Transaction[] } = {}
 
     transactions.forEach((transaction) => {
-      const dateKey = format(new Date(transaction.data), "yyyy-MM-dd")
+      const dateKey = transaction.data
 
       if (!groups[dateKey]) {
         groups[dateKey] = []
@@ -62,12 +70,21 @@ export const TransactionList = ({
       groups[dateKey].push(transaction)
     })
 
-    return Object.entries(groups)
-      .sort(([dateA], [dateB]) => new Date(dateB).getTime() - new Date(dateA).getTime())
-      .map(([date, transactions]) => ({
-        date: new Date(date),
+
+
+    return Object.entries(groups).map(([date, transactions]) => {
+
+      const baseDate = parseISO(date)
+      return {
         data: transactions,
-      }))
+        date: set(baseDate, {
+          hours: 3,
+          minutes: 0,
+          seconds: 0
+        })
+      }
+    })
+
   }
 
   const groupedTransactions = useMemo(() => groupTransactionsByDate(transactions), [transactions])
