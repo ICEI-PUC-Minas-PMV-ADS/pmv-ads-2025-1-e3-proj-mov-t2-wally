@@ -17,7 +17,7 @@ export default function TabTwoScreen() {
 
   const router = useRouter();
 
-  const { grupos } = useGruposViewModel()
+  const { grupos } = useGruposViewModel({})
 
   return (
     <SafeAreaView style={styles.container}>
@@ -37,25 +37,26 @@ export default function TabTwoScreen() {
           resizeMode="contain" />
       </View>
 
-        <Text style={styles.titulo}>GRUPOS</Text>
+      <Text style={styles.titulo}>GRUPOS</Text>
 
-        <FlatList
-          data={grupos}
-          keyExtractor={item => item.id}
-          renderItem={({ item }) => (
-            <Pressable onPress={() => router.push({
-              pathname: '/grupo',
-              params: {
-                id: item.id,
-              }})}>
-              <View style={styles.item}>
-                <Text style={styles.itemTexto}>{item.nome}</Text>
-              </View>
-            </Pressable>
-          )}
-          showsVerticalScrollIndicator={true}
-        />
-   
+      <FlatList
+        data={grupos}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+          <Pressable onPress={() => router.push({
+            pathname: '/grupo',
+            params: {
+              id: item.id,
+            }
+          })}>
+            <View style={styles.item}>
+              <Text style={styles.itemTexto}>{item.nome}</Text>
+            </View>
+          </Pressable>
+        )}
+        showsVerticalScrollIndicator={true}
+      />
+
       <View style={styles.containerBotao}>
 
         <Pressable

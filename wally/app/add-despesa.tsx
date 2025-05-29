@@ -10,11 +10,12 @@ import {
 } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import React, { useCallback } from 'react';
-import { useMutation } from '@tanstack/react-query';
+import { QueryClient, useMutation } from '@tanstack/react-query';
 import { API_URL } from '@env';
 import { useAuthStore } from '@/store/authStore';
 import { Controller, useForm } from 'react-hook-form';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { useGruposViewModel } from '@/viewModels/useGruposViewModel';
 interface Despesa {
   valor: string;
   data: string;
@@ -23,59 +24,10 @@ interface Despesa {
 
 export default function AdicionarDespesaGrupo() {
   const { grupoId } = useLocalSearchParams()
+
   console.log({ grupoId })
 
-  const token = useAuthStore((state) => state.token)
-  const usuario = useAuthStore((state) => state.user)
-
-  const { mutateAsync: criarDespesa } = useMutation({
-    mutationFn: async (despesa: any) => {
-      console.log({ url: `${API_URL}/despesas-grupo`, despesa })
-      const response = await fetch(`${API_URL}/despesas-grupo`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(despesa)
-      })
-
-      if (!response.ok) {
-        throw new Error('Erro ao criar despesa')
-      }
-
-      router.back()
-    }
-  })
-
-  const form = useForm<Despesa>({
-    defaultValues: {
-      valor: '',
-      data: '',
-      nome: '',
-    }
-  })
-
-  const handleSubmitDespesaGrupo = useCallback(form.handleSubmit(async (data) => {
-    try {
-      if (usuario && grupoId) {
-        console.log(data)
-        //await criarDespesa(data)
-
-        const usuarioId = usuario.id
-
-        await criarDespesa({
-          nome: data.nome,
-          valor: Number(data.valor),
-          usuario_id: usuarioId,
-          grupo_id: grupoId,
-          membros_participantes: [usuarioId]
-        })
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }), [criarDespesa])
+  const { despesaGrupoForm, handleSubmitDespesaGrupo, refetchStatusGrupo } = useGruposViewModel({ id: String(grupoId) })
 
   return (
     <>
@@ -101,7 +53,7 @@ export default function AdicionarDespesaGrupo() {
 
           <Text style={styles.labelNome}>Valor</Text>
           <Controller
-            control={form.control}
+            control={despesaGrupoForm.control}
             name="valor"
             render={({ field }) => (
               <TextInput
@@ -115,7 +67,7 @@ export default function AdicionarDespesaGrupo() {
 
           <Text style={styles.labelNome}>Data</Text>
           <Controller
-            control={form.control}
+            control={despesaGrupoForm.control}
             name="data"
             render={({ field }) => (
               <TextInput
@@ -129,7 +81,7 @@ export default function AdicionarDespesaGrupo() {
 
           <Text style={styles.labelNome}>Nome da Despesa</Text>
           <Controller
-            control={form.control}
+            control={despesaGrupoForm.control}
             name="nome"
             render={({ field }) => (
               <TextInput

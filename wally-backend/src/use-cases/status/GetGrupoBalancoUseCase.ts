@@ -1,6 +1,7 @@
 import { GruposRepositorio } from '../../repositorios/GruposRepositorio'
 import { DespesasGrupoRepositorio } from '../../repositorios/DespesasGrupoRepositorio'
 import { GrupoMembrosRepositorio } from '../../repositorios/GrupoMembrosRepositorio'
+import { UsuariosRepositorio } from 'repositorios/UsuariosRepositorio'
 
 interface GetGrupoBalancoUseCaseParams {
   grupo_id: string
@@ -33,87 +34,100 @@ export class GetGrupoBalancoUseCase {
     private readonly grupoMembrosRepositorio: GrupoMembrosRepositorio,
     private readonly despesasGruposRepositorio: DespesasGrupoRepositorio,
     private readonly gruposRepositorio: GruposRepositorio,
+    private readonly usuariosRepositorio: UsuariosRepositorio,
   ) {}
 
   async execute({
     grupo_id,
     usuario_id,
   }: GetGrupoBalancoUseCaseParams): Promise<IResponse> {
-    const grupo = await this.gruposRepositorio.findById(grupo_id)
+    const [grupo, usuario] = await Promise.all([
+      this.gruposRepositorio.findById(grupo_id),
+      this.usuariosRepositorio.findById(usuario_id),
+    ])
 
     if (!grupo) {
       return { success: false, data: null, error: 'Grupo não encontrado.' }
     }
 
-    const grupoMembros =
-      await this.grupoMembrosRepositorio.findAllByGroupId(grupo_id)
-
-    if (grupoMembros.length === 0) {
-      return {
-        success: false,
-        data: null,
-        error: 'Grupo não encontrado',
-      }
+    if (!usuario) {
+      return { success: false, data: null, error: 'Usuario não encontrado.' }
     }
 
-    const grupoMembro = grupoMembros.find(
-      (membro) => membro.usuario_id === usuario_id,
-    )
+    const despesasGrupo =
+      await this.despesasGruposRepositorio.findAllDespesasByGrupoId()
 
-    if (!grupoMembro) {
-      return {
-        success: false,
-        data: null,
-        error: 'Usuário não encontrado no grupo',
-      }
-    }
+    // const grupoMembros =
+    //   await this.grupoMembrosRepositorio.findAllByGroupId(grupo_id)
 
-    const transacoesGrupo =
-      await this.despesasGruposRepositorio.findAllDespesasByGrupoId(
-        grupoMembros.map((membro) => membro.id),
-      )
+    // console.log({ grupoMembros })
 
-    const pagamentos = transacoesGrupo.filter(
-      (transacao) => transacao.tipo === 'PAGAMENTO',
-    )
+    // if (grupoMembros.length === 0) {
+    //   return {
+    //     success: false,
+    //     data: null,
+    //     error: 'Grupo não encontrado',
+    //   }
+    // }
 
-    const despesas = transacoesGrupo.filter(
-      (transacao) => transacao.tipo === 'DESPESA',
-    )
+    // const grupoMembro = grupoMembros.find(
+    //   (membro) => membro.usuario_id === usuario_id,
+    // )
 
-    console.log({ transacoesGrupo, pagamentos, despesas })
+    // if (!grupoMembro) {
+    //   return {
+    //     success: false,
+    //     data: null,
+    //     error: 'Usuário não encontrado no grupo',
+    //   }
+    // }
 
-    const transacoes = pagamentos.map((pagamento) => {
-      const valorPegoEmprestado =
-        despesas.find(
-          (despesa) =>
-            despesa.despesa_id_unico === pagamento.despesa_id_unico &&
-            despesa.grupo_membros_id === grupoMembro.id,
-        )?.valor || null
+    // const transacoesGrupo =
+    //   await this.despesasGruposRepositorio.findAllDespesasByGrupoId(
+    //     grupoMembros.map((membro) => membro.id),
+    //   )
 
-      const emprestou = pagamento.grupo_membros_id === grupoMembro.id
+    // const pagamentos = transacoesGrupo.filter(
+    //   (transacao) => transacao.tipo === 'PAGAMENTO',
+    // )
 
-      const envolvido =
-        !!despesas.find(
-          (despesa) =>
-            despesa.despesa_id_unico === pagamento.despesa_id_unico &&
-            despesa.grupo_membros_id === grupoMembro.id,
-        ) || emprestou
+    // const despesas = transacoesGrupo.filter(
+    //   (transacao) => transacao.tipo === 'DESPESA',
+    // )
 
-      return {
-        nome: pagamento.nome,
-        usuario_id: pagamento.grupo_membros_id,
-        valor_total: Number(pagamento.valor_total),
-        valor_pego_emprestado:
-          emprestou || !envolvido ? null : Number(valorPegoEmprestado),
-        data: pagamento.data_criacao,
-        envolvido,
-        emprestou,
-      }
-    })
+    // console.log({ transacoesGrupo, pagamentos, despesas })
 
-    console.log({ transacoes })
+    // const transacoes = pagamentos.map((pagamento) => {
+    //   const valorPegoEmprestado =
+    //     despesas.find(
+    //       (despesa) =>
+    //         despesa.despesa_id_unico === pagamento.despesa_id_unico &&
+    //         despesa.grupo_membros_id === grupoMembro.id,
+    //     )?.valor || null
 
-    return { success: true, data: { ...grupo, transacoes }, error: null }
+    //   const emprestou = pagamento.grupo_membros_id === grupoMembro.id
+
+    //   const envolvido =
+    //     !!despesas.find(
+    //       (despesa) =>
+    //         despesa.despesa_id_unico === pagamento.despesa_id_unico &&
+    //         despesa.grupo_membros_id === grupoMembro.id,
+    //     ) || emprestou
+
+    //   return {
+    //     nome: pagamento.nome,
+    //     usuario_id: pagamento.grupo_membros_id,
+    //     valor_total: Number(pagamento.valor_total),
+    //     valor_pego_emprestado:
+    //       emprestou || !envolvido ? null : Number(valorPegoEmprestado),
+    //     data: pagamento.data_criacao,
+    //     envolvido,
+    //     emprestou,
+    //   }
+    // })
+
+    // console.log({ transacoes })
+
+    return { success: true, data: { ...grupo, transacoes: [] }, error: null }
   }
 }

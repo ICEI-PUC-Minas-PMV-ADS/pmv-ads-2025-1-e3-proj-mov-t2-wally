@@ -15,6 +15,7 @@ import { useQuery } from '@tanstack/react-query';
 import { API_URL } from '@env';
 import { useAuthStore } from '@/store/authStore';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { useGruposViewModel } from '@/viewModels/useGruposViewModel';
 interface Transacao {
   nome: string
   usuario_id: string
@@ -41,23 +42,11 @@ export default function GrupoScreen() {
 
   const router = useRouter();
 
-  const token = useAuthStore((state) => state.token)
-  const usuario = useAuthStore((state) => state.user)
+  const { statusGrupo } = useGruposViewModel({ id: id as string })
 
-  const { data: statusGrupo, isPending: isLoadingStatusGrupo, refetch: refetchStatusGrupo } = useQuery<IResponse>({
-    queryKey: ['statusGrupo', id],
-    queryFn: async () => {
-      console.log({ url: `/status/grupo?grupo_id=${id}&usuario_id=${usuario?.id}` })
-      const response = await fetch(`${API_URL}/status/grupo?grupo_id=${id}&usuario_id=${usuario?.id}`, {
-        method: 'GET',
-        headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }
-      })
-      return response.json()
-    },
-    enabled: !!id && !!token && !!usuario,
-    gcTime: 0,
-    staleTime: 0,
-  })
+  console.log({id})
+
+  console.log({statusGrupo})
 
   // const saldoDevedor = useMemo(() => {
   //   return statusGrupo?.data?.transacoes.reduce((acc, current) => acc.)
@@ -81,7 +70,7 @@ export default function GrupoScreen() {
         <View style={styles.mainContent}>
 
           <Text style={styles.titulo}>{statusGrupo?.data?.nome}</Text>
-          
+
           <Text style={styles.subTitulo}>Você deve R$2.345,26</Text>
 
           <View style={styles.containerBotoes}>
@@ -94,7 +83,7 @@ export default function GrupoScreen() {
               activeOpacity={0.7}
             >
               <View style={styles.botaoIconeContainer}>
-              <Ionicons name="close-circle-outline" size={24} color="#006A71" />
+                <Ionicons name="close-circle-outline" size={24} color="#006A71" />
               </View>
               <Text style={styles.textoBotaoQuitar}>QUITAR CONTAS</Text>
             </TouchableOpacity>

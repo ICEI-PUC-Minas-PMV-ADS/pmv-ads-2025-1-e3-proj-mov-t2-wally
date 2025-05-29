@@ -7,8 +7,8 @@ import { useForm } from "react-hook-form";
 interface CadastroFormData {
     nome: string;
     email: string;
-    telefone: string | null;
-    dataNascimento: string | null;
+    telefone?: string;
+    data_nascimento?: string;
     senha: string;
     confirmarSenha: string;
     avatarUrl: string | null;
@@ -19,8 +19,6 @@ export function useCadastroViewModel() {
         defaultValues: {
             nome: "",
             email: "",
-            telefone: null,
-            dataNascimento: null,
             senha: "",
             confirmarSenha: "",
             avatarUrl: null,

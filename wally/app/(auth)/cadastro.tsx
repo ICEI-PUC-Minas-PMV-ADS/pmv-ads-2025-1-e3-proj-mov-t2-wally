@@ -49,7 +49,7 @@ export default function Cadastro() {
             control={control}
             name="email"
             render={({ field }) => (
-              <TextInput placeholder="Digite seu e-mail" style={styles.input} value={field.value} onChangeText={field.onChange} keyboardType="email-address" />
+              <TextInput placeholder="Digite seu e-mail" autoCapitalize="none" style={styles.input} value={field.value} onChangeText={(value) => field.onChange(value.toLowerCase())} keyboardType="email-address" />
             )}
           />
 
@@ -67,7 +67,7 @@ export default function Cadastro() {
 
           <Controller
             control={control}
-            name="dataNascimento"
+            name="data_nascimento"
             render={({ field }) => (
               <TextInput placeholder="Digite sua data de nascimento" style={styles.input} value={field.value} onChangeText={field.onChange} />
             )}

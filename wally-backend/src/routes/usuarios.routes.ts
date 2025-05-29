@@ -87,8 +87,8 @@ const createSchema = {
       'email',
       'senha',
       'confirmacao_senha',
-      'telefone',
-      'data_nascimento',
+      // 'telefone',
+      // 'data_nascimento',
     ],
     properties: {
       nome: { type: 'string', description: 'Nome completo do usuário' },
@@ -106,12 +106,12 @@ const createSchema = {
         type: 'string',
         description: 'Confirmação da senha',
       },
-      telefone: { type: 'string', description: 'Número de telefone com DDD' },
-      data_nascimento: {
-        type: 'string',
-        format: 'date',
-        description: 'Data de nascimento (YYYY-MM-DD)',
-      },
+      // telefone: { type: 'string', description: 'Número de telefone com DDD' },
+      // data_nascimento: {
+      //   type: 'string',
+      //   format: 'date',
+      //   description: 'Data de nascimento (YYYY-MM-DD)',
+      // },
     },
   },
   response: {

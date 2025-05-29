@@ -16,7 +16,7 @@ export default function CriarGrupoScreen() {
     { id: "outro", icon: "list-outline", label: "Outro", component: Ionicons },
   ]
 
-  const { grupoForm, handleSubmitGrupo } = useGruposViewModel()
+  const { grupoForm, handleSubmitGrupo } = useGruposViewModel({})
 
   return (
     <>
@@ -99,10 +99,7 @@ export default function CriarGrupoScreen() {
 
           <Pressable
             style={styles.botaoCriar}
-            onPress={async () => {
-              const grupo = await handleSubmitGrupo()
-              router.navigate({ pathname: '/grupo', params: { id: grupo.id } })
-            }}
+            onPress={handleSubmitGrupo}
             accessible={true}
             accessibilityLabel="Criar grupo"
             accessibilityHint="Toque para criar um novo grupo"

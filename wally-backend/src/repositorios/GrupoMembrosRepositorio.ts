@@ -29,7 +29,7 @@ export class GrupoMembrosRepositorio {
   async findAllByGroupId(grupo_id: string): Promise<GrupoMembro[]> {
     const grupos = await this.repositorio.find({
       where: { grupo_id },
-      relations: ['grupo'],
+      relations: ['grupo', 'user'],
     })
 
     return grupos

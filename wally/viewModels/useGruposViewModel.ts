@@ -24,7 +24,7 @@ interface GrupoForm {
     membros: string[]
 }
 
-export function useGruposViewModel() {
+export function useGruposViewModel({ id }: { id?: string }) {
     const queryClient = useQueryClient()
 
     const token = useAuthStore((state) => state.token)
@@ -69,29 +69,95 @@ export function useGruposViewModel() {
 
             const responseData = await response.json()
 
-            console.log({ responseData })
-            return responseData
+
+            return responseData.grupo
         },
     })
 
 
     const handleSubmitGrupo = useCallback(async () => {
-        let grupo = {}
 
         grupoForm.handleSubmit(async (data) => {
-           const novoGrupo = await criarGrupo(data)
+            const novoGrupo = await criarGrupo(data)
 
             await queryClient.invalidateQueries({ queryKey: ['grupos', usuario?.id] })
 
             grupoForm.reset()
 
-            // router.back()
+            console.log({ novoGrupo })
 
-            grupo = novoGrupo
+            router.navigate({ pathname: '/grupo', params: { id: novoGrupo.id } })
         })()
 
-        return grupo
     }, [criarGrupo, grupoForm, refetchGrupos])
+
+
+    const { data: statusGrupo, isPending: isLoadingStatusGrupo, refetch: refetchStatusGrupo } = useQuery<IResponse>({
+        queryKey: ['statusGrupo', id],
+        queryFn: async () => {
+            console.log({ url: `/status/grupo?grupo_id=${id}&usuario_id=${usuario?.id}` })
+            const response = await fetch(`${API_URL}/status/grupo?grupo_id=${id}&usuario_id=${usuario?.id}`, {
+                method: 'GET',
+                headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }
+            })
+            return response.json()
+        },
+        enabled: !!id && !!token && !!usuario,
+        gcTime: 0,
+        staleTime: 0,
+    })
+
+    const { mutateAsync: criarDespesa } = useMutation({
+        mutationFn: async (despesa: any) => {
+            console.log({ url: `${API_URL}/despesas-grupo`, despesa })
+            const response = await fetch(`${API_URL}/despesas-grupo`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(despesa)
+            })
+
+            if (!response.ok) {
+                throw new Error('Erro ao criar despesa')
+            }
+        }
+    })
+
+    const despesaGrupoForm = useForm<Despesa>({
+        defaultValues: {
+            valor: '',
+            data: '',
+            nome: '',
+        }
+    })
+
+
+    const handleSubmitDespesaGrupo = useCallback(despesaGrupoForm.handleSubmit(async (data) => {
+        try {
+            if (usuario && id) {
+                console.log(data)
+                //await criarDespesa(data)
+
+                const usuarioId = usuario.id
+
+                await criarDespesa({
+                    nome: data.nome,
+                    valor: Number(data.valor),
+                    usuario_id: usuarioId,
+                    grupo_id: id,
+                    membros_participantes: [usuarioId]
+                })
+
+                await refetchStatusGrupo()
+
+                router.back()
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }), [criarDespesa])
 
     return {
         grupos,
@@ -99,6 +165,9 @@ export function useGruposViewModel() {
         handleSubmitGrupo,
         refetchGrupos,
         isLoadingGrupos,
-
+        statusGrupo,
+        refetchStatusGrupo,
+        despesaGrupoForm,
+        handleSubmitDespesaGrupo
     }
 }
