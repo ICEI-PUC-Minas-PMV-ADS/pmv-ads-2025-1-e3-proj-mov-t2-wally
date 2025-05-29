@@ -137,14 +137,14 @@ As tabelas a seguir apresentam uma descrição detalhada dos **requisitos funcio
 |RF-007| O aplicativo deve permitir filtrar transações por nome, valor ou tipo de transação. | ALTA |
 |RF-008| O aplicativo deve gerar gráficos simples de gastos por categoria e evolução mensal. | BAIXA |
 |RF-009| O aplicativo deve calcular automaticamene o saldo total, as receitas e as despesas do usuário. | ALTA |
-|RF-010| O aplicativo deve permitir que os usuários escolham o mês e ano na tela incial | ALTA |
+|RF-010| O aplicativo deve permitir que os usuários escolham o mês e ano na tela incial. | ALTA |
 |RF-011| O aplicativo deve permitir a criação de grupos para divisão de despesas. | ALTA |
 |RF-012| O aplicativo deve permitir que os usuários adicionem despesas ao grupo, informando valor, nome da despesa e divisão entre participantes. | ALTA |
 |RF-013| O aplicativo deve calcular automaticamente o saldo de cada participante do grupo.| ALTA |
 |RF-014|O aplicativo deve exibir um histórico de despesas do grupo. | ALTA |
 |RF-015| O aplicativo deve permitir que os usuários adicionem membros aos grupo. | ALTA |
 |RF-016| O aplicativo deve exibir uma tela com a lista de grupos do usuário. | ALTA |
-|RF-017| O aplicativo deve exibir uma tela incial | ALTA |
+|RF-017| O aplicativo deve exibir uma tela incial. | ALTA |
 
 
 ### Requisitos não Funcionais
@@ -193,8 +193,6 @@ O projeto está **restrito** pelos itens apresentados na tabela a seguir:
 A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. 
 
 A matriz deve contemplar todos os elementos relevantes que fazem parte do sistema, conforme a figura apresentada a seguir.
-
-# Matriz de Rastreabilidade
 
 | Relacionamento REQ. | RF-001 | RF-002 | RF-003 | RF-004 | RF-005 | RF-006 | RF-007 | RF-008 | RF-009 | RF-010 | RF-011 | RF-012 | RF-013 | RF-014 | RF-015 | RF-016 |
 |---------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
