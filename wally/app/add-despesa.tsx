@@ -47,7 +47,7 @@ export default function AdicionarDespesaGrupo() {
 
         <View style={styles.mainContent}>
 
-          <Text style={styles.titulo}>Viagem Praia 🏝️</Text>
+          <Text style={styles.titulo}></Text>
 
           <Text style={styles.tituloDois}>Você pagou:</Text>
 

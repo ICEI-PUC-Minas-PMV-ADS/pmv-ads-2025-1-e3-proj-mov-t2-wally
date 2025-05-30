@@ -71,7 +71,7 @@ export default function GrupoScreen() {
 
           <Text style={styles.titulo}>{statusGrupo?.data?.nome}</Text>
 
-          <Text style={styles.subTitulo}>Você deve R$2.345,26</Text>
+          {/* <Text style={styles.subTitulo}>Você deve R$2.345,26</Text> */}
 
           <View style={styles.containerBotoes}>
             <TouchableOpacity
@@ -103,7 +103,7 @@ export default function GrupoScreen() {
             </TouchableOpacity>
           </View>
 
-          <Text style={styles.tituloLista}>Maio 2025</Text>
+          {/* <Text style={styles.tituloLista}>Maio 2025</Text> */}
 
           <FlatList
             data={statusGrupo?.data?.transacoes}

@@ -5,7 +5,8 @@ import {
   SafeAreaView,
   FlatList,
   Text,
-  Pressable
+  Pressable,
+  TouchableOpacity,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import React from 'react';
@@ -37,7 +38,7 @@ export default function TabTwoScreen() {
           resizeMode="contain" />
       </View>
 
-      <Text style={styles.titulo}>GRUPOS</Text>
+      <Text style={styles.titulo}>Grupos</Text>
 
       <FlatList
         data={grupos}
@@ -51,6 +52,14 @@ export default function TabTwoScreen() {
           })}>
             <View style={styles.item}>
               <Text style={styles.itemTexto}>{item.nome}</Text>
+              <TouchableOpacity
+                style={styles.deleteButton}
+                onPress={() => onDelete(item.id)}
+                accessible={true}
+                accessibilityHint="Toque para excluir este grupo"
+              >
+                <MaterialIcons name="delete" size={22} color="#84B3B6" />
+              </TouchableOpacity>
             </View>
           </Pressable>
         )}
@@ -91,7 +100,7 @@ const styles = StyleSheet.create({
   },
   titulo: {
     fontFamily: 'Poppins_300Light',
-    fontSize: 20,
+    fontSize: 18,
     color: '#000',
     fontWeight: 'bold',
     textAlign: 'center',
@@ -99,8 +108,10 @@ const styles = StyleSheet.create({
     marginTop: 66,
   },
   item: {
+    width: '90%',
+    alignSelf: 'center',
     backgroundColor: '#FFF',
-    padding: 20,
+    padding: 16,
     borderWidth: 1,
     borderColor: '#9ACBD0',
     marginBottom: 8,
@@ -110,6 +121,9 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     shadowOffset: { width: 0, height: 2 },
     elevation: 2,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   itemTexto: {
     fontFamily: 'Inter',
@@ -117,16 +131,12 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   containerBotao: {
-    position: 'absolute',
-    bottom: 50,
-    left: 0,
-    right: 0,
     alignItems: 'center',
-    paddingVertical: 10,
+    padding: 30,
     zIndex: 3,
+    marginTop: 16,
   },
   botaoCriarGrupo: {
-    top: 28,
     width: 330,
     height: 52,
     backgroundColor: '#48A6A7',
@@ -141,5 +151,8 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins_700Bold",
     fontSize: 16,
     marginLeft: 10,
+  },
+  deleteButton: {
+    padding: 4,
   },
 });
