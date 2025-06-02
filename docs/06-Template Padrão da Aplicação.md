@@ -10,7 +10,7 @@ A **interatividade** do fluxo do usuário pode ser acessada através do link: [P
 <img width="316" alt="image" src="https://github.com/user-attachments/assets/b771c1a8-d771-4380-834a-ad678e378283" />
 </div>
 
-<h4 align="center">FIGURA 30 - Logomarca do Wally</h4>
+<h4 align="center">FIGURA 32 - Logomarca do Wally</h4>
 
 <br>
 
@@ -26,7 +26,7 @@ A **interatividade** do fluxo do usuário pode ser acessada através do link: [P
 <img width="326" alt="image" src="https://github.com/user-attachments/assets/3f97fbfb-ba10-4bbb-b842-2c131b9f796e" />
 </div>
 
-<h4 align="center">FIGURA 31 - Logomarca do Wally</h4>
+<h4 align="center">FIGURA 33 - Logomarca do Wally</h4>
 
 ## Cores
  
@@ -36,7 +36,7 @@ A **interatividade** do fluxo do usuário pode ser acessada através do link: [P
 <img width="596" alt="image" src="https://github.com/user-attachments/assets/38a875f7-4eed-45a7-bae0-decb9789675e" />
 </div>
 
-<h4 align="center">FIGURA 32 - Esquema de Cores do Wally</h4>
+<h4 align="center">FIGURA 34 - Esquema de Cores do Wally</h4>
 
 <br>
 
@@ -109,7 +109,7 @@ Para textos corridos, descrições e conteúdos mais extensos, optamos pela Inte
 <img width="416" alt="image" src="https://github.com/user-attachments/assets/d7ef6c34-4e5c-41d1-b10a-3f0229c49493" />
 </div>
 
-<h4 align="center">FIGURA 33 - Ilustração da Tela Inicial do Wally</h4>
+<h4 align="center">FIGURA 35 - Ilustração da Tela Inicial do Wally</h4>
 
 <br>
 
@@ -125,7 +125,7 @@ Para textos corridos, descrições e conteúdos mais extensos, optamos pela Inte
 
 </div>
 
-<h4 align="center">FIGURA 34</h4>
+<h4 align="center">FIGURA 36</h4>
 
 ## Template da Aplicação
 
@@ -145,7 +145,7 @@ Para textos corridos, descrições e conteúdos mais extensos, optamos pela Inte
 
 </div>
 
-<h4 align="center">FIGURA 35</h4>
+<h4 align="center">FIGURA 37</h4>
 
 <br>
 <br>
@@ -168,4 +168,4 @@ Para textos corridos, descrições e conteúdos mais extensos, optamos pela Inte
 
 </div>
 
-<h4 align="center">FIGURA 36</h4>
+<h4 align="center">FIGURA 38</h4>
