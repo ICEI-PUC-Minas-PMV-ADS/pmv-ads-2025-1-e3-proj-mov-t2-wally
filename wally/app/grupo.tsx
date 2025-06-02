@@ -16,6 +16,7 @@ import { API_URL } from '@env';
 import { useAuthStore } from '@/store/authStore';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useGruposViewModel } from '@/viewModels/useGruposViewModel';
+import { format } from 'date-fns';
 interface Transacao {
   nome: string
   usuario_id: string
@@ -42,7 +43,7 @@ export default function GrupoScreen() {
 
   const router = useRouter();
 
-  const { statusGrupo } = useGruposViewModel({ id: id as string })
+  const { statusGrupo, usuario } = useGruposViewModel({ id: id as string })
 
   console.log({id})
 
@@ -109,9 +110,12 @@ export default function GrupoScreen() {
             data={statusGrupo?.data?.transacoes}
             renderItem={({ item }) => (
               <View style={styles.item}>
+                <Text style={styles.itemTexto}>{format(new Date(item.data), 'dd/MM/yyyy')}</Text>
                 <Text style={styles.itemTexto}>{item.nome}</Text>
-                <Text style={styles.itemTextoValor}>{item.valor_total}</Text>
-                <Text style={styles.itemTextoValor}>{item.usuario_id}</Text>
+                {item.emprestou && (
+                  <Text style={styles.itemTextoValor}>Você pagou {item.valor_total}</Text>
+                )}
+                
               </View>
             )}
             showsVerticalScrollIndicator={false}

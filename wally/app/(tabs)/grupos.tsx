@@ -18,7 +18,7 @@ export default function TabTwoScreen() {
 
   const router = useRouter();
 
-  const { grupos } = useGruposViewModel({})
+  const { grupos, onDelete } = useGruposViewModel({})
 
   return (
     <SafeAreaView style={styles.container}>
@@ -61,6 +61,7 @@ export default function TabTwoScreen() {
                 <MaterialIcons name="delete" size={22} color="#84B3B6" />
               </TouchableOpacity>
             </View>
+
           </Pressable>
         )}
         showsVerticalScrollIndicator={true}

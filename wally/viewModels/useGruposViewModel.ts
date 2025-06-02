@@ -168,6 +168,7 @@ export function useGruposViewModel({ id }: { id?: string }) {
         statusGrupo,
         refetchStatusGrupo,
         despesaGrupoForm,
-        handleSubmitDespesaGrupo
+        handleSubmitDespesaGrupo,
+        usuario,
     }
 }
