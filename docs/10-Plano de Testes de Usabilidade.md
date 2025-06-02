@@ -1,4 +1,4 @@
-# Plano de Testes de Usabilidade - Wally
+# Plano de Testes de Usabilidade
 
 ## Objetivos dos Testes de Usabilidade
 
