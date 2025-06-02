@@ -184,6 +184,11 @@ Implementação do sistema de autenticação dos usuários, garantindo seguranç
 
 <h4 align="center">Etapa 4:</h4>
 
+<img width="2127" alt="image" src="https://github.com/user-attachments/assets/2455405c-a8eb-47a8-a78c-76671969d5f5" />
+
+
+<h4 align="center">FIGURA 10 - Quadro Kanban</h4>
+
 **Planejamento:**
 
 * Implementar as funcionalidades que não foram abordadas na etapa anterior, garantindo o atendimento completo dos requisitos levantados.
