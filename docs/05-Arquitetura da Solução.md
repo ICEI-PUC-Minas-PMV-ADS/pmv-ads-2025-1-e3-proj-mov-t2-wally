@@ -4,19 +4,19 @@
 
 ![wally-diagrama-de-classes](https://github.com/user-attachments/assets/1fa1fc4c-37c0-47b6-a367-aa2106713611)
 
-<h4 align="center">FIGURA 26 - Diagrama de Classes do Wally</h4>
+<h4 align="center">FIGURA 28 - Diagrama de Classes do Wally</h4>
 
 ## Modelo ER
 
 ![wally-diagrama-er](https://github.com/user-attachments/assets/89748024-49b9-4ec0-9a31-7755a1d77b2a)
 
-<h4 align="center">FIGURA 27 - Diagrama Entidade-Relacionamento do Wally</h4>
+<h4 align="center">FIGURA 29 - Diagrama Entidade-Relacionamento do Wally</h4>
 
 ## Esquema Relacional
 
 ![wally-esquema-relacional](https://github.com/user-attachments/assets/df6e22bc-06a5-4170-aeee-da422e4e660d)
 
-<h4 align="center">FIGURA 28 - Diagrama ER de Banco de Dados</h4>
+<h4 align="center">FIGURA 30 - Diagrama ER de Banco de Dados</h4>
 
 ## Modelo Físico
 
@@ -68,7 +68,7 @@ O fluxo de interação do usuário no Wally será conduzido da seguinte forma:
 
 ![React Native](https://github.com/user-attachments/assets/b79e5a70-9259-4bfd-ba69-af17519786ef)
 
-<h4 align="center">FIGURA 29 - Fluxo de Interação do Usuário com o Sistema</h4>
+<h4 align="center">FIGURA 31 - Fluxo de Interação do Usuário com o Sistema</h4>
 
  <!--  ## Hospedagem
 
