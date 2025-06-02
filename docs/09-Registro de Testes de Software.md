@@ -1,6 +1,6 @@
 # Registro de Testes de Software
 
-**Data:** 31/05/2025
+**Data do Registro:** 31/05/2025
 
 **Versão do Software:** 4.0
 
