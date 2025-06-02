@@ -159,6 +159,10 @@ export function useGruposViewModel({ id }: { id?: string }) {
         }
     }), [criarDespesa])
 
+    const handleDeleteGrupo = useCallback((id: string) => {
+
+    }, [])
+
     return {
         grupos,
         grupoForm,
@@ -170,5 +174,6 @@ export function useGruposViewModel({ id }: { id?: string }) {
         despesaGrupoForm,
         handleSubmitDespesaGrupo,
         usuario,
+        handleDeleteGrupo
     }
 }

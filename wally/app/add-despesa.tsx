@@ -27,7 +27,7 @@ export default function AdicionarDespesaGrupo() {
 
   console.log({ grupoId })
 
-  const {statusGrupo, despesaGrupoForm, handleSubmitDespesaGrupo, refetchStatusGrupo } = useGruposViewModel({ id: String(grupoId) })
+  const { statusGrupo, despesaGrupoForm, handleSubmitDespesaGrupo, refetchStatusGrupo } = useGruposViewModel({ id: String(grupoId) })
 
   return (
     <>
