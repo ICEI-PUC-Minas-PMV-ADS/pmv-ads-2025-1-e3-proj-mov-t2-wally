@@ -182,6 +182,37 @@ Implementação do sistema de autenticação dos usuários, garantindo seguranç
 - Casos de teste atualizados e primeiros testes executados, com registros documentados;
 - Quando Kanban atualizado no GitHub, evidenciando o gerenciamento contínuo do projeto;
 
+<h4 align="center">Etapa 4:</h4>
+
+**Planejamento:**
+
+* Implementar as funcionalidades que não foram abordadas na etapa anterior, garantindo o atendimento completo dos requisitos levantados.
+* Realizar adequações e melhorias nos mecanismos de autenticação, no modelo físico do banco de dados e nos scripts SQL gerados previamente.
+* Atualizar detalhadamente os documentos de planos de teste (funcionalidade e usabilidade), incluindo novos casos de teste que garantam a aderência à especificação.
+* Planejar a captura de evidências visuais e de versionamento no GitHub para demonstrar o progresso do time.
+* Observar rigorosamente as normas de qualidade de software, com foco em:
+  * Funcionalidade: verificar o correto funcionamento do app.
+  * Usabilidade: assegurar uma interface intuitiva e acessível.
+  * Padrões de codificação: manter consistência e legibilidade do código.
+
+
+**Execução:**
+
+* Desenvolvimento das funcionalidades remanescentes, seguindo os requisitos funcionais definidos.
+* Ajustes nos fluxos de autenticação e validação de usuários, conforme feedbacks das etapas anteriores.
+* Atualização do modelo físico do banco de dados e revisão dos scripts SQL (criação, alteração e DML) para suportar as novas features.
+* Implementação de melhorias de usabilidade e refinamento de componentes da interface móvel.
+* Aplicação dos padrões de codificação definidos, com revisões de pares (code review) para garantir qualidade.
+* Atualização contínua do quadro Kanban no repositório GitHub, refletindo o status de cada cartão e sprint.
+* Registro de commits e pull requests, monitorando as contribuições individuais de cada membro do time.
+* Execução dos casos de teste documentados, registrando resultados e evidências de execução.
+
+**Evidências:**
+
+* Funcionalidades remanescentes implementadas e disponíveis na aplicação móvel.
+* Documentos de planos de teste (funcionalidade e usabilidade) revisados e enriquecidos com novos casos de teste.
+
+
 ### Ferramentas
 
 Para garantir um desenvolvimento eficiente e colaborativo, adotamos diversas ferramentas que auxiliam na comunicação, organização, versionamento de código, design e implementação do projeto. Cada ferramenta foi selecionada com base em suas funcionalidades e na sua capacidade de atender às necessidades da equipe.
