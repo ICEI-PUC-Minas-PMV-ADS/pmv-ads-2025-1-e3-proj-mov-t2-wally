@@ -4,7 +4,7 @@
 
  **Versão do Software:** 4.0
  
- ## **Objetivo**
+ ### **Objetivo**
  
  Avaliar a usabilidade da aplicação Wally, garantindo que o sistema seja intuitivo, eficiente e atenda às expectativas dos usuários. O foco dos testes inclui as telas de Login, Cadastro, Adição de Ganhos e Despesas, Criação e Gestão de Grupos de Despesas, e Geração de Relatórios Gráficos.
  
@@ -15,7 +15,7 @@
  - Tempo de conclusão das tarefas.
  - Satisfação geral dos usuários.
  
- ## **Metodologia**
+### **Metodologia**
  
  Os testes de usabilidade foram conduzidos com 10 usuários (5 iniciantes e 5 mais experientes em finanças pessoais) que interagiram com as telas e realizaram as seguintes tarefas:
  
@@ -25,7 +25,7 @@
  4. **Criação de Grupos de Despesas** – Criar grupos de despesas e adicionar participantes.
  5. **Gestão de Saldos de Grupos** – Verificar e ajustar saldos de participantes em grupos.
  
- # Testes Realizados
+ ## Testes Realizados
  
  ### Teste 01 - Realizar Login e Cadastro de Conta
  
@@ -75,7 +75,7 @@
  - **Laura Pereira** (Usuária comum) — Sentiu que o processo de dividir as despesas poderia ser um pouco mais intuitivo, mas conseguiu concluir com sucesso, elogiando o design geral.
  - **João Souza** (Consultor financeiro) — Realizou as tarefas com facilidade e sugeriu melhorias para otimizar a divisão das despesas, mas no geral considerou a funcionalidade bastante prática.
  
- # Questionário de Satisfação
+ ## Questionário de Satisfação
  
  <div align="center">
  
@@ -100,7 +100,7 @@
  
  </div>
  
- # Análise e Conclusões
+ ## Análise e Conclusões
 
 Os usuários ficaram satisfeitos com a experiência, considerando o Wally uma ferramenta prática e fácil de usar, com apenas pequenos ajustes para tornar a navegação ainda mais fluida e eficiente.
 
