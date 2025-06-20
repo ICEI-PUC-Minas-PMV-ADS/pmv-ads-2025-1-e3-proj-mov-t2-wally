@@ -16,7 +16,15 @@ Ao longo do desenvolvimento do Wally, diversas oportunidades de aprimoramento fo
 
 A gestão do trabalho da equipe no projeto Wally foi visualizada e acompanhada de perto por meio do Quadro Kanban no **GitHub Projects**. Este quadro reflete de maneira clara o fluxo de trabalho ágil, com as tarefas distribuídas em colunas como "Backlog", "To Do", "In Progress" e "Done", proporcionando uma visão transparente do progresso do projeto, garantindo que todos — do planejamento à entrega — acompanhem em tempo real o avanço das atividades. 
 
+<img width="1024" alt="image" src="https://github.com/user-attachments/assets/c19cf054-6b34-41f1-a5c5-77693b51cb2e" />
+
 Ao longo de todas as sprints, o grupo manteve-se presente em reuniões de alinhamento, refinamento e demonstração de resultados, assegurando que decisões fossem validadas coletivamente. 
+
+<div align="center">
+
+<img width="568" alt="image" src="https://github.com/user-attachments/assets/ea91f974-f664-4421-9171-b650f7cc7856" />
+
+</div>
 
 No front-end, Danielle entregou a Tela Inicial (index.tsx – RF‑017), enquanto Vinicius desenvolveu as telas de Login (login.tsx – RF‑001), Recuperação de Senha (recuperarsenha.tsx – RF‑002) e Cadastro (cadastro.tsx – RF‑003). Estevão programou os dialogs de Adicionar Receitas e Despesas (AddTransactionDialog.tsx – RF‑005). Alexsander implementou a Tela de Perfil (perfil.tsx – RF‑004). Ariane ficou responsável pela criação de toda identidade visual e design do Wally, desde a logo até a prototipagem e interfaces. Também desenvolveu a Dashboard Principal (index.tsx, layout.tsx e seus componentes), implementando filtragem de transações, cálculos de saldo e seleção de datas (RF‑006, 007, 009 e 010), a Tela de Criação de Grupo (criar-grupo.tsx – RF‑011), a Tela do Grupo (grupo.tsx – RF‑013, RF-014) e atualização de todas as telas para as novas versões. Raphael foi o responsável pela criação, organização e manutenção do Banco de Dados do Wally. E também criou a Tela Grupos e suas funções (grupos.tsx – RF‑016), o Modal de Adicionar Membros (RF‑015) e, em conjunto com Ariane, a Tela de Adicionar Despesa de Grupo (add-despesa.tsx – RF‑012). No back-end, Raphael e Ariane desenharam e mantiveram o serviço Node.js e o modelo físico do PostgreSQL, fortalecendo toda a estrutura de autenticação e transações do Wally.
 
