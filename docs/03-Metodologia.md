@@ -182,6 +182,70 @@ Implementação do sistema de autenticação dos usuários, garantindo seguranç
 - Casos de teste atualizados e primeiros testes executados, com registros documentados;
 - Quando Kanban atualizado no GitHub, evidenciando o gerenciamento contínuo do projeto;
 
+<h4 align="center">Etapa 4:</h4>
+
+<img width="2127" alt="image" src="https://github.com/user-attachments/assets/2455405c-a8eb-47a8-a78c-76671969d5f5" />
+
+
+<h4 align="center">FIGURA 10 - Quadro Kanban</h4>
+
+**Planejamento:**
+
+* Implementar as funcionalidades que não foram abordadas na etapa anterior, garantindo o atendimento completo dos requisitos levantados.
+* Realizar adequações e melhorias nos mecanismos de autenticação, no modelo físico do banco de dados e nos scripts SQL gerados previamente.
+* Atualizar detalhadamente os documentos de planos de teste (funcionalidade e usabilidade), incluindo novos casos de teste que garantam a aderência à especificação.
+* Planejar a captura de evidências visuais e de versionamento no GitHub para demonstrar o progresso do time.
+* Observar rigorosamente as normas de qualidade de software, com foco em:
+  * Funcionalidade: verificar o correto funcionamento do app.
+  * Usabilidade: assegurar uma interface intuitiva e acessível.
+  * Padrões de codificação: manter consistência e legibilidade do código.
+
+**Execução:**
+
+* Desenvolvimento das funcionalidades remanescentes, seguindo os requisitos funcionais definidos.
+* Ajustes nos fluxos de autenticação e validação de usuários, conforme feedbacks das etapas anteriores.
+* Atualização do modelo físico do banco de dados e revisão dos scripts SQL (criação, alteração e DML) para suportar as novas features.
+* Implementação de melhorias de usabilidade e refinamento de componentes da interface móvel.
+* Aplicação dos padrões de codificação definidos, com revisões de pares (code review) para garantir qualidade.
+* Atualização contínua do quadro Kanban no repositório GitHub, refletindo o status de cada cartão e sprint.
+* Registro de commits e pull requests, monitorando as contribuições individuais de cada membro do time.
+* Execução dos casos de teste documentados, registrando resultados e evidências de execução.
+
+**Evidências:**
+
+* Funcionalidades remanescentes implementadas e disponíveis na aplicação móvel.
+* Documentos de planos de teste (funcionalidade e usabilidade) revisados e enriquecidos com novos casos de teste.
+
+<h4 align="center">Etapa 5:</h4>
+
+<img width="1009" alt="image" src="https://github.com/user-attachments/assets/b0523a26-bb66-48e3-851c-4e91bda6921f" />
+
+<h4 align="center">FIGURA 11 - Quadro Kanban</h4>
+
+**Planejamento:**
+
+* Avaliação de Tecnologias: Revisar e documentar o uso de frameworks e ferramentas (Node.js, React Native, Expo, PostgreSQL, Docker, AWS, etc.) adotados ao longo do projeto.
+* Análise Crítica: Identificar pontos fortes e fragilidades na arquitetura atual e no processo de desenvolvimento, com base em cobertura de testes, observabilidade e práticas de versionamento.
+* Propostas de Melhoria: Definir recomendações para o futuro do Wally.
+* “Retratos” de Gestão e Contribuições: Capturar status do Quadro Kanban no GitHub (Backlog, To Do, In Progress, Review, Done) e estatísticas de commits, pull requests e issues fechadas por membro durante a sprint final.
+* Preparação da Apresentação: Estruturar o arquivo PDF de slides e planejar o roteiro do vídeo de apresentação síncrona, prevendo demonstração ao vivo no Expo Go.
+
+**Execução:**
+
+* Produção do Documento “Considerações Finais”.
+* Redigir avaliação dos frameworks e tecnologias.
+* Inserir “retratos” visuais do Kanban e das contribuições no GitHub.
+* Escrever análise crítica e detalhar propostas de melhoria arquitetural e de processo.
+* Criação da Apresentação do Projeto.
+* Revisão Final e Entrega.
+
+**Evidências:**
+
+* Documento “Considerações Finais” completo, com todas as seções exigidas.
+* *Documento de "Apresentação" do projeto.
+* Kanban no GitHub atualizado, refletindo o estado final do projeto.
+* Relatório de Contribuições com tabela de commits, PRs e issues por membro.
+
 ### Ferramentas
 
 Para garantir um desenvolvimento eficiente e colaborativo, adotamos diversas ferramentas que auxiliam na comunicação, organização, versionamento de código, design e implementação do projeto. Cada ferramenta foi selecionada com base em suas funcionalidades e na sua capacidade de atender às necessidades da equipe.

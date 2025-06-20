@@ -1,7 +1,9 @@
 # Registro de Testes de Software
 
-* **Data:** 31/05/2025
-* **Versão do Software:** 4.0
+**Data do Registro:** 31/05/2025
+
+**Versão do Software:** 4.0
+
 
 | Caso de Teste                      | Requisito | Objetivo                                                     | Critérios de Aceitação                                                              | Método          | Resultado | 
 | ---------------------------------- | --------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------- | --------------- | --------- | 

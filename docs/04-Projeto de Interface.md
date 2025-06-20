@@ -7,13 +7,13 @@ A **interface** do Wally foi projetada para oferecer uma experiência intuitiva 
 
 <img width="5258" alt="userflow" src="https://github.com/user-attachments/assets/613c3a40-5d50-4cab-b758-9e3ebc6d2960" />
 
-<h4 align="center">FIGURA 09 - User Flow do Wally</h4>
+<h4 align="center">FIGURA 11 - User Flow do Wally</h4>
 
 ## Diagrama de Fluxo
 
 ![_Fluxograma](https://github.com/user-attachments/assets/0317ce81-dbef-4f85-80f3-790c1e2beeda)
 
-<h4 align="center">FIGURA 10 - Fluxograma do Wally</h4>
+<h4 align="center">FIGURA 12 - Fluxograma do Wally</h4>
 
 ## Wireframes
 
@@ -24,7 +24,7 @@ A Tela Inicial do Wally é o ponto de partida para que os usuários conheçam a 
 <img width="426" alt="image" src="https://github.com/user-attachments/assets/24126883-7ced-4881-81d2-bb1444c52a54" />
 </div>
 
-<h4 align="center">FIGURA 11 </h4>
+<h4 align="center">FIGURA 13 </h4>
 
 <br>
 
@@ -35,7 +35,7 @@ Na Tela de Login, o usuário acessa sua conta inserindo e-mail e senha previamen
 <img width="426" alt="image" src="https://github.com/user-attachments/assets/74b28720-dc3e-440a-833e-26a0d6347ba1" />
 </div>
 
-<h4 align="center">FIGURA 12 </h4>
+<h4 align="center">FIGURA 14 </h4>
 
 <br>
 
@@ -46,7 +46,7 @@ Caso o usuário tenha esquecido sua senha, ele pode recuperá-la na Tela de Recu
 <img width="426" alt="image" src="https://github.com/user-attachments/assets/fb6bd812-2c76-4505-95ed-b27eb5d6ad34" />
 </div>
 
-<h4 align="center">FIGURA 13 </h4>
+<h4 align="center">FIGURA 15 </h4>
 
 <br>
 
@@ -57,7 +57,7 @@ A Tela de Cadastro é onde os usuários criam sua conta no Wally. Para se regist
 <img width="426" alt="image" src="https://github.com/user-attachments/assets/a5197bc0-16b5-4f4b-89b5-45a6dac4d7a8" />
 </div>
 
-<h4 align="center">FIGURA 14 </h4>
+<h4 align="center">FIGURA 16 </h4>
 
 <br>
 
@@ -68,7 +68,7 @@ A Dashboard Principal é o coração do aplicativo, oferecendo uma visão geral 
 <img width="426" alt="image" src="https://github.com/user-attachments/assets/9a12aa25-9497-429e-887d-d4ea9905312c" />
 </div>
 
-<h4 align="center">FIGURA 15 </h4>
+<h4 align="center">FIGURA 17 </h4>
 
 <br>
 
@@ -79,7 +79,7 @@ Essa tela é dedicada ao registro de novas entradas de dinheiro. O usuário info
 <img width="426" alt="image" src="https://github.com/user-attachments/assets/48630eb8-0145-4410-93f1-84d48d2f1961" />
 </div>
 
-<h4 align="center">FIGURA 16 </h4>
+<h4 align="center">FIGURA 18 </h4>
 
 <br>
 
@@ -90,7 +90,7 @@ Similar à tela de receitas, mas voltada para gastos pessoais. Ao registrar uma 
 <img width="426" alt="image" src="https://github.com/user-attachments/assets/07d4313f-332e-4e77-84cf-468cba13adf1" />
 </div>
 
-<h4 align="center">FIGURA 17 </h4>
+<h4 align="center">FIGURA 19 </h4>
 
 <br>
 
@@ -101,7 +101,7 @@ A tela de Receitas Pessoais permite que o usuário visualize seus ganhos de mane
 <img width="426" alt="image" src="https://github.com/user-attachments/assets/c141ccf8-305b-4da4-87f0-c1bcd6c64bdd" />
 </div>
 
-<h4 align="center">FIGURA 18 </h4>
+<h4 align="center">FIGURA 20 </h4>
 
 <br>
 
@@ -112,7 +112,7 @@ A Tela de Despesas Pessoais, assim como a de receitas, apresenta uma visão deta
 <img width="426" alt="image" src="https://github.com/user-attachments/assets/38056f76-9316-4686-a822-28c4c5f09ba9" />
 </div>
 
-<h4 align="center">FIGURA 19 </h4>
+<h4 align="center">FIGURA 21 </h4>
 
 <br>
 
@@ -123,7 +123,7 @@ Na Tela Grupos, o usuário pode visualizar todos os grupos dos quais participa e
 <img width="426" alt="image" src="https://github.com/user-attachments/assets/5eec7a21-1b46-49d0-9ac8-b65bda87b63f" />
 </div>
 
-<h4 align="center">FIGURA 20 </h4>
+<h4 align="center">FIGURA 22 </h4>
 
 <br>
 
@@ -134,7 +134,7 @@ Na Tela de Criação de Grupo, o usuário pode criar um novo grupo de despesas c
 <img width="426" alt="image" src="https://github.com/user-attachments/assets/ceada2ea-9d9b-425e-9ebe-ce355ddefb51" />
 </div>
 
-<h4 align="center">FIGURA 21 </h4>
+<h4 align="center">FIGURA 23 </h4>
 
 <br>
 
@@ -145,7 +145,7 @@ Este Modal permite que o usuário adicione novos participantes ao grupo. A busca
 <img width="426" alt="image" src="https://github.com/user-attachments/assets/09e0bd50-7e7a-4d2f-ba75-cdc6388de599" />
 </div>
 
-<h4 align="center">FIGURA 22 </h4>
+<h4 align="center">FIGURA 24 </h4>
 
 <br>
 
@@ -156,7 +156,7 @@ Na Tela do Grupo, os usuários podem gerenciar despesas compartilhadas dentro do
 <img width="426" alt="image" src="https://github.com/user-attachments/assets/79b18f2e-e4c8-4436-87b7-17684fb54145" />
 </div>
 
-<h4 align="center">FIGURA 23 </h4>
+<h4 align="center">FIGURA 25 </h4>
 
 <br>
 
@@ -167,7 +167,7 @@ Na Tela de Adicionar Despesa do Grupo, o usuário pode registrar uma nova despes
 <img width="426" alt="image" src="https://github.com/user-attachments/assets/40f2a8a6-1130-4594-afe4-5f3348741c8b" />
 </div>
 
-<h4 align="center">FIGURA 24 </h4>
+<h4 align="center">FIGURA 26 </h4>
 
 <br>
 
@@ -178,7 +178,7 @@ A Tela de Perfil permite que o usuário gerencie suas informações pessoais den
 <img width="426" alt="image" src="https://github.com/user-attachments/assets/681d22ec-b494-444f-b852-cb0eeaeb58da" />
 </div>
 
-<h4 align="center">FIGURA 25 </h4>
+<h4 align="center">FIGURA 27 </h4>
 
 <br>
 
