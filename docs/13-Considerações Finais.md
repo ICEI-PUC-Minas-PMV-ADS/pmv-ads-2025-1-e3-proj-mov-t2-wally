@@ -10,7 +10,12 @@ No âmbito de design e prototipagem, o **Figma** permitiu a criação colaborati
 
 ## Análise Crítica e Proposta de Melhorias
 
-Ao longo do desenvolvimento do Wally, diversas oportunidades de aprimoramento foram identificadas, tanto no projeto arquitetural quanto no processo de análise e desenvolvimento. Apesar da arquitetura ser sólida e escalável, baseada em tecnologias consolidadas, percebeu-se a necessidade de investir em testes automatizados mais robustos.
+Ao longo do desenvolvimento do Wally, diversas oportunidades de aprimoramento foram identificadas, tanto no projeto arquitetural quanto no processo de análise e desenvolvimento. Apesar da arquitetura ser sólida e escalável, baseada em tecnologias consolidadas, percebeu-se a necessidade de *investir* em **testes automatizados mais robustos**, além de:
+- **Expansão da Funcionalidade de Grupos:** Adicionar chat interno, notificações de pendência;
+- **Dashboard Web Responsivo:** Desenvolver uma versão web com acesso ampliado para usuários e administradores;
+- **Gamificação e Educação Financeira:** Incluir metas, desafios e conteúdos educativos para incentivar o uso consciente das finanças;
+- **Publicação nas Lojas:** Ajustar o build para Google Play e App Store, realizando testes finais com usuários reais;
+- Melhorias gerias de acordo com o feedback dos usuários. 
 
 ## Retrato Atual da Gestão do Trabalho e Contribuições no GitHub
 
