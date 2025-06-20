@@ -200,7 +200,6 @@ Implementação do sistema de autenticação dos usuários, garantindo seguranç
   * Usabilidade: assegurar uma interface intuitiva e acessível.
   * Padrões de codificação: manter consistência e legibilidade do código.
 
-
 **Execução:**
 
 * Desenvolvimento das funcionalidades remanescentes, seguindo os requisitos funcionais definidos.
@@ -217,6 +216,35 @@ Implementação do sistema de autenticação dos usuários, garantindo seguranç
 * Funcionalidades remanescentes implementadas e disponíveis na aplicação móvel.
 * Documentos de planos de teste (funcionalidade e usabilidade) revisados e enriquecidos com novos casos de teste.
 
+<h4 align="center">Etapa 5:</h4>
+
+<img width="1009" alt="image" src="https://github.com/user-attachments/assets/b0523a26-bb66-48e3-851c-4e91bda6921f" />
+
+<h4 align="center">FIGURA 11 - Quadro Kanban</h4>
+
+**Planejamento:**
+
+* Avaliação de Tecnologias: Revisar e documentar o uso de frameworks e ferramentas (Node.js, React Native, Expo, PostgreSQL, Docker, AWS, etc.) adotados ao longo do projeto.
+* Análise Crítica: Identificar pontos fortes e fragilidades na arquitetura atual e no processo de desenvolvimento, com base em cobertura de testes, observabilidade, pipeline de CI/CD e práticas de versionamento.
+* Propostas de Melhoria: Definir recomendações para testes automatizados (unitários, integração e end‑to‑end), migração gradual para microsserviços, reforço de monitoramento em produção (CloudWatch/Sentry) e documentação de componentes via Storybook.
+* “Retratos” de Gestão e Contribuições: Capturar status do Quadro Kanban no GitHub (Backlog, To Do, In Progress, Review, Done) e estatísticas de commits, pull requests e issues fechadas por membro durante a sprint final.
+* Preparação da Apresentação: Estruturar o arquivo PDF de slides e planejar o roteiro do vídeo de apresentação síncrona, prevendo demonstração ao vivo no Expo Go e espaço para Q&A.
+
+**Execução:**
+
+* Produção do Documento “Considerações Finais”.
+* Redigir avaliação dos frameworks e tecnologias.
+* Inserir “retratos” visuais do Kanban e das contribuições no GitHub.
+* Escrever análise crítica e detalhar propostas de melhoria arquitetural e de processo.
+* Criação da Apresentação do Projeto.
+* Revisão Final e Entrega.
+
+**Evidências:**
+
+* Documento “Considerações Finais” completo, com todas as seções exigidas.
+* *Documento de "Apresentação" do projeto.
+* Kanban no GitHub atualizado, refletindo o estado final do projeto.
+* Relatório de Contribuições com tabela de commits, PRs e issues por membro.
 
 ### Ferramentas
 
