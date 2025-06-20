@@ -27,7 +27,7 @@ export default function AdicionarDespesaGrupo() {
 
   console.log({ grupoId })
 
-  const { despesaGrupoForm, handleSubmitDespesaGrupo, refetchStatusGrupo } = useGruposViewModel({ id: String(grupoId) })
+  const { statusGrupo, despesaGrupoForm, handleSubmitDespesaGrupo, refetchStatusGrupo } = useGruposViewModel({ id: String(grupoId) })
 
   return (
     <>
@@ -47,7 +47,7 @@ export default function AdicionarDespesaGrupo() {
 
         <View style={styles.mainContent}>
 
-          <Text style={styles.titulo}></Text>
+          <Text style={styles.titulo}>{statusGrupo.nome}</Text>
 
           <Text style={styles.tituloDois}>Você pagou:</Text>
 

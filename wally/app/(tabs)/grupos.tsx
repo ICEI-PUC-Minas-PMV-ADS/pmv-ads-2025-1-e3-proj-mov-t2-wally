@@ -7,18 +7,22 @@ import {
   Text,
   Pressable,
   TouchableOpacity,
+  TextInput,
 } from 'react-native';
 import { useRouter } from 'expo-router';
-import React from 'react';
+import React, { useState } from 'react';
 import { Stack } from 'expo-router';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useGruposViewModel } from '@/viewModels/useGruposViewModel';
+
 
 export default function TabTwoScreen() {
 
   const router = useRouter();
 
-  const { grupos } = useGruposViewModel({})
+  const { grupos, handleDeleteGrupo } = useGruposViewModel({})
+
+  const [openMembersPopover, setOpenMembersPopover] = useState(false)
 
   return (
     <SafeAreaView style={styles.container}>
@@ -54,20 +58,20 @@ export default function TabTwoScreen() {
               <Text style={styles.itemTexto}>{item.nome}</Text>
               <TouchableOpacity
                 style={styles.deleteButton}
-                onPress={() => onDelete(item.id)}
+                onPress={() => handleDeleteGrupo(item.id)}
                 accessible={true}
                 accessibilityHint="Toque para excluir este grupo"
               >
                 <MaterialIcons name="delete" size={22} color="#84B3B6" />
               </TouchableOpacity>
             </View>
+
           </Pressable>
         )}
         showsVerticalScrollIndicator={true}
       />
 
       <View style={styles.containerBotao}>
-
         <Pressable
           style={styles.botaoCriarGrupo}
           onPress={() => router.push('/criar-grupo')}
@@ -80,6 +84,8 @@ export default function TabTwoScreen() {
         </Pressable>
 
       </View>
+
+      
     </SafeAreaView>
   );
 }

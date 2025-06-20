@@ -1,123 +1,30 @@
 # Registro de Testes de Software
 
-Data: 10/05/2025
+**Data do Registro:** 31/05/2025
 
-Versão do Software: 2.0
+**Versão do Software:** 4.0
 
-| **Registro de Teste** | **CT-01 – Login** |
-| :---: | :---: |
-| Requisito Associado | RF-001 - O aplicativo deve permitir que os usuários realizem login com e-mail e senha. |
-| Objetivo | Verificar se o usuário consegue logar na aplicação. |
-| Critérios de Aceitação | Usuários devem conseguir logar com e-mail e senha válidos, bem como acessar o sistema com as permissões definidas. |
-| Método | Teste funcional. |
-| Resultado | Os usuários conseguem fazer login. |
-|  	|  	|
-| **Registro de Teste** | **CT-02 – Recuperação de Senha** |
-| Requisito Associado | RF-002 - O aplicativo deve possibilitar a recuperação de senha. |
-| Objetivo | Verificar se o usuário consegue recuperar a senha. |
-| Critérios de Aceitação | Usuários devem conseguir solicitar a recuperação de acesso e recuperá-lo. |
-| Método | Teste funcional. |
-| Resultado | Os usuários conseguem solicitar a recuperação de senha. |
-|  	|  	|
-| **Registro de Teste** | **CT-03 – Cadastro de Usuário** |
-| Requisito Associado | RF-003 - O aplicativo deve permitir que os usuários se cadastrem fornecendo nome, e-mail e senha. |
-| Objetivo | Verificar se o usuário consegue se cadastrar no aplicativo. |
-| Critérios de Aceitação | Usuários devem conseguir registrar-se e acessar o sistema com suas credenciais. |
-| Método | Teste funcional. |
-| Resultado | Os usuários conseguem se cadastrar. |
-|  	|  	|
-| **Registro de Teste** | **CT-04 – Edição de Perfil** |
-| Requisito Associado | RF-004 - O aplicativo deve permitir que os usuários editem seu perfil (nome, foto, senha). |
-| Objetivo | Verificar se o usuário consegue editar o perfil. |
-| Critérios de Aceitação | Usuários devem conseguir modificar e salvar as alterações no perfil. |
-| Método | Teste funcional. |
-| Resultado | Os usuários conseguem modificar e salvar as alterações no perfil. |
-|  	|  	|
-| **Registro de Teste** | **CT-05 – Adicionar Transação** |
-| Requisito Associado | RF-005 - O aplicativo deve permitir que os usuários adicionem ganhos e despesas, informando valor, data, categoria e descrição. |
-| Objetivo | Verificar se o usuário consegue adicionar uma transação financeira. |
-| Critérios de Aceitação | Usuários devem conseguir adicionar transações e visualizar o histórico financeiro. |
-| Método | Teste funcional. |
-| Resultado | Os usuários conseguem adicionar transações. |
-|  	|  	|
-| **Registro de Teste** | **CT-06 – Criar Categoria** |
-| Requisito Associado | RF-006 - O aplicativo deve permitir a criação e edição de categorias para transações. |
-| Objetivo | Verificar se o usuário consegue criar e editar categorias. |
-| Critérios de Aceitação | Usuários devem conseguir criar, editar e excluir categorias. |
-| Método | Teste funcional. |
-| Resultado | Os usuários conseguem criar categorias. |
-|  	|  	|
-| **Registro de Teste** | **CT-07 – Exibir Extrato** |
-| Requisito Associado | RF-007 - O aplicativo deve exibir um extrato financeiro. |
-| Objetivo | Verificar se o usuário consegue visualizar o extrato de transações. |
-| Critérios de Aceitação | O sistema deve exibir corretamente as transações realizadas. |
-| Método | Teste funcional. |
-| Resultado | Os usuários conseguem exibir os extratos. |
-|  	|  	|
-| **Registro de Teste** | **CT-08 – Filtrar Transações** |
-| Requisito Associado | RF-008 - O aplicativo deve permitir filtrar transações por categoria, data ou valor. |
-| Objetivo | Verificar se o usuário consegue filtrar transações. |
-| Critérios de Aceitação | O sistema deve exibir apenas as transações filtradas corretamente. |
-| Método | Teste funcional. |
-| Resultado | Os usuários conseguem filtrar as transações. |
-|  	|  	|
-| **Registro de Teste** | **CT-09 – Gráficos Financeiros** |
-| Requisito Associado | RF-009 - O aplicativo deve gerar gráficos simples de gastos por categoria e evolução mensal. |
-| Objetivo | Verificar se os gráficos são gerados corretamente. |
-| Critérios de Aceitação | Os gráficos devem refletir corretamente os dados inseridos. |
-| Método | Teste funcional. |
-| Resultado | Os usuários conseguem gerar gráficos financeiros. |
-|  	|  	|
-| **Registro de Teste** | **CT-10 – Definir Metas Financeiras** |
-| Requisito Associado | RF-010 - O aplicativo deve permitir que os usuários definam metas financeiras. |
-| Objetivo | Verificar se o usuário consegue definir e acompanhar metas financeiras. |
-| Critérios de Aceitação | O sistema deve permitir definir metas e acompanhar seu progresso. |
-| Método | Teste funcional. |
-| Resultado | Os usuários conseguem utilizar a definição de metas financeiras. |
-|  	|  	|
-| **Registro de Teste** | **CT-11 – Criar Grupo de Despesas** |
-| Requisito Associado | RF-011 - O aplicativo deve permitir a criação de grupos para divisão de despesas. |
-| Objetivo | Verificar se o usuário consegue criar um grupo de despesas. |
-| Critérios de Aceitação | O sistema deve permitir criar grupos e adicionar participantes. |
-| Método | Teste funcional. |
-| Resultado | Os usuários conseguem criar grupos de despesas. |
-|  	|  	|
-| **Registro de Teste** | **CT-12 – Adicionar Despesa ao Grupo** |
-| Requisito Associado | RF-012 - O aplicativo deve permitir que os usuários adicionem despesas ao grupo. |
-| Objetivo | Verificar se o usuário consegue adicionar uma despesa ao grupo. |
-| Critérios de Aceitação | O sistema deve permitir adicionar e dividir despesas corretamente. |
-| Método | Teste funcional. |
-| Resultado | Os usuários conseguem adicionar despesas ao grupo. |
-|  	|  	|
-| **Registro de Teste** | **CT-13 – Calcular Saldo do Grupo** |
-| Requisito Associado | RF-013 - O aplicativo deve calcular automaticamente o saldo de cada participante do grupo. |
-| Objetivo | Verificar se o saldo do grupo é atualizado corretamente. |
-| Critérios de Aceitação | O saldo do grupo deve ser atualizado automaticamente após a adição de uma despesa. |
-| Método | Teste funcional. |
-| Resultado | Os usuários conseguem calcular o saldo do grupo. |
-|  	|  	|
-| **Registro de Teste** | **CT-14 – Dar baixa nas Despesas** |
-| Requisito Associado | RF-014 - O aplicativo deve permitir que os usuários marquem despesas como "pagas". |
-| Objetivo | Marcar as despesas como pagas. |
-| Critérios de Aceitação | As despesas selecionadas devem ser marcadas como "pagas" com sucesso. |
-| Método | Teste funcional. |
-| Resultado | Os usuários conseguem dar baixa nas despesas. |
-|  	|  	|
-| **Registro de Teste** | **CT-15 – Histórico de Despesas** |
-| Requisito Associado | RF-015 - O aplicativo deve exibir um histórico de despesas do grupo. |
-| Objetivo | Visualizar histórico das despesas. |
-| Critérios de Aceitação | Uma lista de despesas do grupo deve ser exibida ao acessar o histórico. |
-| Método | Teste funcional. |
-| Resultado | Os usuários conseguem exibir o histórico de despesas do grupo. |
-|  	|  	|
-| **Registro de Teste** | **CT-16 – Escolher Moeda** |
-| Requisito Associado | RF-016 - O aplicativo deve permitir que os usuários escolham a moeda. |
-| Objetivo | Visualizar e escolher as moedas. |
-| Critérios de Aceitação | O tipo de moeda selecionado pelo usuário deve ser alterado com sucesso. |
-| Método | Teste funcional. |
-| Resultado | Os usuários conseguem escolher a moeda no aplicativo. |
-|  	|  	|
 
-## Avaliação
+| Caso de Teste                      | Requisito | Objetivo                                                     | Critérios de Aceitação                                                              | Método          | Resultado | 
+| ---------------------------------- | --------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------- | --------------- | --------- | 
+| CT-01 – Login                      | RF-001    | Autenticação com e-mail e senha                              | Usuário é autenticado e acessa tela inicial com permissões corretas.                | Teste funcional | O usuário consegue fazer login.|             
+| CT-02 – Recuperação de Senha       | RF-002    | Envio de link e redefinição de senha                         | Link enviado ao e-mail em ≤1 min e usuário redefine senha com sucesso.              | Teste funcional |   O usuário consegue recupear senha. |             
+| CT-03 – Cadastro de Usuário        | RF-003    | Registro de novo usuário                                     | Conta criada e mensagem de boas-vindas exibida.                                     | Teste funcional |   O usuário consegue se cadastrar.          |             
+| CT-04 – Edição de Perfil           | RF-004    | Alterar nome, foto ou senha no perfil                        | Perfil é atualizado e permanece após logout/login.                                  | Teste funcional |  O usuário consegue modificar e salvar as alterações no perfil. |           
+| CT-05 – Adicionar Transação        | RF-005    | Inclusão de receitas e despesas                              | Transação aparece no extrato com dados corretos (valor, data, nome).                | Teste funcional |     O usuário consegue adicionar transações.      |             
+| CT-06 – Exibir Extrato             | RF-006    | Visualizar todas as transações do usuário                    | Todas transações cadastradas são exibidas corretamente na tela de extrato.          | Teste funcional |   O usuário consegue visualizar o extrato.   |             
+| CT-07 – Filtrar Transações         | RF-007    | Filtrar por nome, valor ou tipo de transação                 | Apenas as transações que correspondem ao filtro são mostradas.                      | Teste funcional |  O usuário consegue filtrar as transações.  |            
+| CT-08 – Calcular Saldo Total       | RF-008    | Cálculo automático de saldo, receitas e despesas             | Valores de saldo, receitas e despesas conferem com transações cadastradas.          | Teste funcional | O usuário visualiza corretamente. |             
+| CT-09 – Seleção de Período         | RF-009    | Escolher mês e ano na tela inicial                           | Extrato e saldos exibem corretamente o período selecionado.                         | Teste funcional |  O usuário consegue realizar a ação.  |             
+| CT-10 – Criar Grupo                | RF-010    | Criação de grupo para divisão de despesas                    | Grupo é criado com nome e participantes informados e listado na tela.               | Teste funcional |    O usuário consegue criar grupos.         |             
+| CT-11 – Adicionar Despesa ao Grupo | RF-011    | Inclusão de despesa em grupo com divisão entre participantes | Despesa aparece no histórico do grupo com valores divididos corretamente.           | Teste funcional |  O usuário consegue adicionar despesas ao grupo.          |             
+| CT-12 – Calcular Saldo Individual  | RF-012    | Cálculo de saldo para cada participante                      | Saldos individuais são calculados e exibidos corretamente após divisão de despesas. | Teste funcional |   Responsivo.        |            
+| CT-13 – Histórico de Despesas      | RF-013    | Exibir histórico de despesas do grupo                        | Lista completa de despesas do grupo é apresentada.                                  | Teste funcional |    O usuário visualiza corretamente.        |             
+| CT-14 – Adicionar Membros ao Grupo | RF-014    | Inclusão de novos participantes em grupo                     | Novos membros são adicionados e listados no grupo.                                  | Teste funcional |   Responsivo.             |             
+| CT-15 – Listar Grupos              | RF-015    | Exibir lista de grupos do usuário                            | Todos os grupos existentes são apresentados na tela de Grupos.                      | Teste funcional |   O usuário visualiza corretamente.        |             
+| CT-16 – Exibir Tela Inicial        | RF-016    | Verificar apresentação da tela inicial                       | Elementos visuais aparecem corretamente.     | Teste funcional |   O usuário visualiza corretamente.         |             
+
+
+## Avaliação Geral
 
 Os testes apresentaram boa responsividade, com a aplicação funcional e atendendo as expectativas até o momento.

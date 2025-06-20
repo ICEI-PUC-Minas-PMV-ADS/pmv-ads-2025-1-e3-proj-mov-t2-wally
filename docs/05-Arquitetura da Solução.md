@@ -4,19 +4,19 @@
 
 ![wally-diagrama-de-classes](https://github.com/user-attachments/assets/1fa1fc4c-37c0-47b6-a367-aa2106713611)
 
-<h4 align="center">FIGURA 26 - Diagrama de Classes do Wally</h4>
+<h4 align="center">FIGURA 28 - Diagrama de Classes do Wally</h4>
 
 ## Modelo ER
 
 ![wally-diagrama-er](https://github.com/user-attachments/assets/89748024-49b9-4ec0-9a31-7755a1d77b2a)
 
-<h4 align="center">FIGURA 27 - Diagrama Entidade-Relacionamento do Wally</h4>
+<h4 align="center">FIGURA 29 - Diagrama Entidade-Relacionamento do Wally</h4>
 
 ## Esquema Relacional
 
 ![wally-esquema-relacional](https://github.com/user-attachments/assets/df6e22bc-06a5-4170-aeee-da422e4e660d)
 
-<h4 align="center">FIGURA 28 - Diagrama ER de Banco de Dados</h4>
+<h4 align="center">FIGURA 30 - Diagrama ER de Banco de Dados</h4>
 
 ## Modelo Físico
 
@@ -64,22 +64,9 @@ O fluxo de interação do usuário no Wally será conduzido da seguinte forma:
 
   **5. Resposta ao Usuário:** O back-end retorna os dados processados ao front-end, que os apresenta ao usuário na interface do aplicativo, garantindo uma experiência fluida e intuitiva.
 
-<!-- Além disso, a arquitetura e a implementação do Wally serão estruturadas com base na norma técnica de qualidade de software **ISO/IEC 25010:2011**, garantindo altos padrões de usabilidade, eficiência e confiabilidade. Isso reforça nosso compromisso em oferecer um aplicativo seguro, intuitivo e de alto desempenho para a gestão financeira dos usuários. -->
-
 ![React Native](https://github.com/user-attachments/assets/b79e5a70-9259-4bfd-ba69-af17519786ef)
 
-<h4 align="center">FIGURA 29 - Fluxo de Interação do Usuário com o Sistema</h4>
-
- <!--  ## Hospedagem
-
-Explique como a hospedagem e o lançamento da plataforma foi feita.
-
-> **Links Úteis**:
->
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html) -->
+<h4 align="center">FIGURA 31 - Fluxo de Interação do Usuário com o Sistema</h4>
 
 ## Qualidade de Software
 
@@ -145,7 +132,19 @@ Para garantir que as subcaracterísticas selecionadas sejam atendidas, algumas m
 
 Ao adotar essas práticas e a implementação e monitoramento contínuo dessas métricas, o Wally garantirá um alto padrão de qualidade, proporcionando aos usuários uma experiência confiável, segura e eficiente na gestão financeira.
 
+## Hospedagem
 
+`🔗 Link de Acesso:`
+
+**Documentação da API:** http://ec2-18-231-92-232.sa-east-1.compute.amazonaws.com:3333/wally/documentation
+
+**API URL:** http://ec2-18-231-92-232.sa-east-1.compute.amazonaws.com:3333/wally
+
+`🔐 Credenciais de Acesso (Administrador):`
+
+**E-mail:** admin@email.com
+
+**Senha:** wallyadm
 
 
 

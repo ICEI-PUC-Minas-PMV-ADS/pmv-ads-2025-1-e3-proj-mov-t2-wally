@@ -1,10 +1,13 @@
-import { View, StyleSheet, StatusBar, Text, SafeAreaView, TextInput, Pressable } from "react-native"
-import { useState } from "react"
+import { View, StyleSheet, StatusBar, Text, SafeAreaView, TextInput, Pressable, FlatList, TouchableOpacity } from "react-native"
+import { useCallback, useState } from "react"
 import Ionicons from "@expo/vector-icons/Ionicons"
 import MaterialIcons from "@expo/vector-icons/MaterialIcons"
 import { useGruposViewModel } from "@/viewModels/useGruposViewModel"
 import { Controller } from "react-hook-form"
 import { router } from "expo-router"
+import Popover from '@/components/popover';
+import HBox from '@/components/containers/h-box';
+import { useQuery } from "@tanstack/react-query"
 
 export default function CriarGrupoScreen() {
   const [tipoSelecionado, setTipoSelecionado] = useState<string | null>(null)
@@ -17,6 +20,34 @@ export default function CriarGrupoScreen() {
   ]
 
   const { grupoForm, handleSubmitGrupo } = useGruposViewModel({})
+
+
+  const [search, setSearch] = useState<string | null>(null)
+  const [searchEnabled, setSearchEnabled] = useState<boolean>(false)
+
+  const handleSearchDebounce = useCallback((value: string) => {
+    if(search && search.length >= 3){
+      setTimeout(() => setSearchEnabled(true), 500)
+
+      setSearch(value)
+      return
+    }
+
+    setSearchEnabled(false)
+    setSearch('')
+  }, [])
+
+  const [openMembersPopover, setOpenMembersPopover] = useState(false)
+
+  const { data: usuarios, error } = useQuery({
+    queryKey: [''],
+    queryFn: () => {
+
+    },
+    enabled: false
+  })
+
+  const [membros, setMembros] = useState<string[]>([])
 
   return (
     <>
@@ -92,6 +123,7 @@ export default function CriarGrupoScreen() {
             accessibilityLabel="Adicionar membro"
             accessibilityHint="Toque para adicionar um novo membro ao grupo"
             accessibilityRole="button"
+            onPress={() => setOpenMembersPopover(true)}
           >
             <MaterialIcons name="group-add" size={28} color="#fff" />
             <Text style={styles.textoBotaoAddmebro}>ADICIONAR MEMBROS</Text>
@@ -109,6 +141,49 @@ export default function CriarGrupoScreen() {
           </Pressable>
 
         </View>
+
+
+        {openMembersPopover && <Popover
+          title={"Membros"}
+          onDismiss={() => setOpenMembersPopover(false)}
+          contentStyle={styles.popoverContent}
+        >
+          <View>
+            <HBox>
+
+              <TextInput
+                style={styles.input}
+                placeholder="Procurar pessoa"
+                value={""}
+                onChangeText={() => { }}
+              />
+            </HBox>
+
+
+            <HBox>
+              <FlatList
+                data={[{ id: "1", nome: 'Raphael Rodrigues', email: 'raphaelrbh7@gmail.com' }]}
+                keyExtractor={item => item.id}
+                renderItem={({ item }) => (
+                  <Pressable onPress={() => router.push({
+                    pathname: '/grupo',
+                    params: {
+                      id: item.id,
+                    }
+                  })}>
+                    <View style={styles.item}>
+                      <Text style={styles.itemTexto}>{item.nome}</Text>
+                      <Text style={styles.itemTexto}>{item.email}</Text>
+
+                    </View>
+
+                  </Pressable>
+                )}
+                showsVerticalScrollIndicator={true}
+              />
+            </HBox>
+          </View>
+        </Popover>}
       </SafeAreaView>
     </>
   )
@@ -233,5 +308,34 @@ const styles = StyleSheet.create({
     color: "#00494E",
     marginTop: 4,
     textAlign: "center",
+  },
+  popoverContent: {
+    padding: 0,
+  },
+  item: {
+    width: '90%',
+    alignSelf: 'center',
+    backgroundColor: '#FFF',
+    padding: 16,
+    borderWidth: 1,
+    borderColor: '#9ACBD0',
+    marginBottom: 8,
+    borderRadius: 8,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  itemTexto: {
+    fontFamily: 'Inter',
+    fontSize: 16,
+    color: '#000',
+  },
+  deleteButton: {
+    padding: 4,
   },
 })

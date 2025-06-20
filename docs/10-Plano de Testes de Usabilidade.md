@@ -1,4 +1,4 @@
-# Plano de Testes de Usabilidade - Wally
+# Plano de Testes de Usabilidade
 
 ## Objetivos dos Testes de Usabilidade
 
@@ -61,10 +61,9 @@ As tarefas serão realizadas na seguinte ordem:
 
 1. Login e cadastro de conta.
 2. Cadastro de despesas pessoais.
-3. Criação e edição de categorias.
+3. Extrato de despesas pessoais.
 4. Criação de grupos de despesas compartilhadas.
 5. Gestão de saldos do grupo.
-6. Geração de relatórios gráficos.
 
 ## Métricas Coletadas
 
@@ -88,7 +87,6 @@ Além disso, montamos um guia prático para o plano de usabilidade. Cada tarefa,
 | **Realizar login na aplicação**                     | O usuário consegue fazer login em até 2 tentativas, levando menos de 30 segundos.                               | - Facilidade de localização do campo de login. <br> - Clareza das instruções de login. <br> - Tempo total para realizar o login. <br> - Necessidade de recuperação de senha. |
 | **Recuperar senha**                                 | O usuário consegue recuperar sua senha com sucesso em até 5 minutos.                                             | - Facilidade em encontrar a opção de recuperação. <br> - Clareza das instruções no processo. <br> - Tempo até receber o e-mail ou SMS de recuperação. <br> - Sucesso na alteração da senha. |
 | **Cadastrar nova transação (ganho ou despesa)**     | O usuário consegue adicionar uma transação (ganho ou despesa) em até 2 minutos, incluindo categoria e descrição. | - Facilidade em localizar a tela de transações. <br> - Clareza nas opções de categoria e descrição. <br> - Tempo para adicionar a transação. <br> - Verificação da relevância das categorias predefinidas. |
-| **Gerar gráficos de despesas e receitas**            | O usuário gera um gráfico de despesas e receitas por categoria ou mês em até 5 minutos.                         | - Facilidade de acesso à funcionalidade de gráficos. <br> - Clareza nas informações e dados apresentados. <br> - Tempo necessário para gerar e visualizar o gráfico. |
 | **Visualizar extrato financeiro**                   | O usuário consegue visualizar o extrato completo de suas transações de forma clara e sem erros, em até 3 minutos. | - Facilidade para acessar o extrato. <br> - Clareza das transações no extrato. <br> - Facilidade de filtragem por categoria ou valor. <br> - Exibição correta do saldo atual. |
 | **Criar e gerenciar grupo de despesas compartilhadas** | O usuário consegue criar um grupo e adicionar participantes em até 5 minutos.                                    | - Clareza ao criar o grupo e adicionar participantes. <br> - Facilidade de divisão de despesas entre os participantes. <br> - Clareza das responsabilidades financeiras de cada integrante. |
 | **Adicionar despesas ao grupo e dividir os custos** | O usuário consegue adicionar uma despesa e dividir os custos entre os membros do grupo com sucesso em até 3 minutos. | - Facilidade em adicionar a despesa ao grupo. <br> - Clareza na divisão dos valores entre os participantes. <br> - Feedback visual sobre o status da despesa (pendente/paga). |
