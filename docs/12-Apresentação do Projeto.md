@@ -1,27 +1,67 @@
 # Apresentação
 
-<span style="color:red">Pré-requisitos: Todos os demais artefatos</span>
+## Wally
 
-Conjunto de slides em um arquivo PowerPoint ou PDF com a apresentação do projeto contemplando todos os itens trabalhados nos demais artefatos.
+O Wally é um aplicativo mobile de gestão financeira, ideal para quem busca controle, clareza e praticidade no dia a dia. Com uma interface moderna e navegação fluida, ele simplifica o registro e a classificação de receitas e despesas em tempo real, permitindo que o usuário acompanhe seu saldo de forma intuitiva e tome decisões mais acertadas. Além disso, sua área de gestão de gastos em grupo garante transparência e agilidade ao dividir contas com amigos, familiares ou colegas. 
 
-## Título do Projeto
+## Identidade Visual do Wally
 
-Nome e marca do projeto
+Apresentamos a seguir os elementos que sustentam a personalidade do Wally:
 
-## Identidade Visual (Marca, Design)
+<div align="center">
+<img width="326" alt="image" src="https://github.com/user-attachments/assets/b78071f9-2da1-4a31-85b7-069049e3890e" />
 
-O grupo deve ter o cuidado em utilizar figuras, imagens, e cores dentro do contexto da solução proposta, de forma a manter a temática do problema.
+<img width="326" alt="image" src="https://github.com/user-attachments/assets/3f97fbfb-ba10-4bbb-b842-2c131b9f796e" />
+</div>
 
-> **Links Úteis**:
-> - [10 dicas de design para slides](https://rockcontent.com/blog/design-para-slides/)
-> - [7 dicas de design para criar apresentações de PowerPoint incríveis e eficientes](https://www.shutterstock.com/pt/blog/7-dicas-de-design-para-criar-apresentacoes-de-powerpoint-incriveis-e-eficientes)
-> - [Especialista do TED dá 10 dicas para criar slides eficazes e bonitos](https://soap.com.br/blog/especialista-do-ted-da-10-dicas-para-criar-slides-eficazes-e-bonitos)
+### 1. Logomarca:
 
-## Conjunto de Slides (Estrutura)
+- Linhas suaves e orgânicas;
+- Ícone de carteira com cifrão integrado.
 
-O grupo deve distribuir de forma coerente o conteúdo a ser apresentado, dentro do tempo determinado. Importante ressaltar a importância da descrição clara de todo o andamento do projeto, insumos gerados e requisitos atendidos.
- 
-> **Links Úteis**:
-> - [A regra 10-20-30 para apresentações de sucesso](https://revistapegn.globo.com/Noticias/noticia/2014/07/regra-10-20-30-para-apresentacoes-de-sucesso.html)
-> - [Top Tips for Effective Presentations](https://www.skillsyouneed.com/present/presentation-tips.html)
-> - [How to make a great presentation](https://www.ted.com/playlists/574/how_to_make_a_great_presentation)
+<div align="center">
+<img width="316" alt="image" src="https://github.com/user-attachments/assets/b771c1a8-d771-4380-834a-ad678e378283" />
+</div>
+
+<h4 align="center">FIGURA 37 - Logomarca do Wally</h4>
+
+### 2. Paleta de Cores:
+
+- Tons de verde‑azulado: associam-se a dinheiro, crescimento e renovação;
+- Turquesa vibrante: traz frescor, estabilidade e reforça a hierarquia visual.
+
+<div align="center">
+<img width="596" alt="image" src="https://github.com/user-attachments/assets/38a875f7-4eed-45a7-bae0-decb9789675e" />
+</div>
+
+<h4 align="center">FIGURA 38 - Esquema de Cores do Wally</h4>
+
+### 3. Tipografia:
+
+- Julius Sans One na marca: elegância minimalista;
+- Poppins em títulos: destaque contemporâneo;
+- Inter em textos corridos: legibilidade em telas.
+
+### 4. Ilustrações e Ícones:
+
+- Traços simples, cores alinhadas à paleta;
+- Formas arredondadas evocam movimento e simplicidade.
+
+<div align="right">
+<img width="416" alt="image" src="https://github.com/user-attachments/assets/d7ef6c34-4e5c-41d1-b10a-3f0229c49493" />
+</div>
+
+<h4 align="center">FIGURA 39 - Ilustração do Wally</h4>
+
+## Estrutura e Apresentação do Projeto
+
+[Protótipo Interativo - Wally](https://www.figma.com/proto/MiuZNsY107HDiJqKnMdyIm/Projeto-Wally?page-id=0%3A1&node-id=1-14&viewport=215%2C293%2C0.81&t=uLjzv6SkBrleFN8Z-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A14).
+
+## Links Úteis
+
+Acesse o Template Padrão da Aplicação e conheça mais sobre a Identidade Visual do Wally: [Clique aqui](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e3-proj-mov-t2-wally/blob/main/docs/06-Template%20Padr%C3%A3o%20da%20Aplica%C3%A7%C3%A3o.md).
+
+Acesse o Projeto de Interface do Wally: [Clique aqui](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e3-proj-mov-t2-wally/blob/main/docs/04-Projeto%20de%20Interface.md).
+
+Acesse o Projeto de Interface do Wally: [Clique aqui](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-1-e3-proj-mov-t2-wally/blob/main/docs/04-Projeto%20de%20Interface.md).
+
