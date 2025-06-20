@@ -225,10 +225,10 @@ Implementação do sistema de autenticação dos usuários, garantindo seguranç
 **Planejamento:**
 
 * Avaliação de Tecnologias: Revisar e documentar o uso de frameworks e ferramentas (Node.js, React Native, Expo, PostgreSQL, Docker, AWS, etc.) adotados ao longo do projeto.
-* Análise Crítica: Identificar pontos fortes e fragilidades na arquitetura atual e no processo de desenvolvimento, com base em cobertura de testes, observabilidade, pipeline de CI/CD e práticas de versionamento.
-* Propostas de Melhoria: Definir recomendações para testes automatizados (unitários, integração e end‑to‑end), migração gradual para microsserviços, reforço de monitoramento em produção (CloudWatch/Sentry) e documentação de componentes via Storybook.
+* Análise Crítica: Identificar pontos fortes e fragilidades na arquitetura atual e no processo de desenvolvimento, com base em cobertura de testes, observabilidade e práticas de versionamento.
+* Propostas de Melhoria: Definir recomendações para o futuro do Wally.
 * “Retratos” de Gestão e Contribuições: Capturar status do Quadro Kanban no GitHub (Backlog, To Do, In Progress, Review, Done) e estatísticas de commits, pull requests e issues fechadas por membro durante a sprint final.
-* Preparação da Apresentação: Estruturar o arquivo PDF de slides e planejar o roteiro do vídeo de apresentação síncrona, prevendo demonstração ao vivo no Expo Go e espaço para Q&A.
+* Preparação da Apresentação: Estruturar o arquivo PDF de slides e planejar o roteiro do vídeo de apresentação síncrona, prevendo demonstração ao vivo no Expo Go.
 
 **Execução:**
 
