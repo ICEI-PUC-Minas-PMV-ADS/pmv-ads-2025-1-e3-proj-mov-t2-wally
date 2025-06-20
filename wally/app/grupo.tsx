@@ -45,9 +45,9 @@ export default function GrupoScreen() {
 
   const { statusGrupo, usuario } = useGruposViewModel({ id: id as string })
 
-  console.log({id})
+  console.log({ id })
 
-  console.log({statusGrupo})
+  console.log({ statusGrupo: statusGrupo })
 
   // const saldoDevedor = useMemo(() => {
   //   return statusGrupo?.data?.transacoes.reduce((acc, current) => acc.)
@@ -72,7 +72,20 @@ export default function GrupoScreen() {
 
           <Text style={styles.titulo}>{statusGrupo?.data?.nome}</Text>
 
-          {/* <Text style={styles.subTitulo}>Você deve R$2.345,26</Text> */}
+          <Text style={styles.subTitulo}>Você deve {((statusGrupo?.data?.usuario.deve ?? 0) as number).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Text>
+
+          <View>
+            <Text>Membros</Text>
+            <FlatList
+              data={statusGrupo?.data?.membros}
+              renderItem={({ item }) => (
+                <View>
+                  <Text>{item.user.nome}</Text>
+                </View>
+              )}
+              showsVerticalScrollIndicator={false}
+            />
+          </View>
 
           <View style={styles.containerBotoes}>
             <TouchableOpacity
@@ -110,12 +123,19 @@ export default function GrupoScreen() {
             data={statusGrupo?.data?.transacoes}
             renderItem={({ item }) => (
               <View style={styles.item}>
-                <Text style={styles.itemTexto}>{format(new Date(item.data), 'dd/MM/yyyy')}</Text>
+                <Text style={styles.itemTexto}>{format(new Date(item.data), 'MMMM dd, yyyy')}</Text>
                 <Text style={styles.itemTexto}>{item.nome}</Text>
                 {item.emprestou && (
-                  <Text style={styles.itemTextoValor}>Você pagou {item.valor_total}</Text>
+                  <Text style={styles.itemTextoValor}>Você pagou {(item.valor_total as number).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Text>
                 )}
-                
+
+                {!item.emprestou && item.envolvido && (
+                  <Text style={styles.itemTextoValor}>Você pegou {(item.valor_pego_emprestado ?? 0 as number).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} emprestado</Text>
+                )}
+
+                {!item.envolvido && !item.emprestou && (
+                  <Text style={styles.itemTextoValor}>{`${item.usuario_nome} pagou ${(item.valor_total as number).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} - Não envolvido`}</Text>
+                )}
               </View>
             )}
             showsVerticalScrollIndicator={false}

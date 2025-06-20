@@ -1,5 +1,5 @@
 import { View, StyleSheet, StatusBar, Text, SafeAreaView, TextInput, Pressable, FlatList, TouchableOpacity } from "react-native"
-import { useCallback, useState } from "react"
+import { useCallback, useMemo, useState } from "react"
 import Ionicons from "@expo/vector-icons/Ionicons"
 import MaterialIcons from "@expo/vector-icons/MaterialIcons"
 import { useGruposViewModel } from "@/viewModels/useGruposViewModel"
@@ -8,6 +8,8 @@ import { router } from "expo-router"
 import Popover from '@/components/popover';
 import HBox from '@/components/containers/h-box';
 import { useQuery } from "@tanstack/react-query"
+import { API_URL } from "@env"
+import { useAuthStore } from "@/store/authStore"
 
 export default function CriarGrupoScreen() {
   const [tipoSelecionado, setTipoSelecionado] = useState<string | null>(null)
@@ -21,33 +23,80 @@ export default function CriarGrupoScreen() {
 
   const { grupoForm, handleSubmitGrupo } = useGruposViewModel({})
 
-
-  const [search, setSearch] = useState<string | null>(null)
-  const [searchEnabled, setSearchEnabled] = useState<boolean>(false)
-
   const handleSearchDebounce = useCallback((value: string) => {
-    if(search && search.length >= 3){
-      setTimeout(() => setSearchEnabled(true), 500)
+    if (searchText && searchText.length >= 3) {
 
-      setSearch(value)
+      setSearchText(value)
+
       return
     }
 
-    setSearchEnabled(false)
-    setSearch('')
+    setSearchText(value)
   }, [])
 
   const [openMembersPopover, setOpenMembersPopover] = useState(false)
 
-  const { data: usuarios, error } = useQuery({
-    queryKey: [''],
-    queryFn: () => {
+  const token = useAuthStore((state) => state.token)
+  const usuario = useAuthStore((state) => state.user)
 
+  const { data: usuarios = [], error } = useQuery({
+    queryKey: ['usuarios'],
+    queryFn: async () => {
+      const response = await fetch(`${API_URL}/usuarios`, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
+      })
+
+      const data = await response.json()
+
+      return data
     },
-    enabled: false
+    enabled: true
   })
 
-  const [membros, setMembros] = useState<string[]>([])
+  const [selectedMembros, setSelectedMembros] = useState<{ id: string, nome: string, email: string }[]>([])
+
+  const [searchText, setSearchText] = useState<string | null>(null)
+
+  const membersFiltered = useMemo(() => {
+    if (searchText) {
+      return usuarios.filter(usuario => usuario.email.toLowerCase().includes(searchText.toLowerCase()) || usuario.nome.toLowerCase().includes(searchText.toLowerCase()))
+    }
+
+    return []
+  }, [searchText])
+
+
+  const handleSelectMember = useCallback((u: { id: string; nome: string; email: string }) => {
+    if (!usuario) {
+      return
+    }
+    setSelectedMembros((prev) => {
+      const index = prev.findIndex((usuario) => usuario.id === u.id);
+
+      if (index >= 0) {
+        const newValues = [...prev.slice(0, index), ...prev.slice(index + 1)]
+
+        grupoForm.setValue('membros', [...newValues.map(usuario => usuario.id), usuario.id])
+
+        return [...prev.slice(0, index), ...prev.slice(index + 1)];
+      } else {
+        const newValues = [...prev, u]
+
+        grupoForm.setValue('membros', [...newValues.map(usuario => usuario.id), usuario.id])
+
+        return [...prev, u];
+      }
+    });
+
+    if (usuario) {
+
+    }
+
+    setSearchText(null)
+  }, []);
 
   return (
     <>
@@ -116,6 +165,26 @@ export default function CriarGrupoScreen() {
           />
         </View>
 
+        <View>
+          <Text>Membros</Text>
+
+          <FlatList
+            data={selectedMembros}
+            keyExtractor={item => item.id}
+            renderItem={({ item }) => (
+              <Pressable onPress={() => handleSelectMember(item)}>
+                <View style={styles.item}>
+                  <Text style={styles.itemTexto}>{item.nome}</Text>
+                  <Text style={styles.itemTexto}>{item.email}</Text>
+
+                </View>
+
+              </Pressable>
+            )}
+            showsVerticalScrollIndicator={true}
+          />
+        </View>
+
         <View style={styles.containerBotao}>
           <Pressable
             style={styles.botaoAddmebro}
@@ -154,34 +223,59 @@ export default function CriarGrupoScreen() {
               <TextInput
                 style={styles.input}
                 placeholder="Procurar pessoa"
-                value={""}
-                onChangeText={() => { }}
+                value={searchText ?? ''}
+                onChangeText={(value) => handleSearchDebounce(value)}
               />
             </HBox>
 
+            {selectedMembros.length > 0 && (
+              <HBox style={{ display: 'flex', flexDirection: 'column', width: '100%', background: 'red' }}>
+                <View style={{  width: '100%' }}>
+                  <Text>Membros</Text>
+                </View>
+                <FlatList
+                  style={{ width: '100%' }}
+                  data={selectedMembros}
+                  keyExtractor={item => item.id}
+                  renderItem={({ item }) => (
+                    <Pressable onPress={() => handleSelectMember(item)}>
+                      <View style={styles.item}>
+                        <Text style={styles.itemTexto}>{item.nome}</Text>
+                        <Text style={styles.itemTexto}>{item.email}</Text>
 
-            <HBox>
-              <FlatList
-                data={[{ id: "1", nome: 'Raphael Rodrigues', email: 'raphaelrbh7@gmail.com' }]}
-                keyExtractor={item => item.id}
-                renderItem={({ item }) => (
-                  <Pressable onPress={() => router.push({
-                    pathname: '/grupo',
-                    params: {
-                      id: item.id,
-                    }
-                  })}>
-                    <View style={styles.item}>
-                      <Text style={styles.itemTexto}>{item.nome}</Text>
-                      <Text style={styles.itemTexto}>{item.email}</Text>
+                      </View>
 
-                    </View>
+                    </Pressable>
+                  )}
+                  showsVerticalScrollIndicator={true}
+                />
+              </HBox>
+            )}
 
-                  </Pressable>
-                )}
-                showsVerticalScrollIndicator={true}
-              />
-            </HBox>
+
+            {membersFiltered.length > 0 && (
+              <HBox style={{ display: 'flex', flexDirection: 'column' }}>
+                <View style={{ width: '100%' }}>
+                  <Text>Resultados</Text>
+                </View>
+                <FlatList
+                  style={{ width: '100%' }}
+                  data={membersFiltered}
+                  keyExtractor={item => item.id}
+                  renderItem={({ item }) => (
+                    <Pressable onPress={() => handleSelectMember(item)}>
+                      <View style={styles.item}>
+                        <Text style={styles.itemTexto}>{item.nome}</Text>
+                        <Text style={styles.itemTexto}>{item.email}</Text>
+
+                      </View>
+
+                    </Pressable>
+                  )}
+                  showsVerticalScrollIndicator={true}
+                />
+              </HBox>
+            )}
           </View>
         </Popover>}
       </SafeAreaView>
@@ -217,14 +311,15 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   input: {
-    height: 60,
+    height: 50,
     borderWidth: 1,
     borderColor: "#ccc",
     borderRadius: 8,
-    paddingHorizontal: 16,
+    paddingHorizontal: 14,
     fontSize: 14,
     backgroundColor: "#fff",
     fontFamily: "Inter",
+    flex: 1,
   },
   labelNome: {
     fontFamily: "Poppins_300Light",
@@ -310,13 +405,17 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   popoverContent: {
-    padding: 0,
+    paddingLeft: 16,
+    paddingRight: 16,
+    minHeight: 300,
   },
   item: {
-    width: '90%',
+    width: '100%',
     alignSelf: 'center',
     backgroundColor: '#FFF',
-    padding: 16,
+    paddingLeft: 8,
+    paddingRight: 8,
+    padding: 8,
     borderWidth: 1,
     borderColor: '#9ACBD0',
     marginBottom: 8,
@@ -328,7 +427,6 @@ const styles = StyleSheet.create({
     elevation: 2,
     flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'center',
   },
   itemTexto: {
     fontFamily: 'Inter',

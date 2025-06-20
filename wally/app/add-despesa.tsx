@@ -7,10 +7,11 @@ import {
   TouchableOpacity,
   StatusBar,
   Pressable,
+  FlatList,
 } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import React, { useCallback } from 'react';
-import { QueryClient, useMutation } from '@tanstack/react-query';
+import { QueryClient, useMutation, useQuery } from '@tanstack/react-query';
 import { API_URL } from '@env';
 import { useAuthStore } from '@/store/authStore';
 import { Controller, useForm } from 'react-hook-form';
@@ -29,6 +30,26 @@ export default function AdicionarDespesaGrupo() {
 
   const { statusGrupo, despesaGrupoForm, handleSubmitDespesaGrupo, refetchStatusGrupo } = useGruposViewModel({ id: String(grupoId) })
 
+
+  const handleSelectMember = useCallback(
+    (u: any, membrosParticipantes: any[], onChange: (updated: any[]) => void) => {
+      const index = membrosParticipantes.findIndex((usuario) => usuario.id === u.id);
+
+      console.log({index})
+      if (index >= 0) {
+        const updated = membrosParticipantes.map((m, i) =>
+          i === index ? { ...m, active: !m.active } : m
+        );
+        onChange(updated);
+      } else {
+        const newValues = [...membrosParticipantes, { ...u, active: true }];
+        onChange(newValues);
+      }
+    },
+    []
+  );
+
+
   return (
     <>
 
@@ -39,7 +60,12 @@ export default function AdicionarDespesaGrupo() {
         <View style={styles.botaoVoltar}>
 
           <Pressable
-            onPress={() => router.push('/grupo')}>
+            onPress={() => router.push({
+              pathname: '/grupo',
+              params: {
+                id: grupoId,
+              }
+            })}>
             <MaterialIcons name="arrow-back-ios" size={24} color="#006A71" />
           </Pressable>
 
@@ -47,9 +73,23 @@ export default function AdicionarDespesaGrupo() {
 
         <View style={styles.mainContent}>
 
-          <Text style={styles.titulo}>{statusGrupo.nome}</Text>
+          <Text style={styles.titulo}>{statusGrupo.data.nome}</Text>
 
-          <Text style={styles.tituloDois}>Você pagou:</Text>
+          {/* <Text style={styles.tituloDois}>Você pagou:</Text> */}
+
+          <Text style={styles.labelNome}>Nome da Despesa</Text>
+          <Controller
+            control={despesaGrupoForm.control}
+            name="nome"
+            render={({ field }) => (
+              <TextInput
+                style={styles.input}
+                placeholder="Nome da Despesa"
+                value={field.value}
+                onChangeText={field.onChange}
+              />
+            )}
+          />
 
           <Text style={styles.labelNome}>Valor</Text>
           <Controller
@@ -79,21 +119,38 @@ export default function AdicionarDespesaGrupo() {
             )}
           />
 
-          <Text style={styles.labelNome}>Nome da Despesa</Text>
-          <Controller
-            control={despesaGrupoForm.control}
-            name="nome"
-            render={({ field }) => (
-              <TextInput
-                style={styles.input}
-                placeholder="Nome da Despesa"
-                value={field.value}
-                onChangeText={field.onChange}
-              />
-            )}
-          />
 
-          <Text style={styles.labelDivisao}>Dividir por todos:</Text>
+
+
+
+          <View>
+            <Text style={styles.labelDivisao}>Dividir entre:</Text>
+
+            <Controller
+              control={despesaGrupoForm.control}
+              name="membros_participantes"
+              render={({ field }) => (
+                <FlatList
+                  data={field.value}
+                  keyExtractor={item => item.id}
+                  renderItem={({ item }) => {
+                    //console.log({ item })
+                    return (
+                      <Pressable onPress={() => handleSelectMember(item, field.value, field.onChange)}>
+
+                        <View >
+                          <Text style={{ opacity: item.active ? 1 : 0.25 }}>{item.nome}</Text>
+                        </View>
+                      </Pressable>
+                    )
+                  }
+
+                  }
+                  showsVerticalScrollIndicator={true}
+                />
+              )}
+            />
+          </View>
 
           <TouchableOpacity
             style={styles.botaoSalvar}

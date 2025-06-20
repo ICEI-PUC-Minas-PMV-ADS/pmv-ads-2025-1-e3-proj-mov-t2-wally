@@ -125,11 +125,15 @@ export function useGruposViewModel({ id }: { id?: string }) {
         }
     })
 
-    const despesaGrupoForm = useForm<Despesa>({
+
+    const despesaGrupoForm = useForm<any>({
         defaultValues: {
             valor: '',
             data: '',
             nome: '',
+            usuario_id: usuario?.id,
+            membros_participantes: statusGrupo?.data?.membros.map(membro => ({ ...membro.user, active: false })),
+            grupo_id: id,
         }
     })
 
@@ -145,9 +149,9 @@ export function useGruposViewModel({ id }: { id?: string }) {
                 await criarDespesa({
                     nome: data.nome,
                     valor: Number(data.valor),
-                    usuario_id: usuarioId,
-                    grupo_id: id,
-                    membros_participantes: [usuarioId]
+                    usuario_id: data.usuario_id,
+                    grupo_id: data.grupo_id,
+                    membros_participantes: data.membros_participantes.map(user => user.id)
                 })
 
                 await refetchStatusGrupo()

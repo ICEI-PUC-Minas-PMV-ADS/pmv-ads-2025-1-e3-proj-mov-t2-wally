@@ -2,6 +2,7 @@ import { GruposRepositorio } from '../../repositorios/GruposRepositorio'
 import { DespesasGrupoRepositorio } from '../../repositorios/DespesasGrupoRepositorio'
 import { GrupoMembrosRepositorio } from '../../repositorios/GrupoMembrosRepositorio'
 import { UsuariosRepositorio } from 'repositorios/UsuariosRepositorio'
+import { GrupoMembro } from 'entity/GrupoMembro'
 
 interface GetGrupoBalancoUseCaseParams {
   grupo_id: string
@@ -21,6 +22,10 @@ interface Transacao {
 interface GetGrupoBalancoUseCaseResponse {
   nome: string
   transacoes: Transacao[]
+  membros: GrupoMembro[]
+  usuario: {
+    deve: number
+  }
 }
 
 interface IResponse {
@@ -56,6 +61,8 @@ export class GetGrupoBalancoUseCase {
 
     const grupoMembros =
       await this.grupoMembrosRepositorio.findAllByGroupId(grupo_id)
+
+    console.log({ grupoMembros })
 
     // console.log({ grupoMembros })
 
@@ -145,6 +152,13 @@ export class GetGrupoBalancoUseCase {
         transacoes: transacoes.sort(
           (a, b) => b.data.getTime() - a.data.getTime(),
         ),
+        membros: grupoMembros,
+        usuario: {
+          deve: transacoes.reduce(
+            (acc, transacao) => acc + (transacao.valor_pego_emprestado ?? 0),
+            0,
+          ),
+        },
       },
       error: null,
     }
